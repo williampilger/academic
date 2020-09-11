@@ -26,4 +26,26 @@ Para cada linha de entrada deverá ser impressa uma linha de saída com a frase 
 conforme a especificação acima. */
 
 #include <stdio.h>
+#include <string.h>
 
+int main (void){
+    int dig, i, x=0, y;
+    char vet[100];
+    scanf("%d", &y);
+    while(x<=y){
+        gets(vet);
+        for(i=0;i<100;i++){
+            if(vet[i]=='\0') break;
+        }
+        dig=i-1;
+        for(i=dig/2;i>=0;i--){
+            printf("%c", vet[i]);
+        }
+        for(i=dig;i>dig/2;i--){
+            printf("%c", vet[i]);
+        }
+        printf("\n");
+        x++;
+    }
+    return 0;
+}
