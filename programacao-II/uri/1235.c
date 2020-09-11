@@ -30,7 +30,7 @@ conforme a especificação acima. */
 
 int main (void){
     int dig, i, x=0, y;
-    char vet[100];
+    char vet[101];
     scanf("%d", &y);
     while(x<=y){
         gets(vet);
