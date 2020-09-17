@@ -29,22 +29,25 @@ conforme a especificação acima. */
 #include <string.h>
 
 int main (void){
-    int dig, i, x=0, y;
-    char vet[101];
+    int dig, i, x=0, y,j;
+    char vet[101], nvet[101];
     scanf("%d", &y);
     while(x<=y){
         gets(vet);
-        for(i=0;i<100;i++){
-            if(vet[i]=='\0') break;
+        dig=strlen(vet);
+        strcpy(nvet,"");
+        j=0;
+        for(i=dig/2-1;i>=0;i--){
+            nvet[j++]=vet[i];
+            //printf("%c", vet[i]);
         }
-        dig=i-1;
-        for(i=dig/2;i>=0;i--){
-            printf("%c", vet[i]);
+        for(i=dig-1;i>dig/2-1;i--){
+            nvet[j++]=vet[i];
+            //printf("%c", vet[i]);
         }
-        for(i=dig;i>dig/2;i--){
-            printf("%c", vet[i]);
-        }
-        printf("\n");
+        nvet[j]='\0';
+        //printf("\n");
+        printf("%s\n", nvet);
         x++;
     }
     return 0;
