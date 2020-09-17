@@ -28,14 +28,13 @@ conforme a especificação acima. */
 #include <stdio.h>
 #include <string.h>
 
-int main (void){
+int main (){
     int dig, i, x=0, y,j;
     char vet[101], nvet[101];
     scanf("%d", &y);
     while(x<=y){
         gets(vet);
         dig=strlen(vet);
-        strcpy(nvet,"");
         j=0;
         for(i=dig/2-1;i>=0;i--){
             nvet[j++]=vet[i];
