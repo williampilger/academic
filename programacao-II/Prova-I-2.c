@@ -62,7 +62,7 @@ int main(){
         minuto=atoi(tempmin);
         segundo=atoi(tempseg);
         if(hora>=0&&hora<24&&minuto>=0&&minuto<60&&segundo>=0&&segundo<60) val=1;
-    }else val=0;
+    }
     
     if(val!=1) hora=minuto=segundo=-1;
     
