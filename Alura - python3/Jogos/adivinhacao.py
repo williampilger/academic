@@ -8,8 +8,13 @@ for rodada in range(1, tentativas + 1):
         print("Faça sua aposta", end="")
     else:
         print("Tente novamente", end="")
-    print("(tentativa {} de {}): ".format(rodada, tentativas), end="")
+    print("Digite um número entre 1 e 100 (tentativa {} de {}): ".format(rodada, tentativas), end="")
     chute = int(input(""))
+
+    if(chute < 1 or chute > 100):
+        print("Número fora do intervalo!")
+        erro_anterior = abs(numero - chute)
+        continue
 
     if(chute == numero):
         print("Mas aah, você acertou!!")
