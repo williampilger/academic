@@ -12,7 +12,7 @@ def jogar():
     if(nivel == 1):
         tentativas = 20
     elif(nivel == 2):
-        tentativa = 10
+        tentativas = 10
     else:
         tentativas = 5
 
@@ -56,3 +56,6 @@ def jogar():
 
 
     print("Fim de jogo!")
+
+if(__name__ == "__main__"):
+    jogar()
