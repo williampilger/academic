@@ -43,3 +43,6 @@ class Conta:
     def titular(self):
         return self.__titular
 
+    @staticmethod
+    def cod_banco():
+        return "001"
