@@ -13,6 +13,9 @@ class Conta:
         print("Depositando {} reais na conta de {}.".format(valor, self.__titular))
         self.__saldo += valor
 
+    def consulta_disponibilidade(self, valor_a_sacar):
+        return valor_a_sacar <= self.__saldo+self.__limite
+
     def saca(self, valor):
         print("Sacando {} reais na conta de {}.".format(valor, self.__titular))
         self.__saldo -= valor
