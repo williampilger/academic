@@ -58,13 +58,13 @@ class Playlist:
     def __getitem__(self, item): # torna minha playlist iterável
         return self._programas[item]
 
+    def __len__(self): #torna a playlist algo que possa retornar o próprio tamanho... ou seja, posso usar len(playlist)
+        return len(self._programas)
+
     @property
     def listagem(self):
         return self._programas
 
-    @property
-    def tamanho(self):
-        return len(self._programas)
 
 
 
