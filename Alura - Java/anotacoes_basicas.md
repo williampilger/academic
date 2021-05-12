@@ -52,3 +52,24 @@ Para compilar e rodar:
 
 OBS.: Para executar, SEMPRE é usado `.` no lugar da `/`.
 
+## Criando arquivos .JAR
+Os arquivos JAR nada mais são que nosso pacote zipado, e podemos usar o mesmo projeto para fazer alguns testes.
+Para criar o arquivo .jar do nosso projeto usamos **jar -cf nome_do_arquivo.jar nome_do_pacote**, exemplo, no nosso caso:
+
+> jar -cf teste.jar teste
+
+Para rodar este arquivo agora, usamos:
+
+> java -cp teste.jar teste.HelloWorld William
+
+## Arquivo Maninfest.mf
+Automativamente ao criarmos o arquivo jar é criada a pasta **META-INF** e dentro dela o arquivo **Maninfest.mf**, ele serve para reter informações e configurações do nosso pacote, e pode ser personalizado para informar ao jar qual classe deve ser executada ao abrirmos nosso **.jar**, para isso devemos criar um arquivo maninfest.mf no nosso pacote, e informa-lo no momento de criar o .jar.
+Dentro do arquivo maninfest (que você pode salvar com qualquer nome) coloque, por exemplo:
+
+```java
+Main-Class: scjp.HelloWorld
+```
+
+E, no momento de criar o jar, usaremos:
+> jar -cmf teste.jar meu_maninfest teste //ISSO NAO FUNCIONA, NÃO SEI PQ
+
