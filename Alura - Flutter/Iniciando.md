@@ -26,11 +26,24 @@ Siga as [instruções disponíveis na página do flutter](https://developer.andr
 
 Ou crie rapidamente um emulador genérico usando o comando abaixo:
 
-> flutter 
+> flutter emulators --create [--name NOME_DO_EMULADOR]
 
 ## Criando o primeiro projeto
 
 Depois de tudo instalado, abra um terminal, e:
 
 - navegue até o diretório onde deseja salvar seu novo projeto;
-- Crie o projeto usando `flutter 
+- Crie o projeto usando `flutter create NOME_DO_PROJETO`. Isso pode demorar um pouco.
+
+## Executando o projeto teste
+
+Imediatamente após criar, já é possível executar esta aplicação, mas para isso é necessário ter um **emulador rodando** ou um **dispositivo android conectado via depuração USB**.
+Para executar seu emulador, criado na etapa anterior, basta digitar `flutter emulators --launch <emulador_id>`.
+
+Para executar a aplicação, use:
+
+> cd pasta_do_seu_projeto
+
+> flutter run
+
+**lembre-se de estar no diretório da aplicação criada para que isso funcione.**
