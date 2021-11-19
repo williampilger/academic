@@ -14,7 +14,7 @@ Instale o NodeJS, e o NPM:
 
 Para o Visual Studio Code:
 
-> sudo snap install code
+> sudo snap install code --classic
 
 **# No MAC**
 
