@@ -3,7 +3,8 @@
 
 ## Pré requisitos
 
-Você precisará de duas ferramentas principais, o **NodeJS** e o **NPM**, no MAC o NPM já vem pré instalado (acredito que em todas as versões), nos demais algumas providências precisam ser tomadas:
+Você precisará de duas ferramentas principais, o **NodeJS** e o **NPM**, no MAC o NPM já vem pré instalado (acredito que em todas as versões).
+Também é importante ter uma boa IDE, o Visual Studio Code é uma boa opção.
 
 **No Linux (Ubuntu ou semelhantes)**
 
@@ -11,6 +12,9 @@ Instale o NodeJS, e o NPM:
 
 > sudo apt-get -y install nodejs npm
 
+Para o Visual Studio Code:
+
+> sudo snap install code
 
 **No MAC**
 
@@ -21,9 +25,11 @@ Instale o NodeJS:
 
 **No Windows**
 
-Te vira mané!
-Tá na hora de usar o OS descente, larga de ser nutella!
+Baixe e instale o [NodeJS](https://nodejs.org).
+Lembre de marcar a opção **"Install addictional tools"**.
+(A instalação das ferramentas adicionais leva bastante tempo)
 
+Baixe e instale o [NCM]
 
 
 ## Criando um "Olá mundo!"
