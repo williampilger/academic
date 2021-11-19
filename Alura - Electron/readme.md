@@ -3,7 +3,7 @@
 
 ## Pré requisitos
 
-Você precisará de duas ferramentas principais, o **NodeJS** e o **NPM**, no MAC o NPM já vem pré instalado (acredito que em todas as versões).
+Você precisará de duas ferramentas principais, o **NodeJS** e o **NPM**, no MAC e no Windows o NPM acompanha o NodeJS.
 Também é importante ter uma boa IDE, o Visual Studio Code é uma boa opção.
 
 **# No Linux (Ubuntu ou semelhantes)**
@@ -14,9 +14,13 @@ Instale o NodeJS, e o NPM:
 
 Para o Visual Studio Code:
 
-> sudo snap install code
+> sudo snap install code --classic
 
 **# No MAC**
+
+Se ainda não possuir, instale o **brew**
+
+> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 Instale o NodeJS:
 
