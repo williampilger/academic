@@ -18,6 +18,10 @@ Para o Visual Studio Code:
 
 **# No MAC**
 
+Se ainda não possuir, instale o **brew**
+
+> /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 Instale o NodeJS:
 
 > brew install node
