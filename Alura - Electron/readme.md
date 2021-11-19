@@ -3,14 +3,13 @@
 
 ## Pré requisitos
 
+Você precisará de duas ferramentas principais, o **NodeJS** e o **NPM**, no MAC o NPM já vem pré instalado (acredito que em todas as versões), nos demais algumas providências precisam ser tomadas:
 
 **No Linux (Ubuntu ou semelhantes)**
 
 Instale o NodeJS, e o NPM:
 
-> sudo apt-get install nodejs
-
-> sudo apt-get install npm
+> sudo apt-get -y install nodejs npm
 
 
 **No MAC**
