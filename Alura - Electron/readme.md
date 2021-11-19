@@ -6,7 +6,7 @@
 Você precisará de duas ferramentas principais, o **NodeJS** e o **NPM**, no MAC o NPM já vem pré instalado (acredito que em todas as versões).
 Também é importante ter uma boa IDE, o Visual Studio Code é uma boa opção.
 
-**No Linux (Ubuntu ou semelhantes)**
+**# No Linux (Ubuntu ou semelhantes)**
 
 Instale o NodeJS, e o NPM:
 
@@ -16,14 +16,14 @@ Para o Visual Studio Code:
 
 > sudo snap install code
 
-**No MAC**
+**# No MAC**
 
 Instale o NodeJS:
 
 > brew install node
 
 
-**No Windows**
+**# No Windows**
 
 Baixe e instale o [NodeJS](https://nodejs.org).
 Lembre de marcar a opção **"Install addictional tools"**.
