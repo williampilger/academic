@@ -68,7 +68,7 @@ def mensagem_derrota(palavra):
 
 def mensagem_vitória(palavra):
     print("Parabéns, você ganhou!")
-    print("A palavra setreca era:", palavra)
+    print("A palavra secreta era:", palavra)
     print("       ___________      ")
     print("      '._==_==_=_.'     ")
     print("      .-\\:      /-.    ")
