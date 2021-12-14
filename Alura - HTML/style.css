@@ -1,0 +1,59 @@
+:root {
+    --cor-fundo-texto: white;
+    --cor-fundo-pagina: rgb(214, 214, 214);
+}
+
+html {/*RESET*/
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    line-height: 1;
+    list-style: none;
+    quotes: none;
+}
+
+body {
+    background-color: var(--cor-fundo-pagina);
+}
+
+h1 {
+    font-size: 50px;
+    margin: 10px;
+}
+
+h2 {
+    font-size: 40px;
+    margin: 20px 10px 10px 10px;
+}
+
+p {
+    text-align: justify;
+}
+
+.div-card {
+    display: block;
+    padding: 20px;
+    margin: 20px 10% 20px 10%;
+    min-width: 300px;
+    
+    
+    border-radius: 5px;
+    background-color: var(--cor-fundo-texto);
+
+}
+
+#time {
+    width: 50%;
+    border: 5px solid #5e6d26;
+    text-align: center;
+}
+
+ul {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin: 5%;
+}

@@ -33,7 +33,7 @@ Baixe e instale o [NodeJS](https://nodejs.org).
 Lembre de marcar a opção **"Install addictional tools"**.
 (A instalação das ferramentas adicionais leva bastante tempo)
 
-Baixe e instale o [NPM]
+Baixe e instale o [NPM] se o mesmo não for instalado automaticamente com o NodeJS.
 
 
 ## Criando um "Olá mundo!"
