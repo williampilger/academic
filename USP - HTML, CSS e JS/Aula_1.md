@@ -1,6 +1,6 @@
 # Aula 1 - Git e Github
 
-Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtube.com/watch?v=zOdV7bBcS0E&list=PLJDZ4FAZLYfg2Ju84U1xrFRMkdT-Yf8dT&index=1)
+Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtube.com/watch?v=zOdV7bBcS0E&list=PLJDZ4FAZLYfg2Ju84U1xrFRMkdT-Yf8dT&index=1).
 
 ## Configurando GIT
 
