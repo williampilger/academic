@@ -1,4 +1,4 @@
-# Aula 1 - Introdução ao HTML 
+# Aula 2 - Introdução ao HTML 
 
 Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtube.com/watch?v=6IMsMX3d8zY).
 
@@ -39,7 +39,12 @@ Se você estiver usando o **Visual Studio Code**, basta criar um novo arquivo `.
 
 ## Tags
 
-Tags de Formatação
+Principais tags
+
+| **TAG** | **Função** |
+| --- | --- |
+| <h1>,<h2>,<h3>,<h4>,<h5>,<h6> | Titulos e subtitulos |
+| <p> | Parágrafo |
 
 Tags de 
 
