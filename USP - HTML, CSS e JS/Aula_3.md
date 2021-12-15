@@ -95,34 +95,32 @@ Veja alguns exemplos:
 **Codigo**
 
 ```html
-<ul reversed start="3">
+<ol reversed start="3">
     <li>Primeiro item</li>
     <li>Segundo item</li>
     <li>Terceiro item</li>
-    <ul type="A">
+    <ol type="A">
         <li>Primeiro subitem</li>
         <li>Segundo subitem</li>
         <li>Terceiro subitem</li>
-    </ul>
+    </ol>
     <li>Quarto item</li>
-</ul>
+</ol>
 ```
 
 **Resultado**
 
-<html>
-    <ul reversed start="3">
-        <li>Primeiro item</li>
-        <li>Segundo item</li>
-        <li>Terceiro item</li>
-        <ul type="A">
-            <li>Primeiro subitem</li>
-            <li>Segundo subitem</li>
-            <li>Terceiro subitem</li>
-        </ul>
-        <li>Quarto item</li>
-    </ul>
-<html>
+<ol reversed start="3">
+    <li>Primeiro item</li>
+    <li>Segundo item</li>
+    <li>Terceiro item</li>
+    <ol type="A">
+        <li>Primeiro subitem</li>
+        <li>Segundo subitem</li>
+        <li>Terceiro subitem</li>
+    </ol>
+    <li>Quarto item</li>
+</ol>
 
 *******
 
