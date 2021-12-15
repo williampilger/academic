@@ -1,4 +1,4 @@
-# Aula 1
+# Aula 1 - Git e Github
 
 ## Configurando GIT
 
