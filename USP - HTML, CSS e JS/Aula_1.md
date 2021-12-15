@@ -83,8 +83,12 @@ Cloar um repositório:
 
 > git clone https://url.do.seu/repositorio/remoto.git
 
-Ou para sincronizar, usam-se os `fetch` e `pull` :
+Ou baixar alterações do repositório remoto para o local, usam-se os `fetch` e `pull`. O git pull faz um git fetch seguido de um merge, ou seja, aplica as alterações do repositório remoto já na sua branch local.
 
 > git fetch
 
 > git pull
+
+Para enviar seus commits do repositório local para o remoto, use o `push`:
+
+> git push
