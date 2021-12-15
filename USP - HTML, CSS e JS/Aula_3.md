@@ -16,17 +16,17 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
     <tbody>
         <tr>
             <td>
-                &lt;ul&gt;
-                    &lt;li&gt;Primeiro item&lt;/li&gt;
-                    &lt;li&gt;Segundo item&lt;/li&gt;
-                    &lt;li&gt;Terceiro item&lt;/li&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;Primeiro subitem&lt;/li&gt;
-                        &lt;li&gt;Segundo subitem&lt;/li&gt;
-                        &lt;li&gt;Terceiro subitem&lt;/li&gt;
-                    &lt;/ul&gt;
-                    &lt;li&gt;Quarto item&lt;/li&gt;
-                &lt;/ul&gt;
+                `<ul>`
+                    `<li>Primeiro item</li>`
+                    <li>Segundo item</li>
+                    <li>Terceiro item</li>
+                    <ul>
+                        <li>Primeiro subitem</li>
+                        <li>Segundo subitem</li>
+                        <li>Terceiro subitem</li>
+                    </ul>
+                    <li>Quarto item</li>
+                </ul>`
             </td>
         </tr>
     </tbody>
@@ -34,7 +34,8 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
 
 
 | **Codigo** | **Resultado** |
-| ```
+|
+```html
 <ul>
     <li>Primeiro item</li>
     <li>Segundo item</li>
@@ -46,7 +47,8 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
     </ul>
     <li>Quarto item</li>
 </ul>
-``` | <ul>
+```
+| <ul>
     <li>Primeiro item</li>
     <li>Segundo item</li>
     <li>Terceiro item</li>
