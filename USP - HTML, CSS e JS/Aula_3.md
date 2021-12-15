@@ -110,17 +110,19 @@ Veja alguns exemplos:
 
 **Resultado**
 
-<ul revered start="3">
-    <li>Primeiro item</li>
-    <li>Segundo item</li>
-    <li>Terceiro item</li>
-    <ul type="A">
-        <li>Primeiro subitem</li>
-        <li>Segundo subitem</li>
-        <li>Terceiro subitem</li>
+<html>
+    <ul revered start="3">
+        <li>Primeiro item</li>
+        <li>Segundo item</li>
+        <li>Terceiro item</li>
+        <ul type="A">
+            <li>Primeiro subitem</li>
+            <li>Segundo subitem</li>
+            <li>Terceiro subitem</li>
+        </ul>
+        <li>Quarto item</li>
     </ul>
-    <li>Quarto item</li>
-</ul>
+<html>
 
 *******
 
