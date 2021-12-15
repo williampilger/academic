@@ -43,10 +43,33 @@ Principais tags
 
 | **TAG** | **Função** |
 | --- | --- |
-| ```<h1>,<h2>,<h3>,<h4>,<h5>,<h6>``` | Titulos e subtitulos |
-| ```<p>``` | Parágrafo |
+| `<h1>,<h2>,<h3>,<h4>,<h5>,<h6>` | Titulos e subtitulos |
+| `<p>` | Parágrafo |
+| `<a>` | Tag de link, junto ao atributo `href="url"` |
+| `<div>` | define uma divisão (seção) no corpo |
+| `<table>` | define uma tabela |
+| `<ol>` | lista ordenada |
+| `<ul>` | lista não ordenada |
+| `<li>` | define um item de uma lista |
+| `<form>` | define um formulário |
+| `<input>` | define um campo de um formulário |
+| `<textarea>` | define uma área de texto em um formulário |
+| `<button>` | define um botão de um formulário |
 
-Tags de 
+Tags de Formatação
+
+| **TAG** | **Função** |
+| --- | --- |
+| `<b>` ou `<strong>` | Negrito |
+| `<i>` ou `<em>` | Italico |
+| `<u>` | Sublinhado |
+| `<br/>` | quebra de linha |
+| `<sub>` | subescrito Ex. TEXTO<sub>SUBESCRITO</sub> |
+| `<sup>` | supraescrito Ex. TEXTO<sup>SUPRAESCRITO</sup> |
+| `<del>` | texto cortado |
+| `<mark>` | marcar/destacar um texto |
+| `<pre>` | definir texto pré formatado |
+| `<small>` | definir tamanho menor |
 
 
 ## Primeira página
