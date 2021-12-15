@@ -16,7 +16,7 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
             <tbody>
                 <tr>
                     <td>
-                        ```<ul>
+                        `<ul>
                             <li>Primeiro item</li>
                             <li>Segundo item</li>
                             <li>Terceiro item</li>
@@ -26,7 +26,7 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
                                 <li>Terceiro subitem</li>
                             </ul>
                             <li>Quarto item</li>
-                        </ul>```
+                        </ul>`
                     </td>
                 </tr>
             </tbody>
