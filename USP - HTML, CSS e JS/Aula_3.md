@@ -6,7 +6,9 @@ Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtub
 
 As tags foram descritas na aula passada. Veja alguns exemplos:
 
-** Codigo:**
+*******
+
+**Codigo**
 
 ```html
 <ul>
@@ -35,6 +37,40 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
     </ul>
     <li>Quarto item</li>
 </ul>
+
+*******
+
+**Codigo**
+
+```html
+<ol>
+    <li>Primeiro item</li>
+    <li>Segundo item</li>
+    <li>Terceiro item</li>
+    <ol>
+        <li>Primeiro subitem</li>
+        <li>Segundo subitem</li>
+        <li>Terceiro subitem</li>
+    </ol>
+    <li>Quarto item</li>
+</ol>
+```
+
+**Resultado**
+
+<ol>
+    <li>Primeiro item</li>
+    <li>Segundo item</li>
+    <li>Terceiro item</li>
+    <ol>
+        <li>Primeiro subitem</li>
+        <li>Segundo subitem</li>
+        <li>Terceiro subitem</li>
+    </ol>
+    <li>Quarto item</li>
+</ol>
+
+*******
 
 ## Sobre
 
