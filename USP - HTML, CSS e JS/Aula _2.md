@@ -75,10 +75,10 @@ Simbolor e entidades
 
 | **Codigo** | **Simbolo** |
 | --- | --- |
-| `&copy;` | Simbolo Copyright &copy; |
-| `&reg;` | Símbolo de marca registrada &reg; |
-| `&nbsp;` | Espaço em branco |
-| `&amp;` | E comercial &amp; |
+| `&copy;` | Simbolo Copyright '&copy;' |
+| `&reg;` | Símbolo de marca registrada '&reg;' |
+| `&nbsp;` | Espaço em branco '&nbsp;' |
+| `&amp;` | E comercial '&amp;' |
 
 ## Primeira página
 
