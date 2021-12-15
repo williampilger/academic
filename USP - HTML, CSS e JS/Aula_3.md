@@ -11,9 +11,7 @@ As tags que formam uma lista são:
 | `<ol>` | lista ordenada |
 | `<ul>` | lista não ordenada |
 | `<li>` | define um item de uma lista |
-| `<dl>` | lista de definição |
-| `<dt>` | adiciona um título de definição à lista de definição |
-| `<dd>` | adiciona um conteúdo de definição à lista de definição |
+
 
 As listas **ordenadas** tem alguns atributos específicos:
 
@@ -129,6 +127,42 @@ Lista ordenada
 </ol>
 
 A visualização aqui não ficou 100%.
+
+*******
+
+## Listas de Definição
+
+São listas que contém ítens e suas definições. Por exemplo: Um produto e suas especificações.
+
+| **Tag** | **Função** |
+| --- | --- |
+| `<dl>` | lista de definição |
+| `<dt>` | adiciona um título de definição à lista de definição |
+| `<dd>` | adiciona um conteúdo de definição à lista de definição |
+
+Veja alguns exemplos:
+
+*******
+
+**Codigo**
+
+```html
+<dl>
+    <dt>Notebook Acer</dt>
+    <dd>Notebook com 1TB de HD, 16Gb de RAM, processador Intel Core i7-11000.</dd>
+    <dt>Smartphone Motorole</dt>
+    <dd>Motorola Moto X4 (XT1032) 2GB RAM, 64GB ROM, a prova d'água, snapgragon 98562.</dd>
+</dl>
+```
+
+**Resultado**
+
+<dl>
+    <dt>Notebook Acer</dt>
+    <dd>Notebook com 1TB de HD, 16Gb de RAM, processador Intel Core i7-11000.</dd>
+    <dt>Smartphone Motorole</dt>
+    <dd>Motorola Moto X4 (XT1032) 2GB RAM, 64GB ROM, a prova d'água, snapgragon 98562.</dd>
+</dl>
 
 *******
 
