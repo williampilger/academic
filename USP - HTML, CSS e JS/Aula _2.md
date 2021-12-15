@@ -71,6 +71,14 @@ Tags de Formatação
 | `<pre>` | definir texto pré formatado |
 | `<small>` | definir tamanho menor |
 
+Simbolor e entidades
+
+| **Codigo** | **Simbolo** |
+| --- | --- |
+| `&copy;` | Simbolo Copyright &copy; |
+| `&reg;` | Símbolo de marca registrada &reg; |
+| `&nbsp;` | Espaço em branco |
+| `&amp;` | E comercial &amp; |
 
 ## Primeira página
 
