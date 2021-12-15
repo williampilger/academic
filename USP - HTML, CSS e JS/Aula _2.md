@@ -43,8 +43,8 @@ Principais tags
 
 | **TAG** | **Função** |
 | --- | --- |
-| <h1>,<h2>,<h3>,<h4>,<h5>,<h6> | Titulos e subtitulos |
-| <p> | Parágrafo |
+| ```<h1>,<h2>,<h3>,<h4>,<h5>,<h6>``` | Titulos e subtitulos |
+| ```<p>``` | Parágrafo |
 
 Tags de 
 
