@@ -92,3 +92,13 @@ Ou baixar alterações do repositório remoto para o local, usam-se os `fetch` e
 Para enviar seus commits do repositório local para o remoto, use o `push`:
 
 > git push
+  
+## Alterando o caminho do reposiorio remoto
+
+Temos um exemplo abaixo:
+
+> git remote set-url origin git@github.com:williampilger/academic.git
+
+Pode-se ver qual o diretório atual do remoto digitando:
+
+> git remote -v
