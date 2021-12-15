@@ -2,6 +2,13 @@
 
 Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtube.com/watch?v=ExlIVyYVw04).
 
+Nesta aula, foram vistos dois grandes conteúdos:
+
+- [Listas](.Listas)
+- [Tags Semânticas](.Tags%20Semânticas)
+
+# Listas
+
 ## Listas não ordenadas e ordenadas
 
 As tags que formam uma lista são:
@@ -165,6 +172,10 @@ Veja alguns exemplos:
 </dl>
 
 *******
+
+# Tags Semânticas
+
+
 
 ## Sobre
 
