@@ -34,8 +34,7 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
 
 
 | **Codigo** | **Resultado** |
-|
-```html
+|```html
 <ul>
     <li>Primeiro item</li>
     <li>Segundo item</li>
@@ -47,8 +46,7 @@ As tags foram descritas na aula passada. Veja alguns exemplos:
     </ul>
     <li>Quarto item</li>
 </ul>
-```
-| <ul>
+```| <ul>
     <li>Primeiro item</li>
     <li>Segundo item</li>
     <li>Terceiro item</li>
