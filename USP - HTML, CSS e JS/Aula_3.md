@@ -95,7 +95,7 @@ Veja alguns exemplos:
 **Codigo**
 
 ```html
-<ul revered start="3">
+<ul reversed start="3">
     <li>Primeiro item</li>
     <li>Segundo item</li>
     <li>Terceiro item</li>
@@ -111,7 +111,7 @@ Veja alguns exemplos:
 **Resultado**
 
 <html>
-    <ul revered start="3">
+    <ul reversed start="3">
         <li>Primeiro item</li>
         <li>Segundo item</li>
         <li>Terceiro item</li>
