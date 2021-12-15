@@ -11,6 +11,9 @@ As tags que formam uma lista são:
 | `<ol>` | lista ordenada |
 | `<ul>` | lista não ordenada |
 | `<li>` | define um item de uma lista |
+| `<dl>` | lista de definição |
+| `<dt>` | adiciona um título de definição à lista de definição |
+| `<dd>` | adiciona um conteúdo de definição à lista de definição |
 
 As listas **ordenadas** tem alguns atributos específicos:
 
@@ -23,13 +26,14 @@ As listas **ordenadas** tem alguns atributos específicos:
     - `I`: algarismos romanos maiúsculos;
     - `1`: números;
 
-
 Veja alguns exemplos:
 
 *******
 
 **Codigo**
 
+Lista não-ordenada
+
 ```html
 <ul>
     <li>Primeiro item</li>
@@ -59,6 +63,8 @@ Veja alguns exemplos:
 </ul>
 
 *******
+
+Lista ordenada
 
 **Codigo**
 
@@ -121,6 +127,8 @@ Veja alguns exemplos:
     </ol>
     <li>Quarto item</li>
 </ol>
+
+A visualização aqui não ficou 100%.
 
 *******
 
