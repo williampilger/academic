@@ -4,7 +4,27 @@ Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtub
 
 ## Listas não ordenadas e ordenadas
 
-As tags foram descritas na aula passada. Veja alguns exemplos:
+As tags que formam uma lista são:
+
+| **TAG** | **Função** |
+| --- | --- |
+| `<ol>` | lista ordenada |
+| `<ul>` | lista não ordenada |
+| `<li>` | define um item de uma lista |
+
+As listas **ordenadas** tem alguns atributos específicos:
+
+- `reversed`: inverte o sentido da lista;
+- `start`: determina o ponto de partida;
+- `type`: tipo de numeração:
+    - `a`: letras minúsculas;
+    - `A`: letras maiúsculas;
+    - `i`: algarismos romanos minúsculos;
+    - `I`: algarismos romanos maiúsculos;
+    - `1`: números;
+
+
+Veja alguns exemplos:
 
 *******
 
