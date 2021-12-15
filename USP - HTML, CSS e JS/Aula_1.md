@@ -61,8 +61,30 @@ Para deletar uma branch use:
 
 > dig branch -D nome_da_branch
 
-## Efetivando alterações
+## Commit e merge
 
 Criar um commit:
 
 > git commit -m "mensagem de commit"
+
+Mesclar branches (merge). No exemplo abaixo, a **branch atual** (que você pode ver usando `git status`) será mergida à **master_branch**.
+
+> git merge master_branch
+
+O comando `git merge` mantém a ordem cronológica de todas suas alterações. Caso você prefira, podem ser aplicadas as alterações todas em cascata, usando o `git rebase`, veja abaixo:
+
+> git rebase master_branch
+
+No exemplo acima, **são perdidos os detalhes da ordem cronológica das alterações**, mas o efeito final é o mesmo. a branch **atual** foi mesclada à **master_branch**.
+
+## Interagindo com um repositório remoto
+
+Cloar um repositório:
+
+> git clone https://url.do.seu/repositorio/remoto.git
+
+Ou para sincronizar, usam-se os `fetch` e `pull` :
+
+> git fetch
+
+> git pull
