@@ -116,3 +116,9 @@ Simbolor e entidades
     </body>
 </html>
 ```
+
+## Sobre
+
+By: **will.i.am**
+
+**Bom Princípio - RS - Brasil**
