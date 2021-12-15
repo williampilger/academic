@@ -19,9 +19,21 @@ Dentro de uma pasta, dê o comando para criar um repositório local:
 
 > git init
 
+## Status e LOG
+
 Obter o status do seu repositório
 
 > git status
+
+Para ver seu histórico de commits, use:
+
+> git log
+
+Para ver o LOG de forma um pouco mais gráfica, pode-se usar:
+
+> git log --graph --all
+
+## Adicionar arquivos ao repositório e/ou à branch atual
 
 Adicionar arquivos ao seu repositório:
 
@@ -29,13 +41,7 @@ Adicionar arquivos ao seu repositório:
 
 Você pode adicionar arquivos usando `git add .` para adicionar tudo, ou usar `git add /pasta/**/*.js`  por exemplo.
 
-Criar um commit:
-
-> git commit -m "mensagem de commit"
-
-Para ver seu histórico de commits, use:
-
-> git log
+## Criar, Excluir e migrar de branch
 
 Criando uma branch
 
@@ -54,3 +60,9 @@ Ou ainda, pode criar e migrar para uma branch com um único comando:
 Para deletar uma branch use:
 
 > dig branch -D nome_da_branch
+
+## Efetivando alterações
+
+Criar um commit:
+
+> git commit -m "mensagem de commit"
