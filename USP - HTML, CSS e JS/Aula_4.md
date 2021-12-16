@@ -116,12 +116,12 @@ Veja o exemplo:
 **Código**
 
 ```html
-<img alt="icone github" scr="https://github.com/fluidicon.png" style="widht:150px; height:150px;">
+<img alt="icone github" src="https://github.com/fluidicon.png" style="width:50px; height:50px;">
 ```
 
 **Resultado**
 
-<img alt="icone github" scr="https://github.com/fluidicon.png" style="widht:150px; height:150px;">
+<img alt="icone github" src="https://github.com/fluidicon.png" style="width:50px; height:50px;">
 
 ******
 
