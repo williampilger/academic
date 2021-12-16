@@ -4,8 +4,8 @@ Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtub
 
 Nesta aula, foram vistos dois grandes conteúdos:
 
-- [Listas](.Listas)
-- [Tags Semânticas](.Tags%20Semânticas)
+- Listas
+- Tags Semânticas
 
 # Listas
 
@@ -175,6 +175,21 @@ Veja alguns exemplos:
 
 # Tags Semânticas
 
+As tags semanticas são utilizadas para delimitar áreas específicas da nossa página, e tem o mesmo comportamento de uma div.
+Seu uso não é obrigatório, mas **é uma ótima prática**.
+O uso das tags semânticas ajuda na interpretação da sua página para softwares de acessibilidade, por exemplo. O ranqueamento da página no google, por exemplo, certamente será melhor se você utilizar tags semânticas.
+
+Vejmos as principais tags:
+
+| **Tag** | **Função** |
+| --- | --- |
+| `<header>` | Cabeçalho da página. Área que comunmente contém logotipo, nome da empresa, campode busca, menus padrões, etc. |
+| `<nav>` | Menu de navegação. Comunmente na lateral ou no topo da página. |
+| `<section>` | Divide a página em seções. |
+| `<main>` | É a seção principal da página. |
+| `<article>` | É uma seção geralmente usada para exibir artigos, ou grandes áreas de texto (? conferir isso) |
+| `<aside>` | Conteúdo de ênfase. Exemplos: listas de patrocinadores, anúncios, contato. Coisas que geralmente não são o objetivo principal da página, mas que precisam de destaque. |
+| `<footer>` | Rodapé da página. Em geral contém direitos autorais, endereço, "false conosco", etc. |
 
 
 ## Sobre
