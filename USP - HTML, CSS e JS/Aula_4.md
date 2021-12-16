@@ -128,7 +128,19 @@ Veja o exemplo:
 ## Link (`<a>`)
 
 A tag `<a>` é uma tag de link, e é um desvio, ou seja, causa a troca de página.
+O atributo `href` deve conter o endereço da página para onde o link leva. `href` é obrigatório, e pode apontar para links relativos ou absolutos.
+Podem também ser usados outros protocolos, como `mailto`, `tel`, entre outros.
 
+Alguns exemplos:
+
+```html
+<a href="contato.html">Contato</a>
+<a href="https://www.google.com.br">Ir para google</a>
+<a href="mailto:teste@teste.com.br">Enviar e-mail para teste@teste.com.br</a>
+<a href="tel:+5551999999999">Ligar para +55 51 99999 9999</a>
+```
+
+f
 
 ## Sobre
 
