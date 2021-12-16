@@ -223,7 +223,7 @@ Veja abaixo a página criada na aula:
     <aside style="background-color: darkcyan; color: aliceblue;">
         <h2>Seja um colaborador Petuxo!</h2>
         <section>
-            <h3>Especialistas médicos</h3>
+            <h3>Nossos especialistas</h3>
             <dl>
                 <dt>Dra. Mônica</dt>
                 <dd><small>Médica clínica</small></dd>
