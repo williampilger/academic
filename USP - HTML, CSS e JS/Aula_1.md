@@ -69,7 +69,7 @@ Criar um commit:
 
 > git commit -m "mensagem de commit"
 
-Mesclar branches (merge). No exemplo abaixo, a **branch atual** (que você pode ver usando `git status`) será mergida à **master_branch**.
+Mesclar branches (merge). No exemplo abaixo, a **master_branch** será mergida à **branch atual** (que você pode ver usando `git status`) .
 
 > git merge master_branch
 
