@@ -55,6 +55,11 @@ Exemplo:
 
 ******
 
+Para mesclar celulas podemos usar os `colspan` e `rowspan`, como demonstrado abaixo.
+Também aproveito o exemplo para mostrar a estilização da tabela, definindo as bordas.
+
+******
+
 **Código**
 
 ```html
