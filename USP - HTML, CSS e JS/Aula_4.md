@@ -51,10 +51,49 @@ Exemplo:
     </tr>
 </table>
 
+* OBS: A visualização no navegador é **sem as linhas de demarcação**.
+
 ******
 
+**Código**
 
+```html
+<table style="border: 1px solid; border-collapse: collapse;">
+    <tr style="border: 1px solid;">
+        <th style="border: 1px solid;" colspan="2">Petuxos</th>
+    </tr>
+    <tr style="border: 1px solid;">
+        <th style="border: 1px solid;" rowspan="3">Raças</th>
+        <td style="border: 1px solid;">Pinscher</td>
+    </tr>
+    <tr style="border: 1px solid;">
+        <td style="border: 1px solid;">Pastor Alemão</td>
+    </tr>
+    <tr style="border: 1px solid;">
+        <td style="border: 1px solid;">Pug</td>
+    </tr>
+</table>
+```
 
+**Resultado**
+
+<table style="border: 1px solid; border-collapse: collapse;">
+    <tr style="border: 1px solid;">
+        <th style="border: 1px solid;" colspan="2">Petuxos</th>
+    </tr>
+    <tr style="border: 1px solid;">
+        <th style="border: 1px solid;" rowspan="3">Raças</th>
+        <td style="border: 1px solid;">Pinscher</td>
+    </tr>
+    <tr style="border: 1px solid;">
+        <td style="border: 1px solid;">Pastor Alemão</td>
+    </tr>
+    <tr style="border: 1px solid;">
+        <td style="border: 1px solid;">Pug</td>
+    </tr>
+</table>
+
+******
 
 ## Sobre
 
