@@ -258,6 +258,62 @@ Box model:
 | `padding` | Define a distância do componente em relação aos seus componenter internos. |
 | `width` e `height` | Definem o tamanho do proprio componente |
 
+## Utilização
+
+Existem três formas de utilizar estilos:
+
+**Inline**
+
+Pouco indicado.
+
+```html
+<form>
+    <label style="color: red">Teste</label>
+</form>
+```
+
+**Tag Style**
+
+Pouco indicado, too.
+
+```html
+<head>
+    <style>
+        #lab1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label id="lab1">Teste</label>
+    </form>
+</body>
+```
+
+**Folha de estilos (arquivo individual)**
+
+Mais indicado.
+
+*index.html*
+```html
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <form>
+        <label id="lab1">Teste</label>
+    </form>
+</body>
+```
+
+*style.css*
+```css
+#lab1{
+    color: red;
+}
+```
+
 ## Sobre
 
 By: **will.i.am**
