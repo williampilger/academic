@@ -4,6 +4,8 @@ Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtub
 
 ## Icones em .svg
 
+**OBS: Isso foi mostrado na aula, mas não funciona**, ao menos não desta forma.
+
 *HTML*
 ```html
 <span class="icon icon-home" aria-hidden="true">Exemplo de uso</span>
