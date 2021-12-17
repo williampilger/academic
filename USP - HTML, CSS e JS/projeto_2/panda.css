@@ -1,0 +1,180 @@
+/* Estrutura */
+.rosto {
+    width: 200px;
+    height: 200px;
+    background: #FFF;
+    border-radius: 50%;
+    border: 1px solid #333;
+    position: relative;
+    top:0;right:0;bottom:0;left:0;
+    margin: auto;
+    
+  }
+  
+  .olho {
+    position: relative;
+    width: 55px;
+    height: 60px;
+    border: 1px solid #333;
+    border-radius: 90% 85% 90% 97%;
+    background: #333;
+  }
+  
+  .orelha {
+    position: relative;
+    width: 60px;
+    height: 50px;
+    border: 1px solid #333;
+    border-radius: 60% 55% 60% 57%;
+    background: #333;
+  }
+  
+  .orelha-right {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    transform: rotate(30deg);
+    -webkit-animation: orelhinha-r 3s ease-in-out infinite alternate;
+  }
+  
+  .orelha-left {
+    position: absolute;
+    top: -13px;
+    left: -20px;
+    transform: rotate(-30deg);
+    -webkit-animation: orelhinha-l 3s ease-in-out infinite alternate;
+  }
+  
+  .olho-right {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+  }
+  
+  .olho.olho-right:after {
+    content: "";
+    background: #333;
+    display: block;
+    bottom: -1px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: -1px;
+    border-radius: 36%;
+    z-index: 0;
+  }
+  
+  .olho-left {
+    position: absolute;
+    top:  60px;
+    left: 20px;
+  }
+  
+  .olho.olho-left:after {
+    content: "";
+    background: #333;
+    display: block;
+    bottom: -1px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 1px;
+    border-radius: 36%;
+    z-index: 0;
+  }
+  
+  .olho-centro {
+    width: 10px;
+    height: 10px;
+    background: #FFF;
+    border-radius: 100%;
+    position: absolute;
+    top:0;right:0;bottom:0;left:0;
+    margin: auto;
+    z-index: 1;
+    -webkit-animation: pisca 10s ease-in-out infinite;
+  }
+  
+  .boca {
+    width: 45px;
+    height: 45px;
+    border-bottom: 3px solid #333;
+    background: transparent;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 35%;
+  }
+  
+  .boca:after {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background: #555;
+    bottom: -10px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+  
+  .rosto:before {
+    content: "";
+    width: 0;
+    height: 0;
+    background: none;
+    border: 25px solid;
+    border-color: #EEE transparent transparent transparent;
+    bottom: -20px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+  }
+  
+  /* Animations */
+  @-webkit-keyframes pisca {
+    0% {
+      height: 10px;
+    }
+    2% {
+      height: 0;
+    }
+    4% {
+      height: 10px;
+    }
+  }
+  @-webkit-keyframes orelhinha-r {
+    0% {
+      transform: rotate(30deg);
+    }
+    10% {
+      transform: rotate(10deg);
+    }
+    20% {
+      transform: rotate(40deg);
+    }
+    40% {
+      transform: rotate(30%);
+    }
+  }
+  
+  @-webkit-keyframes orelhinha-l {
+    0% {
+      transform: rotate(-30deg);
+    }
+    10% {
+      transform: rotate(-10deg);
+    }
+    20% {
+      transform: rotate(-40deg);
+    }
+    40% {
+      transform: rotate(-30%);
+    }
+  }

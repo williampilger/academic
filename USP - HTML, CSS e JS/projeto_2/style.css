@@ -1,0 +1,130 @@
+
+body {
+    background-color: rgb(50, 50, 50);
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    size: 100%/*!important*/;
+    min-width: 475px;
+}
+
+.navbar {
+    background-color: rgb(37, 37, 37);
+    padding: 3px;
+    text-align: right;
+    padding-right: 40px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar li {
+    display: inline-block;
+    padding: 5px;
+    background-color: transparent;
+    border: 1px solid #24bee8;
+    color: #24bee8;
+    border-radius: 3px;
+    margin: 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li:hover {
+    background-color: #1b9cc055;
+    box-shadow: 0px 0px 5px 0px;
+}
+
+main{
+    /* padding: 30px; */
+    text-align: center;
+}
+
+.card {
+    background-color: #24bee8;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+    margin: 30px;
+    width: 20%;
+    min-width: 375px;
+    height: 210px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 46px -5px rgba(0,0,0,0.75);
+}
+
+.card form{
+    display: inline;
+    margin: 10px;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+    font-weight: normal;
+    font-size: 24px;
+}
+
+input {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 120%;
+}
+
+input:hover {
+    background-color: #14AEC8;
+    box-shadow: 0px 0px 5px 0px;
+    cursor: pointer;
+}
+
+input:focus {
+    background-color: #14AEC8;
+    outline: none;
+}
+
+footer {
+    background-color: rgb(37, 37, 37);
+    margin: 0;
+    padding: 10px;
+    width: calc(100% - 20px);
+}
+
+.coluna{
+    /* border: 1px solid red; */
+    width: calc(50% - 10px);
+    padding: 10xp;
+    display: inline-block;
+    vertical-align: top;
+    color: gray;
+}
+
+/* Isso abaixo não interfere agora, mas é interessante saber */
+.coluna + .coluna{
+    margin-left: 10px;
+}
+
+footer ul{
+    list-style: none;
+    padding-left: 5px;
+    display: inline-block;
+}
+
+footer li:hover{
+    color: #14AEC8;
+    cursor: pointer;
+}
+
+.name{
+    font-weight: bold;
+}
