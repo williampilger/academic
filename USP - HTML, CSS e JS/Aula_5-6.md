@@ -1,4 +1,4 @@
- # Aula 5 - Introdução ao CSS
+ # Aulas 5 e 6 - Introdução ao CSS
 
 Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtube.com/watch?v=W8ssbk872ZU).
 
