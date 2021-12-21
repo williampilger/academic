@@ -1,0 +1,58 @@
+body {
+    background-color: #eee;
+}
+  
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: "Work Sans", sans-serif;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.tag { /*Titulo do card*/
+    background-color: #9999ff;
+    border-radius: 12px;
+    display: flex;
+    width: fit-content;
+    padding: 5px 10px;
+}
+
+.circle {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: #5555ff;
+}
+
+.course {
+    color: #ffffff;
+    margin: auto 20px;
+}
+
+.icon {
+    font-size: 50px;
+    margin-right: 20px;
+    color: #5555ff;
+}
+
+.module {
+    color: #5555ff;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.module-wrapper {
+    /* border: 2px solid red; */
+    display: flex;
+}
+
+.infos {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+}

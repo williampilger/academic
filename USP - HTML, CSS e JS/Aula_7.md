@@ -38,67 +38,15 @@ Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtub
 
 Para praticar, faça o exercício do [FlexBox Froggy](https://flexboxfroggy.com/).
 
-Um Exemplo (Codigo-fonte disponível [aqui](./projeto_3/)) :
+As tarefas realizadas na aula foram:
 
-*index.html*
-```html
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste FlexBox</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-</head>
-<body>
-    <div class="container">
-        <div class="box red">VERMELHO</div>
-        <div class="box green">VERDE</div>
-        <div class="box blue">AZUL</div>
-    </div>
-</body>
-</html>
-```
+- [FlexBox salmple](./projeto_3/));
 
-*style.css*
-```css
-body {
-    margin: 0;
-    padding: 0;
-}
+- [Exemplo de card](./projeto_4/);
 
-.container {
-    border: 10px solid yellow;
-    display: flex;
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
+- [Página com Cards](./projeto_5/);
 
-.box {
-    height: 150px;
-    width: 150px;
-    
-    /*Centralizar textos nas caixas*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.red {
-    background-color: red;
-}
-
-.green {
-    background-color: green;
-}
-.blue {
-    background-color: blue;
-}
-```
+- [Página genérica](./projeto_6/).
 
 
 ## Sobre

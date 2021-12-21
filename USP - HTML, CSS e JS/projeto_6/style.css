@@ -1,0 +1,250 @@
+:root {
+    /* Cores */
+
+    --white: #fff;
+    --gray-lighter: #f8f8fa;
+    --gray-light: #dadbdd;
+    --gray: #999999;
+    --dark-gray: #505050;
+    --gray-darker: #2e2f35;
+    --orange: #fe763e;
+
+    /* Cores de fundo */
+    --bg-white-color: var(--white);
+    --bg-gray-color: var(--gray-lighter);
+    --bg-dark-color: var(--gray-darker);
+
+    /* Cores da marca */
+    --primary-color: var(--orange);
+
+    /* Core de texto */
+    --txt-primary-color: var(--gray-darker);
+    --txt-primary-color-contrast: var(--white);
+    --txt-secondary-color: var(--gray-dark);
+    --txt-light-color: var(--gray-darker);
+}
+
+/* Reset */
+
+*,
+::after,
+::before {
+    /* reboot */
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 0;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+a:visited {
+    outline: none;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: 0;
+}
+
+button:disabled {
+    cursor: initial;
+}
+
+/* Tipografia */
+
+body {
+    font-family: Montserrat, sans-serif;
+}
+
+.display {
+    color: var(--white);
+    font-size: 4rem;
+}
+
+.title {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.title .highlight {
+    position: relative;
+    z-index: 0;
+}
+
+.title .highlight::after {
+    content: '';
+
+    height: 0.75rem;
+
+    position: absolute;
+    bottom: -0.3rem;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    background-color: var(--gray-light);
+    border-radius: 0.3rem;
+}
+
+.body {
+    font-size: 1.5rem;
+}
+
+.link {
+    color: var(--txt-primary-color);
+    text-decoration: underline;
+}
+
+/* Botões */
+.btn {
+    padding: 1.75rem 3rem;
+    border-radius: 0.25rem;
+
+    font-family: Montserrat, sans-serif;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    color: var(--txt-primary-color-contrast);
+    background-color: var(--primary-color);
+}
+.btn-primary:hover {
+    opacity: 0.8;
+}
+.btn-primary:active {
+    opacity: 1;
+}
+.btn-primary:disabled,
+.btn-primary:hover:disabled {
+    opacity: 0.6;
+}
+
+/* Main */
+.main {
+    background-color: var(--bg-gray-color);
+}
+
+/* Header e Footer  */
+.footer,
+.header {
+    background-color: var(--bg-dark-color);
+    color: var(--txt-primary-color-contrast);
+}
+
+.header {
+    padding: 1.5rem;
+}
+
+.header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-item {
+    padding: 16px ;
+}
+
+nav .nav-item:last-child { /*Isso é aplicado à ULTIMA INSTANCIA do item.*/
+    padding-right: 0 ;
+}
+
+/* Hero */
+.hero {
+    background-color: var(--bg-dark-color);
+    padding: 3rem 6.5rem;
+    color: var(--txt-primary-color-contrast);
+}
+
+.hero a {
+    text-decoration: underline;
+    color: var(--txt-primary-color-contrast);
+}
+
+.hero a:visited {
+    color: var(--txt-primary-color-contrast);
+}
+
+#hero-title {
+    padding-top: 60px;
+    padding-bottom: 120px;
+    width: 50%;
+}
+
+/* Outros componentes */
+.logo {
+    font-size: 2rem;
+}
+
+.section {
+    padding: 6.5rem;
+}
+
+.section .title {
+    color: var(--txt-primary-color);
+}
+
+.callout {
+    font-size: 4.5rem;
+    font-weight: 100;
+}
+
+/* Footer */
+.footer {
+    padding: 6.5rem;
+}
+
+/* .footer hr {
+    border: none;
+    border-bottom: 1px solid var(--gray);
+    opacity: 0.2;
+} */
+
+#conteudo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+}
+
+.callout {
+    width: 70%;
+}
+
+#footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid var(--dark-gray);
+}
