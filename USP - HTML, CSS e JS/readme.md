@@ -1,4 +1,4 @@
-# Curso de HTML, CSS e JavaScript da USP
+# Curso de HTML e CSS da USP
 
 Trilha de Devs 2020.
 
