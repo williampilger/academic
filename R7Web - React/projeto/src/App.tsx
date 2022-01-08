@@ -5,7 +5,9 @@ import { PhotoShild } from './components/PhotoShild'
 import { Contador } from './components/contador'
 import { InputCampo } from './components/InputCampo'
 import { Botao, BotaoComRetorno } from './components/Botao'
-
+import { ListaPresenca } from './components/listaPresenca';
+import { BotaoMostrar } from './components/BotaoMostrar';
+import { BotaoFlipFlop } from "./components/botaoFlipFlop";
 
 function App() {
 
@@ -40,6 +42,12 @@ function App() {
                 <Botao text='Crie um alerta' clickfn={botaoClick}/>
 
                 <BotaoComRetorno text='Crie um alerta com retorno de conteúdo' clickfnComTexto={botaoCliclComFrase} />
+
+                <ListaPresenca/>
+
+                <BotaoMostrar/>
+
+                <BotaoFlipFlop />
 
             </div>
         </div>

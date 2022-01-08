@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from './style.module.css';
 
 export const Contador = () => {
 
@@ -9,7 +10,7 @@ export const Contador = () => {
     }
 
     return (
-        <div>
+        <div className={styles.div}>
             <span>Valor atual: <strong>{numero}</strong>.</span>
             <button onClick={handleClick}>+1</button>
         </div>
