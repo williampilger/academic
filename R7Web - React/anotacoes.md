@@ -21,3 +21,9 @@ Abra o terminal onde deseja criar o projeto, e digite:
 > npm init vite seu-projeto -- --template react-ts
 
 Isso usa o template `react-ts`, que é uma aplicação react com typescript
+
+Em seguida, navegue até seu projeto e instale as bibliotecas.
+
+> cd seu-projeto
+
+> npm install
