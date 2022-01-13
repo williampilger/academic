@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Filme } from "./types/Filme";
+import { Filme } from "./_types/Filme";
 
 export const Cinema = () => {
     const [filmes, setFilmes] = useState<Filme[]>([]);

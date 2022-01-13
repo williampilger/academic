@@ -1,17 +1,19 @@
 import './App.css'
-import { Header } from './components/header'
-import { Photo } from './components/Photo'
-import { PhotoShild } from './components/PhotoShild'
-import { Contador } from './components/contador'
-import { InputCampo } from './components/InputCampo'
-import { Botao, BotaoComRetorno } from './components/Botao'
-import { ListaPresenca } from './components/listaPresenca'
-import { BotaoMostrar } from './components/BotaoMostrar'
-import { BotaoFlipFlop } from "./components/botaoFlipFlop"
-import * as C from './components/Styled_BotoesGerais'
-import { FormNome } from './components/formNome'
-import { Cinema } from './components/cinema'
-import { Blog } from './components/Blog'
+import { Header } from './_components/header'
+import { Photo } from './_components/Photo'
+import { PhotoShild } from './_components/PhotoShild'
+import { Contador } from './_components/contador'
+import { InputCampo } from './_components/InputCampo'
+import { Botao, BotaoComRetorno } from './_components/Botao'
+import { ListaPresenca } from './_components/listaPresenca'
+import { BotaoMostrar } from './_components/BotaoMostrar'
+import { BotaoFlipFlop } from "./_components/botaoFlipFlop"
+import * as C from './_components/Styled_BotoesGerais'
+import { FormNome } from './_components/formNome'
+import { Cinema } from './_components/cinema'
+import { Blog } from './_components/Blog'
+import { Blog_comAxios } from './_components/Blog_comAxios'
+import { contadorReducer } from './_components/contadorReducer'
 
 function App() {
 
@@ -87,11 +89,22 @@ function App() {
                 </div>
 
                 <div>
-                    <span>Exemplo de requisição e post a um servidor externo:</span>
+                    <span>Exemplo de requisição eget/post a um servidor externo (sem AXIOS):</span>
                     <hr />
                     <Blog/>
                 </div>
 
+                <div>
+                    <span>Exemplo de requisição eget/post a um servidor externo (sem AXIOS):</span>
+                    <hr />
+                    <Blog_comAxios/>
+                </div>
+
+                <div>
+                    <span>Exemplo de componente com Reducer</span>
+                    <hr />
+                    <contadorReducer/>
+                </div>
             </div>
         </div>
     );
