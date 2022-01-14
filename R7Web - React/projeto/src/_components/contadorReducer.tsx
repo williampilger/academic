@@ -1,7 +1,7 @@
 import { useContagem } from "./_reducers/contagem";
 
 
-export const contadorReducer = () => {
+export const ContadorReducer = () => {
 
     const [contagem, contagemDispatch] = useContagem();
 

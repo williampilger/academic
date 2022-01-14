@@ -13,7 +13,7 @@ import { FormNome } from './_components/formNome'
 import { Cinema } from './_components/cinema'
 import { Blog } from './_components/Blog'
 import { Blog_comAxios } from './_components/Blog_comAxios'
-import { contadorReducer } from './_components/contadorReducer'
+import { ContadorReducer } from './_components/contadorReducer'
 
 function App() {
 
@@ -103,7 +103,7 @@ function App() {
                 <div>
                     <span>Exemplo de componente com Reducer</span>
                     <hr />
-                    <contadorReducer/>
+                    <ContadorReducer/>
                 </div>
             </div>
         </div>
