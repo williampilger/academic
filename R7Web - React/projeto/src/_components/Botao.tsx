@@ -12,9 +12,6 @@ export const Botao = ( { text, clickfn }: Props) =>{
 }
 
 
-
-
-
 type Props2 = {
     text: string;
     clickfnComTexto: (txt: string) => void;
