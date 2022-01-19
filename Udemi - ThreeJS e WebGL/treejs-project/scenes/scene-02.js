@@ -9,7 +9,7 @@ const material = new THREE.MeshLambertMaterial(
 
 // CUBO
 const cube = new THREE.Mesh(
-    new THREE.BoxBufferGeometry(),
+    new THREE.BoxBufferGeometry(1,1,1),
     material
 );
 scene.add(cube);

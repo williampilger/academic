@@ -1,0 +1,52 @@
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-width: 630px;
+    max-width: 1000px;
+    padding: 50px;
+    margin: auto;
+}
+
+.resumo {
+    display: flex;
+    margin: 10px;
+}
+
+main .resumo .dados {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#nome-job{
+    display: block;
+
+}
+
+#nome-job h1,
+#nome-job p{
+    margin: 0;
+    padding: 0;
+}
+
+.tableDiv {
+    width: fit-content;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid gray;
+    overflow: auto;
+    box-shadow: 0px 0px 10px 1px gray;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td {
+    border: 1px solid gray;
+    padding: 5px 15px;
+}

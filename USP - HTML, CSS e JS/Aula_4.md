@@ -8,8 +8,8 @@ Esta aula está (ou ao menos estava) disponível [no YouTube](https://www.youtub
 | --- | --- |
 | `<table>` | Cria uma tabela |
 | `<tr>` | Linha de uma tabela |
-| `<th>` | Coluna de uma tabela |
-| `<td>` | Coluna de cabeçalho |
+| `<th>` | Coluna de cabeçalho |
+| `<td>` | Coluna de uma tabela |
 
 Exemplo:
 

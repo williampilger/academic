@@ -1,5 +1,5 @@
 :root {
-    --cor_fundo: rgb(202, 202, 202);
+    --cor_fundo: rgb(238, 235, 235);
     --cor_top_foot: rgb(0, 122, 204);
     --cor_text_1: black;
     --cor_text_2: white;/*Textos no header e footer*/
@@ -36,8 +36,10 @@ footer ul{
 
 .item {
     padding: 5px;
+    margin: 5px;
     text-decoration: none;
     color: var(--cor_text_2);
+    transition: 0.5s;
 }
 
 .item:hover{
@@ -45,53 +47,4 @@ footer ul{
     background-color: var(--cor_text_2);
     color: var(--cor_top_foot);
     transition: 0.5s;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-}
-
-main .resumo {
-    display: flex;
-}
-
-main .resumo .dados {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: 10px;
-}
-
-#nome-job{
-    display: block;
-
-}
-
-#nome-job h1,
-#nome-job p{
-    margin: 0;
-    padding: 0;
-}
-
-.quadro-espec {
-    display: flex;
-    border: 1px solid var(--cor_text_1);
-    /* padding: 10px; */
-}
-
-.quadro-espec .periodo{
-    display: flex;
-    align-items: center;
-    width: 100px;
-    border-right: 1px solid var(--cor_text_1);
-}
-
-.quadro-espec div {
-    padding: 10px;
-}
-
-.quadro-espec p {
-    padding: 0;
-    margin: 5px;
 }
