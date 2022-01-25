@@ -1,72 +1,32 @@
 scene.background = new THREE.Color(options.backgroundColor);
 
-const whiteMaterial = new THREE.MeshLambertMaterial(
+const defaultMaterial = new THREE.MeshLambertMaterial(
     { 
         color: 0xFFFFFF,
         side: THREE.DoubleSide //Isso define se o objeto é preenchido por dentro E por fora, ou só por dentro, ou só por fora. Por exemplo, um plano, não é visível dos dois lados se isso não for setado como doubleside.
     }
 );
-const greenMaterial = new THREE.MeshLambertMaterial(
-    { 
-        color: 0x00FF00,
-        side: THREE.DoubleSide //Isso define se o objeto é preenchido por dentro E por fora, ou só por dentro, ou só por fora. Por exemplo, um plano, não é visível dos dois lados se isso não for setado como doubleside.
-    }
-);
 
-// CUBO
-const cube = new THREE.Mesh(
-    new THREE.BoxBufferGeometry(1,1,1),
-    material
-);
-scene.add(cube);
+//Texto
+var fontLoader = new THREE.FontLoader();
+fontLoader.load('./resourses/DancingMinotaur_Regular.json',function(tex){ //De: https://gero3.github.io/facetype.js/
+    var  textGeo = new THREE.TextGeometry('Test', {
+            size: 10,
+            height: 0,
+            font: tex,
+    });
+    var  color = new THREE.Color();
+    color.setRGB(255, 250, 250);
+    var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
+    const  text = new THREE.Mesh(textGeo , textMaterial);
+    scene.add(text);
+})
 
-// CILINDRO
-const cylinder = new THREE.Mesh(
-    // raioTopo, raioFundo, altura
-    new THREE.CylinderBufferGeometry(
-        0.1, 0.5, 1 //sempre, medidas no S.I.
-    ),
-    material
-);
-cylinder.position.x = 2;
-cylinder.position.y = 0;
-scene.add(cylinder);
-
-// PLANO
-const plane = new THREE.Mesh(
-    // largura, altura
-    new THREE.PlaneBufferGeometry(
-        1, 1
-    ),
-    material
-);
-plane.position.x = 2;
-plane.position.y = 2;
-plane.rotation.x = THREE.MathUtils.degToRad(-90);
-scene.add(plane);
-
-// ESFERA
-const sphere = new THREE.Mesh(
-    // raio, segmentosX, segmentosY
-    new THREE.SphereBufferGeometry(
-        0.3, 20, 20
-    ),
-    material
-);
-sphere.position.x = 0;
-sphere.position.y = 2;
-scene.add(sphere);
-
-//Adicionando itens no depurador
 x3.add(camera, {open: false});
 x3.add(light);
-x3.add(cube);
 
 renderer.setAnimationLoop( () => {
     
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    cube.rotation.z += 0.01;
 
     x3.tick();
     x3.fps(()=>{
