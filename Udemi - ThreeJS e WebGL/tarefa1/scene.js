@@ -8,17 +8,23 @@ const defaultMaterial = new THREE.MeshLambertMaterial(
 );
 
 //Texto
+var teste = null;
 var fontLoader = new THREE.FontLoader();
 fontLoader.load('./resourses/DancingMinotaur_Regular.json',function(tex){ //obter json de: https://gero3.github.io/facetype.js/
+    
+    console.log(tex);
+
+    teste = tex;
+
     var  textGeo = new THREE.TextGeometry('Testando', {
         size: 1,
         height: 0,
         font: tex,
     });
-    textGeo.rotateX(0);
-    textGeo.rotateY(0);
-    textGeo.rotateZ(1);
-    textGeo.translate(2,2,0);
+    // textGeo.rotateX(0);
+    // textGeo.rotateY(0);
+    // textGeo.rotateZ(1);
+    // textGeo.translate(2,2,0);
     
 
     var  color = new THREE.Color();
@@ -26,7 +32,7 @@ fontLoader.load('./resourses/DancingMinotaur_Regular.json',function(tex){ //obte
     
     var  textMaterial = new THREE.MeshBasicMaterial({ color: color });
     const  text = new THREE.Mesh(textGeo , textMaterial);
-    text.position = [2,2,2]
+    
     scene.add(text);
     
     let boxMet = new THREE.Box3().setFromObject(text);
@@ -39,9 +45,13 @@ x3.add(light);
 
 renderer.setAnimationLoop( () => {
     
-
     x3.tick();
     x3.fps(()=>{
         renderer.render(scene, camera);
     });
 });
+
+console.log('fora:', teste);
+
+setTimeout(()=>{
+},100);
