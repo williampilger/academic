@@ -37,6 +37,10 @@ Para executar o container, publicando seu conteúdo (no caso de ser um site est�
 
 > sudo docker run -d -P dockersamples/static-site
 
+Ou, caso queira escolher a porta manualmente, use `-p` minúscula, seguida das portas externa e interna, separadas por `:`, veja:
+
+> sudo docker run -d -p 1234:80 dockersamples/static-site
+
 Para verificar as portas usadas, você pode usar:
 
 > sudo docker port ID_DO_SEU_CONTAINER
