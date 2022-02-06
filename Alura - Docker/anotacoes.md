@@ -59,6 +59,10 @@ Para parar o container, use:
 
 > sudo docker stop ID_DO_SEU_CONTAINER
 
+Por padrão, o stop aguarda 10s para ser executado. Você pode ver essas contigurações usando o `docker stop --help`. Mas isso pode ser alterado usando a flag `-t`:
+
+> sudo docker stop -t 0 ID_DO_SEU_CONTAINER
+
 
 ## Remover containers
 
