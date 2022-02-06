@@ -49,6 +49,10 @@ Você também pode nomear seu container, para não precisar ficar usando o ID pa
 
 > sudo docker run -d -P --name meu-container dockersamples/static-site
 
+Caso seja necessário informar algum valor para uma variável de ambiente (interna ao container), pode-se faze-lo usando a flag `-e`. Um exemplo dessa utilidade é:
+
+> sudo docker run -d -P --name meu-container -e AUTHOR="WilliamPilger" dockersamples/static-site
+
 Você pode encontrar mais informações sobre os comando usando `sudo docker run --help`.
 
 ## Listando containers
