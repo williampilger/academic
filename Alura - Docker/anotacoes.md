@@ -33,6 +33,15 @@ Para forçar a execução do container SEM atribuir o terminal à ele (útil sem
 
 > sudo docker run -d hello-world
 
+Para executar o container, publicando seu conteúdo (no caso de ser um site estático, por exemplo) use (lembrando que o nome da imagem é apenas um exemplo):
+
+> sudo docker run -d -P dockersamples/static-site
+
+Para verificar as portas usadas, você pode usar:
+
+> sudo docker port ID_DO_SEU_CONTAINER
+
+Você pode encontrar mais informações sobre os comando usando `sudo docker run --help`.
 
 ## Listando containers
 
