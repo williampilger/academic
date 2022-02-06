@@ -45,8 +45,12 @@ Com o comando acima, ao listar os containers, você verá os identificadores dos
 
 > sudo docker start ID_DO_SEU_CONTAINER
 
-Para iniciar o container atrelando o terminal a ele, usamos a flag `-a` (atatch):
+Para iniciar o container atrelando o terminal a ele, usamos as flags `-a` (atatch), e `-i` (iterable):
 
-> sudo docker start -a ID_DO_SEU_CONTAINER
+> sudo docker start -a -i ID_DO_SEU_CONTAINER
+
+Para parar o container, use:
+
+> sudo docker stop ID_DO_SEU_CONTAINER
 
 
