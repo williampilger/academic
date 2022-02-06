@@ -41,6 +41,10 @@ Para verificar as portas usadas, você pode usar:
 
 > sudo docker port ID_DO_SEU_CONTAINER
 
+Você também pode nomear seu container, para não precisar ficar usando o ID para atuar sobre seu container, usando a flag `--name XXXXX`:
+
+> sudo docker run -d -P --name meu-container dockersamples/static-site
+
 Você pode encontrar mais informações sobre os comando usando `sudo docker run --help`.
 
 ## Listando containers
