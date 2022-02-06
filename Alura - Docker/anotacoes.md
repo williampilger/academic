@@ -126,3 +126,31 @@ Onde:
    - `-w "/var/www"` para definir o diretório de início do container (work directory);
    - `node` nesse caso, nome da imagem que será usada;
    - `npm start` comando (rodado no work directory) que inicia o node dentro do container.
+
+
+## Criando uma imagem Docker
+
+Para configurar sua propria imagem, deve-se utilizar um arquivo dockerfile, o qual pode ter qualquer nome como `teste.dockerfile` ou simplesmente `Dockerfile`. No segundo caso, não será necessário informar seu nome no builder futuramente.
+
+Este é um exemplo de dockerfile:
+
+```dockerfile
+FROM node:latest
+MAINTAINER William Pilger
+ENV SAMPLE_FLAG=sample_value
+COPY . /var/www
+WORKDIR /var/www
+RUN npm install
+ENTRYPOINT npm start
+EXPOSE 3000
+```
+
+Onde:
+   - `FROM node:latest` -> Indica que a imagem é baseada na imagem `node`, em sua última versão;
+   - `MAINTAINER William Pilger` -> Informa o mantenedor
+   - `ENV SAMPLE_FLAG=sample_value` -> ENV serve para setar variáveis de ambiente
+   - `COPY . /var/www` -> Copia todo o conteúdo de `.` (diretório atual) para o direorio `/var/www` dentro do container
+   - `WORKDIR /var/www` -> Define o diretório de trabalho do container como `/var/www`
+   - `RUN npm install` -> Comando RUN especifica um comando que deve ser executado no momento da instalação
+   - `ENTRYPOINT npm start` -> ENTRYPOINT especifica um comando que deve ser executado sempre que o container for iniciado
+   - `EXPOSE 3000` -> Expõe/abre a porta 3000 para uso externo
