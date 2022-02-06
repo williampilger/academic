@@ -154,3 +154,13 @@ Onde:
    - `RUN npm install` -> Comando RUN especifica um comando que deve ser executado no momento da instalação
    - `ENTRYPOINT npm start` -> ENTRYPOINT especifica um comando que deve ser executado sempre que o container for iniciado
    - `EXPOSE 3000` -> Expõe/abre a porta 3000 para uso externo
+
+### Build
+
+Após concluir a criação do arquivo,use algo parecido com:
+
+> sudo docker build -f "teste.dockerfile" -t "williampilger/exemplo"
+
+Onde:
+   - `-f "teste.dockerfile"` -> Especifica o arquivo de origem
+   - `-t "williampilger/exemplo"` -> Especifica o título/nome da imagem
