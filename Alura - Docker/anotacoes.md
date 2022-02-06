@@ -107,3 +107,22 @@ As imagens podem ser listadas com:
 Para remover todas
 
 > sudo docker images prune
+
+
+# Exemplos
+
+Mais fácil do que explicar todos os funcionamentos possíveis, vamos à alguns exemplos:
+
+## Rodando site com node
+
+Comando completo:
+
+> sudo docker run -d -p 8080:3000 -v "C:\Users\User\Desktop\MeuAppExemplo:/var/www" -w "/var/www" node npm start
+
+Onde:
+   - `-d` para não render o terminal atual;
+   - `-p 8080:3000` Para direcionar a porta 3000 do container (configurado no meu app, por exemplo) para a porta 8080;
+   - `-v "C:\Users\User\Desktop\MeuAppExemplo:/var/www"` para vincular a pasta do meu projeto (no PC local, físico) ao endereço `/var/www` do container;
+   - `-w "/var/www"` para definir o diretório de início do container (work directory);
+   - `node` nesse caso, nome da imagem que será usada;
+   - `npm start` comando (rodado no work directory) que inicia o node dentro do container.
