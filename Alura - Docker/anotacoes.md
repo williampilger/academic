@@ -29,6 +29,11 @@ Isso fará a criação e execução imediata do container. Caso precise manter o
 
 > sudo docker run -it hello-world
 
+Para forçar a execução do container SEM atribuir o terminal à ele (útil sempre que você criar container que vão executar processos que não acabam após uma simples execução. Ou seja, quase sempre.):
+
+> sudo docker run -d hello-world
+
+
 ## Listando containers
 
 Listar containers ativos:
@@ -38,6 +43,7 @@ Listar containers ativos:
 Ou, listar todos, incluindo os parados:
 
 > sudo docker ps -a
+
 
 ## Iniciando/parando containers já criados
 
@@ -54,3 +60,25 @@ Para parar o container, use:
 > sudo docker stop ID_DO_SEU_CONTAINER
 
 
+## Remover containers
+
+> sudo docker rm ID_DO_SEU_CONTAINER
+
+Para remover todos os containers:
+
+> sudo docker container prune
+
+
+## Listar imagens
+
+As imagens podem ser listadas com:
+
+> sudo docker images
+
+## Remover imagens
+
+> sudo docker rmi NOME_DA_IMAGEM
+
+Para remover todas
+
+> sudo docker images prune
