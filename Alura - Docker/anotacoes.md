@@ -23,7 +23,11 @@ O comando `run` é responsável por criar um novo container com base em outro ex
 
 Veja como executar o hello-world do docker:
 
-> sudo socker run hello-world
+> sudo docker run hello-world
+
+Isso fará a criação e execução imediata do container. Caso precise manter o container rodando no terminal atual, use `-it` para atrelar o terminal ao container:
+
+> sudo docker run -it hello-world
 
 ## Listando containers
 
@@ -34,3 +38,15 @@ Listar containers ativos:
 Ou, listar todos, incluindo os parados:
 
 > sudo docker ps -a
+
+## Iniciando/parando containers já criados
+
+Com o comando acima, ao listar os containers, você verá os identificadores dos seus containers, use eles para disparar comandos para tais:
+
+> sudo docker start ID_DO_SEU_CONTAINER
+
+Para iniciar o container atrelando o terminal a ele, usamos a flag `-a` (atatch):
+
+> sudo docker start -a ID_DO_SEU_CONTAINER
+
+
