@@ -1,7 +1,7 @@
 <?php
 
-    require_once __DIR__.'/../vendor/autoload.php';
-    require_once __DIR__.'/../vendor/mercadopago/sdk/lib/mercadopago.php';
+    require_once __DIR__.'/vendor/autoload.php';
+    require_once __DIR__.'/vendor/mercadopago/sdk/lib/mercadopago.php';
     require_once __DIR__.'/_local/cred.php';
 
     MercadoPago\SDK::setAccessToken(MP_credentials['ENV_ACCESS_TOKEN']);
@@ -24,11 +24,19 @@
 
     $payment->save();
 
+    $customer = new MercadoPago\Customer();
+    $customer->email = $_POST['email'];
+    $customer->save();
+
+
+
     $response = array(
         'status' => $payment->status,
         'status_detail' => $payment->status_detail,
-        'id' => $payment->id
+        'id' => $payment->id,
+        'customer' => $customer->id
     );
+    
     echo json_encode($response);
 
 ?>

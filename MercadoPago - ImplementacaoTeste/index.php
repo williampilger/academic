@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <form id="form-checkout" action="/pay/process_payment.php/" method="POST">
+    <form id="form-checkout" action="/process_payment.php/" method="POST">
         <div id="form-checkout__cardNumber" class="container"></div>
         <div id="form-checkout__expirationDate" class="container"></div>
         <div id="form-checkout__securityCode" class="container"></div>
