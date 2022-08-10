@@ -1,8 +1,8 @@
 <?php
 
-    require_once __DIR__.'/vendor/autoload.php';
-    require_once __DIR__.'/vendor/mercadopago/sdk/lib/mercadopago.php';
-    require_once __DIR__.'/_local/cred.php';
+    require_once __DIR__.'/../vendor/autoload.php';
+    require_once __DIR__.'/../vendor/mercadopago/sdk/lib/mercadopago.php';
+    require_once __DIR__.'/../_local/cred.php';
 
     MercadoPago\SDK::setAccessToken(MP_credentials['ENV_ACCESS_TOKEN']);
 

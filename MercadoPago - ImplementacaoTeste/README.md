@@ -2,7 +2,7 @@
 
 ## Dependences
 
-The `Mercado Pago` librare will be instaled with **composer**, the if you don't has install it by accessing the server FTP via SSH and running:
+The `Mercado Pago` librare will be instaled with **composer**, the if you don't has install it by accessing the server FTP via SSH and run:
 
 ```sh
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -16,9 +16,5 @@ php -r "unlink('composer-setup.php');"
 If you already have installed composer, navigate to the instalation dir, and run:
 
 ```sh
-php composer.phar require mercadopago/dx-php
-php composer.phar require slim/slim
-php composer.phar require slim/psr7
-php composer.phar require twig/twig
+php composer.phar install
 ```
-
