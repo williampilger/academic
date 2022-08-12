@@ -1,13 +1,11 @@
-<?php require_once __DIR__.'/_local/cred.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HomePage</title>
     <style>
-
         html, body{
             width: 100%;
             height: 100%;
@@ -26,17 +24,24 @@
             border-radius: 10px;
             padding: 20px;
         }
+        a {
+            display: inline-block;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 7px;
+            text-align: center;
+        }
   </style>
 </head>
 <body>
-    <div class="center">
-        <h1>Pesquisar usuários existentes</h1>
-        <form id="form-newUser" action="/ajax/find_user.php/" method="POST">
-            <input type="text" id="form" name="find" placeholder="Search" />
-            <button type="submit" id="form-newUser__submit">Criar</button>
-        </form>
-
+    <div class='center'>
+        <h1>Testes de API - MercadoPago</h1>
+        <a href="/page_UserCreateTest.php">Cadastrar Novo Cliente</a>
+        <a href="/page_listUsers.php">Listar Clientes</a>
+        <a href="/page_getUser.php">Obter Cliente</a>
+        <a href="/page_UserModify.php">Modificar Cliente</a>
+        <a href="/page_listUsersCards.php">Listar Cartões por Clientes</a>
+        <a href="/page_CardPaymentTest.php">Pagamento com Cartão de Crédico</a>
     </div>
-
 </body>
 </html>

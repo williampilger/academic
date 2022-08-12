@@ -1,4 +1,3 @@
-<?php require_once __DIR__.'/_local/cred.php'; ?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
