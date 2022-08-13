@@ -1,42 +1,24 @@
 <?php
 
-    require_once __DIR__.'/../vendor/autoload.php';
-    require_once __DIR__.'/../vendor/mercadopago/sdk/lib/mercadopago.php';
     require_once __DIR__.'/../_local/cred.php';
+    require_once __DIR__.'/../_local/MercadoPago.class.php';
 
-    MercadoPago\SDK::setAccessToken(MP_credentials['ENV_ACCESS_TOKEN']);
-
-    $payment = new MercadoPago\Payment();
-    $payment->transaction_amount = (float)$_POST['transactionAmount'];//##VER## Isto ser ridículo! Jamais confiar nesse tipo de informação vindo do front!!!!
-    $payment->token = $_POST['token'];
-    $payment->description = $_POST['description'];
-    $payment->installments = (int)$_POST['installments'];
-    $payment->payment_method_id = $_POST['paymentMethodId'];
-    $payment->issuer_id = (int)$_POST['issuer'];
-
-    $payer = new MercadoPago\Payer();
-    $payer->email = $_POST['email'];
-    $payer->identification = array(
-        "type" => $_POST['identificationType'],
-        "number" => $_POST['identificationNumber']
-    );
-    $payment->payer = $payer;
-
-    $payment->save();
-
-    $customer = new MercadoPago\Customer();
-    $customer->email = $_POST['email'];
-    $customer->save();
+    $mp = new MercadoPago(MP_credentials['ENV_ACCESS_TOKEN']);
 
 
+    $data = [
+        'description' => $_POST['description'],
+        'external_reference' => $_POST['external_reference'],
+        'issuer_id' => $_POST['issuer_id'],
+        'installments' => $_POST['installments'],
+        'payer' => $_POST['payer'],
+        'payment_method_id' => $_POST['payment_method_id'],
+        'token' => $_POST['token'],
+        'transaction_amount' => $_POST['transaction_amount']
+    ];
 
-    $response = array(
-        'status' => $payment->status,
-        'status_detail' => $payment->status_detail,
-        'id' => $payment->id,
-        'customer' => $customer->id
-    );
+    $response = $mp->Payment_new($data);
     
     echo json_encode($response);
-
+    
 ?>
