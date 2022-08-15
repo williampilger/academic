@@ -28,6 +28,11 @@
             border-radius: 10px;
             padding: 20px;
         }
+        .side{
+            color: orange;
+            font-size: small;
+            vertical-align: middle;
+        }
         #form-newUser {
             display: flex;
             flex-direction: column;
@@ -43,7 +48,7 @@
 </head>
 <body>
     <div class="center">
-        <h1>Modificar Cadastro de Usuário</h1>
+        <h1> <span class="side">[SERVER-SIDE]</span> Modificar Cadastro de Usuário</h1>
         <span>Os dados não são carregados automaticamente neste exemplo. <br> Somente serão substituidos dados preenchidos. <br> <br></span>
         
         <form id="form-newUser" action="/ajax/update_user.php/" method="POST">

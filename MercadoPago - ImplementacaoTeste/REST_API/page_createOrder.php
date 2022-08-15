@@ -28,6 +28,11 @@
             border-radius: 10px;
             padding: 20px;
         }
+        .side{
+            color: orange;
+            font-size: small;
+            vertical-align: middle;
+        }
         #form-newUser {
             display: flex;
             flex-direction: column;
@@ -43,7 +48,7 @@
 </head>
 <body>
     <div class="center">
-        <h1>Criar ordem de pagamento</h1>
+        <h1> <span class="side">[SERVER-SIDE]</span> Criar ordem de pagamento</h1>
         <span>Obtém URL para segunda etapa do pagamento (client-side)</span>
         
         <form id="form-newUser" action="/ajax/create_order.php/" method="POST">

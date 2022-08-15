@@ -25,6 +25,11 @@
             border-radius: 10px;
             padding: 20px;
         }
+        .side{
+            color: orange;
+            font-size: small;
+            vertical-align: middle;
+        }
         #form-newUser {
             display: flex;
             flex-direction: column;
@@ -36,7 +41,7 @@
 </head>
 <body>
     <div class="center">
-        <h1>Listar Cartões por Usuário/Cliente</h1>
+        <h1> <span class="side">[SERVER-SIDE]</span> Listar Cartões por Usuário/Cliente</h1>
         <form id="form-newUser" action="/ajax/find_userCards.php/" method="POST">
             <input type="text" id="ID" name="id" placeholder="ID" />
             <div>

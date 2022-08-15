@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Get Card</title>
     <style>
 
         html, body{
@@ -41,19 +41,16 @@
 </head>
 <body>
     <div class="center">
-        <h1> <span class="side">[SERVER-SIDE]</span> Criar Novo Usuário</h1>
-        
-        <form id="form-newUser" action="/ajax/create_user.php/" method="POST">
-            <input type="email" id="form-checkout__email" name="email" placeholder="E-mail" />
-            <input type="text" id="form-checkout__cpf" name="cpf" placeholder="CPF, sem pontos e traço" />
+        <h1> <span class="side">[SERVER-SIDE]</span> Obter dados do cartão por cliente</h1>
+        <span>Função um tanto quanto inútil, aparentemente. <br> Retorna algumas poucas informações a mais que a listagem simples. <br> <br> </span>
+        <form id="form-newUser" action="/ajax/get_card.php/" method="POST">
+            <input type="text" id="user" name="userid" placeholder="ID do USUÁRIO" />
+            <input type="text" id="card" name="cardid" placeholder="ID do CARTÃO" />
             <div>
-                <input type="text" id="form-checkout__zip" name="zip" placeholder="CEP" />
-                <input type="text" id="form-checkout__street" name="street" placeholder="Rua" />
-                <input type="number" id="form-checkout__number" name="number" placeholder="Número" />
+                <input type="checkbox" id="json" name="json">
+                <label for="json">Resultado Completo</label>
             </div>
-    
-            
-            <button type="submit" id="form-newUser__submit">Criar</button>
+            <button type="submit" id="form-newUser__submit">Carregar</button>
         </form>
 
     </div>

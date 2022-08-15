@@ -22,7 +22,8 @@
         {
             $arr[] = [
                 'email'=>$item['email'],
-                'id'=>$item['id']
+                'id'=>$item['id'],
+                'cards'=>$item['cards']
             ];
         }
 

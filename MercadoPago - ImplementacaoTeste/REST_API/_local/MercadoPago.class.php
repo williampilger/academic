@@ -80,9 +80,19 @@ class MercadoPago
         return $resp;
     }
 
+    public function Customer_addCard( string $id, string $cardToken )
+    {
+        return $this->doRequest('POST', "v1/customers/$id/cards", ['token'=>$cardToken]);
+    }
+
+    public function Card_get( string $userID, string $cardID )
+    {
+        return $this->doRequest('GET', "v1/customers/$userID/cards/$cardID", []);
+    }
+
     public function Payment_new( array $data )//##VER## Isso não é usado, atualmente.
     {
-        $resp = $this->doRequest('POST', 'payments', $data);
+        $resp = $this->doRequest('POST', 'v1/payments', $data);
 
         return $resp;
     }
