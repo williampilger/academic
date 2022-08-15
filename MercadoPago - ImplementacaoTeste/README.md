@@ -14,4 +14,5 @@ No exemplo `REST_API` usei apenas a API REST do MercadoPago, fazendo requisiçõ
    - **Ambiente local, linux**: `composer install`
    - **Ambiente de produção, servidor apache**: `php composer.phar install`
  - **3** - Execute o servidor PHP de teste (ou suba pro seu site...):
-   - **No linux**: `php -S localhost:8080` por exemplo.
+   - **No linux**: `php -S localhost:8080`, por exemplo.
+   - **No servidor apache**: basta subir e acessar.
