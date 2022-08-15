@@ -48,26 +48,22 @@
 </head>
 <body>
     <div class="center">
-        <h1> <span class="side">[SERVER-SIDE]</span> Modificar Cadastro de Usuário</h1>
-        <span>Os dados não são carregados automaticamente neste exemplo. <br> Somente serão substituidos dados preenchidos. <br> <br></span>
+        <h1> <span class="side">[SERVER-SIDE]</span> Criar Pagamento com Token de Cartão</h1>
+        <span>Você já precisa ter obtido um token de cartão para esta etapa. <br> <br></span>
         
-        <form id="form-newUser" action="/ajax/update_user.php/" method="POST">
+        <form id="form-newUser" action="/ajax/create_payment.php/" method="POST">
             
-            <input type="text" id="form-checkout__description" name="description" placeholder="Descrição da compra" />
-            <input type="text" id="form-checkout__external_reference" name="external_reference" placeholder="ID do produto" />
-            <input type="text" id="form-checkout__issuer_id", name="issuer_id", claceholder="APP ID" value="<?php echo MP_credentials['APP_ID'] ?>" required >
-            <input type="hidden" id="form-checkout__installments" name="installments" value=1 required />
+            <input type="text" id="form-checkout__description" name="description" placeholder="Descrição da compra (opcional)" />
+            <input type="text" id="form-checkout__external_reference" name="external_reference" placeholder="ID do produto (opcional)" />
+            <input type="number" id="form-checkout__issuer_id", name="issuer_id", placeholder="ID do emissor do meio de pagamento" required >
+            <input type="number" id="form-checkout__installments" name="installments" placeholder="Número de parcelas" required />
 
             <hr>
            
-            <input type="text" id="form-checkout__payer" name="payer" placeholder="ID do Cliente" required />
+            <input type="text" id="form-checkout__payer" name="payer" placeholder="ID do pagador" required />
             <input type="text" id="form-checkout__payment_method_id" name="payment_method_id" placeholder="ID do Método de pagamento" required />
             <input type="text" id="form-checkout__payment_token" name="token" placeholder="Token" required />
             <input type="number" id="form-checkout__payment_transaction_amount" name="transaction_amount" placeholder="Valor a ser cobrado" required />
-
-
-           
-    
             
             <button type="submit" id="form-newUser__submit">Atualizar</button>
         </form>

@@ -76,6 +76,7 @@
             <div class="psec base-flex">
                 <h3>Outros</h3>
                 <a href="/page_CardTokenization.php">Criar Token de cartão (FRONT)</a>
+                <a href="/page_getCardConfirmationToken.php">Obter Token de cartão existente (FRONT)</a>
                 <a href="/page_CardGet.php">Obter dados "completos" de um cartão</a>
             </div>
         </div>
@@ -85,8 +86,8 @@
                 <h3>Checkout Transparente</h3>
                 <div class="sec base-flex">
                     <h4>Pagamento Único</h4>
-                    <a href="/page_createPayment.php">Criar Pagamento <strong>[FAILL]</strong> </a>
-                    <a href="/page_CardPaymentTest.php">Pagamento com Cartão de Crédico</a>
+                    <a href="/page_createPayment.php">Criar Pagamento com Token de Cartão </a>
+                    <a href="/page_CardPaymentTest.php">Pagamento com NOVO Cartão de Crédico</a>
                 </div>
             </div>
             <div class="gsec base-flex">
