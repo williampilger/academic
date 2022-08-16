@@ -65,7 +65,7 @@
             <input type="text" id="form-checkout__payment_token" name="token" placeholder="Token" required />
             <input type="number" id="form-checkout__payment_transaction_amount" name="transaction_amount" placeholder="Valor a ser cobrado" required />
             
-            <button type="submit" id="form-newUser__submit">Atualizar</button>
+            <button type="submit" id="form-newUser__submit">Fazer Cobrança</button>
         </form>
 
     </div>

@@ -1,10 +1,10 @@
 <?php
     require_once __DIR__.'/_local/cred.php';
-    require_once __DIR__.'/../_local/MercadoPago.class.php';
+    require_once __DIR__.'/_local/MercadoPago.class.php';
 
     $mp = new MercadoPago(MP_credentials['ENV_ACCESS_TOKEN'], MP_credentials['APP_ID']);
 
-    $cards = $mp->Customer_get($_)
+    $cards = $mp->Customer_get($_POST['id'])['cards'];
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +37,11 @@
             border-radius: 10px;
             padding: 20px;
         }
+        .side{
+            color: orange;
+            font-size: small;
+            vertical-align: middle;
+        }
         
         #form-checkout {
             display: flex;
@@ -56,8 +61,10 @@
 </head>
 <body>
     <div class="center">
-
-        <form id="form-checkout" method="POST" action="/process_payment">
+        <h1> <span class="side">[CLIENT-SIDE]</span> Obter Token para validar pagamento com cartão salvo.</h1>
+        <span>Este passo obtém o token de validação do método de pagamento já salvo anteriormente. A etapa seguinte é fazer o pagamento.<br> <br></span>
+        
+        <form id="form-checkout">
             <select type="text" id="form-checkout__cardId"></select>
             <div id="form-checkout__securityCode-container" class="container"></div>
             <input name="token" id="token" hidden>
@@ -71,7 +78,7 @@
             placeholder: "CVV"
         }).mount('form-checkout__securityCode-container');
 
-        const customerCards = <?php  ?>;
+        const customerCards = <?php echo json_encode($cards); ?>;
 
         function appendCardToSelect() {
         const selectElement = document.getElementById('form-checkout__cardId');
@@ -90,15 +97,15 @@
         const formElement = document.getElementById('form-checkout');
         formElement.addEventListener('submit', e => createCardToken(e));
         const createCardToken = async (event) => {
+            event.preventDefault();
             try {
                 const tokenElement = document.getElementById('token');
                 if (!tokenElement.value) {
-                event.preventDefault();
                 const token = await mp.fields.createCardToken({
                     cardId: document.getElementById('form-checkout__cardId').value
                 });
                 tokenElement.value = token.id;
-                console.log(tokenElement);
+                alert(`Use o token '${token.id}' para aprovar um pagamento no Server-side. Token válido apenas para um pagamento, e por um curto intervalo de tempo.`);
                 }
             } catch (e) {
                 console.error('error creating card token: ', e)

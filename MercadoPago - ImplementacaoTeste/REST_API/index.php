@@ -76,7 +76,7 @@
             <div class="psec base-flex">
                 <h3>Outros</h3>
                 <a href="/page_CardTokenization.php">Criar Token de cartão (FRONT)</a>
-                <a href="/page_getCardConfirmationToken.php">Obter Token de cartão existente (FRONT)</a>
+                <a href="/page_getCardConfirmationToken_1.php">Obter Token de cartão existente (FRONT-BACK)</a>
                 <a href="/page_CardGet.php">Obter dados "completos" de um cartão</a>
             </div>
         </div>
