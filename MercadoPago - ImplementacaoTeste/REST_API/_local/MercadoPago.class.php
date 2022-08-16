@@ -133,6 +133,25 @@ class MercadoPago
         return $this->doRequest('POST', 'preapproval', $data);
     }
 
+    public function Subscription_newWithTokenCard( bool $anualy = false, string $email = '', string $short = '', float $amount = 0, string $cardToken = '')
+    {
+        $data = [
+            'auto_recurring' => [
+                'frequency_type' => 'months',
+                'frequency' => $anualy ? 12 : 1,
+                'transaction_amount' => $amount,
+                'currency_id' => 'BRL'
+            ],
+            'back_url' => 'https://store.authentydev.com.br/ws/gateways_responses/MercadoPago.php',
+            'payer_email' => $email,
+            'reason' => $short,
+            'card_token_id' => $cardToken,
+            'status' => 'authorized'
+        ];
+
+        return $this->doRequest('POST', 'preapproval', $data);
+    }
+
     // #####################################################################################################################
     // # STATIC PUBLIC Methods - STATIC PUBLIC Methods - STATIC PUBLIC Methods - STATIC PUBLIC Methods - STATIC PUBLIC Met #
     // #####################################################################################################################

@@ -98,7 +98,8 @@
                 </div>
                 <div class="sec base-flex">
                     <h4>Pagamento Recorrente</h4>
-                    <a href="/page_createSubscription.php">Criar Assinatura</a>
+                    <a href="/page_createSubscription.php">Criar Assinatura (Checkout PRO)</a>
+                    <a href="/page_createSubscriptionWithCardToken.php">Criar Assinatura com CardToken(Checkout Transparente)</a>
                 </div>
             </div>
         </div>
