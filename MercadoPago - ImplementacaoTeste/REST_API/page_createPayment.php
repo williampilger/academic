@@ -55,13 +55,11 @@
             
             <input type="text" id="form-checkout__description" name="description" placeholder="Descrição da compra (opcional)" />
             <input type="text" id="form-checkout__external_reference" name="external_reference" placeholder="ID do produto (opcional)" />
-            <input type="number" id="form-checkout__issuer_id", name="issuer_id", placeholder="ID do emissor do meio de pagamento" required >
             <input type="number" id="form-checkout__installments" name="installments" placeholder="Número de parcelas" required />
 
             <hr>
            
             <input type="text" id="form-checkout__payer" name="payer" placeholder="ID do pagador" required />
-            <input type="text" id="form-checkout__payment_method_id" name="payment_method_id" placeholder="ID do Método de pagamento" required />
             <input type="text" id="form-checkout__payment_token" name="token" placeholder="Token" required />
             <input type="number" id="form-checkout__payment_transaction_amount" name="transaction_amount" placeholder="Valor a ser cobrado" required />
             

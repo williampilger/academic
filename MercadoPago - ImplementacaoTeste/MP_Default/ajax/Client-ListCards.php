@@ -30,11 +30,18 @@
     else
     {
         $arr = [];
-        foreach ( $response['iterator'] as $item )
+        foreach ( $response ? $response['toArray']['cards'] : [] as $item )
         {
+            // $item = json_decode(json_encode($item), true);
+            $item = (array)$item;
             $arr[] = [
-                'email'=>$item['toArray']['email'],
-                'id'=>$item['toArray']['id']
+                'cardholder'=>$item['cardholder'],
+                'expiration_month'=>$item['expiration_month'],
+                'expiration_year'=>$item['expiration_year'],
+                'id'=>$item['id'],
+                'issuer'=>$item['issuer'],
+                'last_four_digits'=>$item['last_four_digits'],
+                'payment_method'=>$item['payment_method']
             ];
         }
 
