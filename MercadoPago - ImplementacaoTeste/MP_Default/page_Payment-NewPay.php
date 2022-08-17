@@ -37,9 +37,9 @@
     
             <button type="submit" id="form-checkout__submit">Pagar</button>
 
-            <span> <br> * Aqui sim, o <span class="side">[server-side]</span> entra em ação, não diretamente, mas apenas após a validação do cartão com o MercadoPago. <br> </span>
-            <span> Este é um exemplo chinelo, sendo o valor cobrado preenchido manualmente no código PHP, serve meramente para teste e aprendizado. <br> Código praticamente só copiado da documentação oficial.<br> </span>
         </form>
+        <span> <br> *Aqui sim, o <span class="side">[server-side]</span> entra em ação, não diretamente, mas apenas após a validação do cartão com o MercadoPago. <br> </span>
+        <span> Este é um exemplo chinelo, sendo o valor cobrado preenchido manualmente no código PHP, serve meramente para teste e aprendizado. <br> Código praticamente só copiado da documentação oficial.<br> </span>
     </div>
 
     <script src="https://sdk.mercadopago.com/js/v2"></script>

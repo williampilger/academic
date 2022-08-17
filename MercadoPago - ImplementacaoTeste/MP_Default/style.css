@@ -18,6 +18,8 @@ body{
 }
 .center{
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: fit-content;
     height: fit-content;
     background-color: white;
@@ -56,7 +58,11 @@ h1, h2,h3, h4, h5{
 #form-checkout {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    max-width: 300px;
+}
+
+#form-checkout * {
+    margin: 2px;
 }
 
 .container {

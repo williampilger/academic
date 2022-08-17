@@ -9,16 +9,15 @@
 </head>
 <body>
     <div class="base-flex center">
-        <h1><span class="side">[SERVER-SIDE]</span>Pesquisar usuários existentes</h1>
-        <span>Pesquisar usuários. Deixar o campo em branco não restringe a pesquisa.<br><br></span>
-        <form id="form-checkout" class="center base-flex" action="/ajax/Client-List.php/" method="POST">
-            <input type="text" id="form" name="email" placeholder="Email" />
-            <input type="text" id="ID" name="id" placeholder="ID" />
+        <h1><span class="side">[SERVER-SIDE]</span>Excluir Usuários Existentes</h1>
+        <span>Excluir usuário definitivamente do banco do MercadoPago.<br><br></span>
+        <form id="form-checkout" class="center base-flex" action="/ajax/Client-Remove.php/" method="POST">
+            <input type="text" id="ID" name="id" placeholder="ID" required/>
             <div>
                 <input type="checkbox" id="json" name="json">
                 <label for="json">Resultado Completo</label>
             </div>
-            <button type="submit" id="form-newUser__submit">Buscar</button>
+            <button type="submit" id="form-newUser__submit">Excluir</button>
         </form>
 
     </div>

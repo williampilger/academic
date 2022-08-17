@@ -11,7 +11,7 @@
     <div class="center base-flex">
         <h1><span class="side">[SERVER-SIDE]</span>Criar Novo Usuário</h1>
         <span>Criar usuário básico.</span>
-        <form id="form-newUser" action="/ajax/Client-New.php/" method="POST">
+        <form id="form-checkout" action="/ajax/Client-New.php/" method="POST">
             <input type="email" id="form-checkout__email" name="email" placeholder="E-mail" />
     
             

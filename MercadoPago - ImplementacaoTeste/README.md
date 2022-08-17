@@ -4,6 +4,8 @@ Implementação básica da API de pagamentos do MercadoPago.
 Este repositório trata-se apenas de uma página com exemplos da utilização em pequenas etapas.
 O código encontra-se bem bagunçado, pois como dito acima, foi usado para aprendizado, e possui anotações.
 
+**ATENÇÃO**: Isso não pode, em hipotese alguma, ser implementado desta maneira. Nos testes não me preocupei com injeção de código malicioso, o código pode (e certamente está) vulnerável a ataques.
+
 No exemplo `MP_Default` foi usado o SDK padrão fornecido pelo MercadoPago.
 
 No exemplo `REST_API` usei apenas a API REST do MercadoPago, fazendo requisições usando cURL, inclusive no server-side. Respostas bem claras em JSON, muito, mas muito mais fácil de utilizar, inicialmente.

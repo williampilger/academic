@@ -18,8 +18,8 @@
                 <div class="psec base-flex">
                     <h4>Cadastro</h4>
                     <a href="/page_Client-New.php">Cadastrar Novo Cliente</a>
-                    <a href="/page_Client-List.php">Listar Clientes</a>
-                    <a href="/.php">#Excluir Cliente</a>
+                    <a href="/page_Client-List.php">Pesquisar em Clientes</a>
+                    <a href="/page_Client-Remove.php">Excluir Cliente</a>
                 </div>
                 <div class="psec base-flex">
                     <h4>Cartões</h4>
