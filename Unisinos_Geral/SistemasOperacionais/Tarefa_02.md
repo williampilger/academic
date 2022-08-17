@@ -2,7 +2,7 @@
 
 By: **William Pilger** | **2022.08.17-08.30** | **Bom Princípio - RS**
 
-** Detalhes da máquina utilizada ($ neofetch):**
+**Detalhes da máquina utilizada ($ neofetch):**
 ```txt
              /////////////                user@micro-02 
          /////////////////////            ------------- 
