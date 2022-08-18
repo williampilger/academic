@@ -23,9 +23,9 @@
                 </div>
                 <div class="psec base-flex">
                     <h4>Cartões</h4>
-                    <a href="/page_Client-ListCards.php">Listar Cartões por Clientes</a>
-                    <a href="/.php">#Atribuir Cartão ao Cliente</a>
-                    <a href="/.php">#Criar Token de Cartão (Novo Cartão)</a>
+                    <a href="/page_Card-New.php">Criar Token de Cartão (Novo Cartão)</a>
+                    <a href="/page_Card-ListPerUser.php">Listar Cartões por Clientes</a>
+                    <a href="/page_Card-SaveToClient.php">Atribuir Cartão ao Cliente</a>
                 </div>
             </div>
             <div class="sec base-flex">

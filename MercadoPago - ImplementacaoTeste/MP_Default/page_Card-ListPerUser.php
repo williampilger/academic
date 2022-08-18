@@ -10,8 +10,8 @@
 <body>
     <div class="center base-flex">
         <h1><span class="side">[SERVER-SIDE]</span>Listar Cartões por Usuário/Cliente</h1>
-        <form id="form-checkout" action="/ajax/Client-ListCards.php/" method="POST">
-            <input type="text" id="ID" name="id" placeholder="ID" required />
+        <form id="form-checkout" action="/ajax/Card-ListPerUser.php/" method="POST">
+            <input type="text" id="ID" name="id" placeholder="ID do Cliente" required />
             <div>
                 <input type="checkbox" id="json" name="json">
                 <label for="json">Resultado Completo</label>
