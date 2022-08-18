@@ -26,7 +26,7 @@
                     <a href="/page_Card-New.php">Criar Token de Cartão (Novo Cartão)</a>
                     <a href="/page_Card-ListPerUser.php">Listar Cartões por Clientes</a>
                     <a href="/page_Card-SaveToClient.php">Atribuir Cartão ao Cliente</a>
-                    <a href="/.php">#Excluir Cartão</a>
+                    <a href="/page_Card-Remove.php">Excluir Cartão</a>
                 </div>
             </div>
             <div class="sec base-flex">
