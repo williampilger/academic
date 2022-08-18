@@ -13,7 +13,7 @@
     <div class='center base-flex'>
         <h1><span class="side">[CLIENT-SIDE]</span>Pagamento único com Cartão de Crédito</h1>
         <span>Pagamento sem cadastro de cliente, sem salvar dados de cartão.<br>Cobrança simples, <strong>usando padrão de formulário fornecido</strong> pelo MP. <br><br></span>
-        <form id="form-checkout" action="/ajax/Payment-NewPay.php/" method="POST">
+        <form id="form-checkout" action="/ajax/Payment-NewSimpleWitoutClient.php/" method="POST">
             <div id="form-checkout__cardNumber" class="container"></div>
             <div id="form-checkout__expirationDate" class="container"></div>
             <div id="form-checkout__securityCode" class="container"></div>

@@ -26,13 +26,15 @@
                     <a href="/page_Card-New.php">Criar Token de Cartão (Novo Cartão)</a>
                     <a href="/page_Card-ListPerUser.php">Listar Cartões por Clientes</a>
                     <a href="/page_Card-SaveToClient.php">Atribuir Cartão ao Cliente</a>
+                    <a href="/.php">#Excluir Cartão</a>
                 </div>
             </div>
             <div class="sec base-flex">
                 <h3>Pagamentos</h3>
                 <div class="psec base-flex">
                     <h4>Pagamento Simples (Cartão de Crédito)</h4>
-                    <a href="/page_Payment-NewPay.php">Pagamento com Cartão de Crédico (Default Form) </a>
+                    <a href="/page_Payment-NewSimpleWitoutClient.php">Pagamento com Cartão, sem Cliente (Default Form) </a>
+                    <a href="/.php">#Novo Pagamento com Catão</a>
                     <a href="/.php">#Estornar Pagamento</a>
                     <a href="/.php">#Consultar Pagamento</a>
                 </div>
