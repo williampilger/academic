@@ -1,13 +1,12 @@
 <?php
 
     require_once __DIR__.'/../vendor/autoload.php';
-    require_once __DIR__.'/../vendor/mercadopago/sdk/lib/mercadopago.php';
     require_once __DIR__.'/../_local/cred.php';
 
     MercadoPago\SDK::setAccessToken(MP_credentials['ENV_ACCESS_TOKEN']);
 
     $payment = new MercadoPago\Payment();
-    $payment->transaction_amount = (float)$_POST['transactionAmount'];//##VER## Isto ser ridículo! Jamais confiar nesse tipo de informação vindo do front!!!!
+    $payment->transaction_amount = (float)$_POST['transactionAmount'];// Isto ser ridículo! Jamais confiar nesse tipo de informação vindo do front. Aqui é feito pra testes!!!!
     $payment->token = $_POST['token'];
     $payment->description = $_POST['description'];
     $payment->installments = (int)$_POST['installments'];
@@ -27,7 +26,6 @@
     $customer = new MercadoPago\Customer();
     $customer->email = $_POST['email'];
     $customer->save();
-
 
 
     $response = array(

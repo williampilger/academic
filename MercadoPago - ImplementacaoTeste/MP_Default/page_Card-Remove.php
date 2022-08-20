@@ -9,14 +9,13 @@
 </head>
 <body>
     <div class="base-flex center">
-        <h1><span class="side">[SERVER-SIDE]</span>Excluir Usuários Existentes</h1>
+        <h1><span class="side">[SERVER-SIDE]</span>Excluir Carão Existente</h1>
         <span>Excluir usuário definitivamente do banco do MercadoPago.<br><br></span>
         <form id="form-checkout" class="center base-flex" action="/ajax/Card-Remove.php/" method="POST">
-            <input type="text" id="ID" name="id" placeholder="ID do Cartão" required/>
+            <input type="text" id="cardID" name="cardid" placeholder="ID do Cartão" required/>
+            <input type="text" id="userID" name="customerid" placeholder="ID do Usuário" required/>
             <button type="submit" id="form-newUser__submit">Excluir</button>
         </form>
-
     </div>
-
 </body>
 </html>

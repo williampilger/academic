@@ -10,9 +10,9 @@
 
     if( $cardid && $customerid )
     {
-        $card = new MercadoPago\Card();//##AQUI##VER##
-        $card->customer_id = 
-        $card->find_by_id($id);
+        $card = new MercadoPago\Card();
+        $card->customer_id = $customerid;
+        $card->id = $cardid;
 
         if($card)
         {
