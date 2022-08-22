@@ -41,7 +41,9 @@
                 </div>
                 <div class="psec base-flex">
                     <h4>Assinaturas / Reccorência (Cartão de Crédito)</h4>
-                    <a href="/.php">#Criar Pagamento Recorrente</a>
+                    <a href="/page_Plan-New.php">Criar Plano para Assinaturas</a>
+                    <a href="/page_Subscription-New.php">Criar Assinatura (Pagamento Recorrente)</a>
+                    <a href="/.php">#Listar Assinaturas</a>
                     <a href="/.php">#Cancelar Assinatura Recorrente</a>
                     <a href="/.php">#Estornar Pagamento</a>
                     <a href="/.php">#Consultar Pagamento</a>

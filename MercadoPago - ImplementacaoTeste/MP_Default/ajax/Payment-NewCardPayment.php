@@ -15,8 +15,6 @@
     if(isset($_POST['description']) && $_POST['description'] != '') $payment->description = $_POST['description'];
     if(isset($_POST['external_reference']) && $_POST['external_reference'] != '') $payment->external_reference = $_POST['external_reference'];
 
-    $customer = MercadoPago\Customer::find_by_id($_POST['customer']);
-
     $payment->payer = new MercadoPago\Payer(['id'=>$_POST['customer']]);
 
     if( $payment->save() )
@@ -24,8 +22,7 @@
         $response = [
             'status' => $payment->status,
             'status_detail' => $payment->status_detail,
-            'id' => $payment->id,
-            'customer' => $customer->id
+            'id' => $payment->id
         ];
     }
     else
@@ -38,8 +35,7 @@
     if( $_POST['full'] )
     {
         $response['AdvInfo'] = [
-            'payment' => objectAdvPrint($payment),
-            'customer' => objectAdvPrint($customer)
+            'payment' => objectAdvPrint($payment)
         ];
     }
     
