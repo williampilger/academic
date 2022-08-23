@@ -6,47 +6,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Payment</title>
+    <title>Create Card</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-
-        html, body{
-            width: 100%;
-            height: 100%;
-        }
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: gray;
-        }
-        .center{
+        form div{
             display: flex;
             flex-direction: column;
-            width: fit-content;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
+            margin: 10px;
         }
-        .side{
-            color: orange;
+        form div label{
             font-size: small;
-            vertical-align: middle;
         }
-        #form-newUser {
-            display: flex;
-            flex-direction: column;
-        }
-        #form-newUser input{
-            margin: 5px;
-        }
-        hr{
-            width: 100%;
-            margin: 5px 0 15px 0;
-        }
-  </style>
+    </style>
 </head>
 <body>
-    <div class="center">
+    <div class="center base-flex">
         <h1> <span class="side">[CLIENT-SIDE]</span> Criar Token de cartão</h1>
         <span>Obtém Token para cartão de crédito.</span>
         
@@ -77,12 +51,11 @@
             </div>
 
             <button type="submit" id="form-newCard__submit">Criar</button>
-        </form>
-
+        </form>    
     </div>
 
     <script src="https://sdk.mercadopago.com/js/v2"></script>
-
+    
     <script>
 
         const createToken = async (e) => {
@@ -94,7 +67,7 @@
             );
 
             const token = await mp.createCardToken({
-                cardNumber: document.getElementById('cardNumber').value,
+                cardNumber: document.getElementById('cardNumber').value.replace(/[^0-9]/g,''),
                 cardholderName: document.getElementById('name').value,
                 cardExpirationMonth: document.getElementById('expMonth').value,
                 cardExpirationYear: document.getElementById('expYear').value,

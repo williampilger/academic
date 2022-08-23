@@ -16,51 +16,11 @@
     <title>Get card token</title>
 
     <script src="https://sdk.mercadopago.com/js/v2"></script>
-
-    <style>
-
-        html, body{
-            width: 100%;
-            height: 100%;
-        }
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: gray;
-        }
-        .center{
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-        }
-        .side{
-            color: orange;
-            font-size: small;
-            vertical-align: middle;
-        }
-        
-        #form-checkout {
-            display: flex;
-            flex-direction: column;
-            max-width: 600px;
-        }
-
-        .container {
-            height: 18px;
-            display: inline-block;
-            border: 1px solid rgb(118, 118, 118);
-            border-radius: 2px;
-            padding: 1px 2px;
-        }
-  </style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
-    <div class="center">
+    <div class="center base-flex">
         <h1> <span class="side">[CLIENT-SIDE]</span> Obter Token para validar pagamento com cartão salvo.</h1>
         <span>Este passo obtém o token de validação do método de pagamento já salvo anteriormente. A etapa seguinte é fazer o pagamento.<br> <br></span>
         

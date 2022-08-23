@@ -6,48 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-    #form-checkout {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
-    }
+    <link rel="stylesheet" href="style.css">
 
-    .container {
-      height: 18px;
-      display: inline-block;
-      border: 1px solid rgb(118, 118, 118);
-      border-radius: 2px;
-      padding: 1px 2px;
-    }
-  </style>
 </head>
-<body>
+<body class="base-flex">
+    <div class='center base-flex'>
+        <h1><span class="side">[CLIENT-SIDE]</span>Pagamento único com Cartão de Crédito</h1>
+        <span>Pagamento sem cadastro de cliente, sem salvar dados de cartão.<br>Cobrança simples, <strong>usando padrão de formulário fornecido</strong> pelo MP. <br><br></span>
+        <form id="form-checkout" action="/ajax/Payment-NewSimpleWitoutClient.php/" method="POST">
+            <div id="form-checkout__cardNumber" class="container"></div>
+            <div id="form-checkout__expirationDate" class="container"></div>
+            <div id="form-checkout__securityCode" class="container"></div>
+            <input type="text" id="form-checkout__cardholderName" placeholder="Titular do cartão" />
+            <select id="form-checkout__issuer" name="issuer">
+                <option value="" disabled selected>Banco emissor</option>
+            </select>
+            <select id="form-checkout__installments" name="installments">
+                <option value="" disabled selected>Parcelas</option>
+            </select>
+            <select id="form-checkout__identificationType" name="identificationType">
+                <option value="" disabled selected>Tipo de documento</option>
+            </select>
+            <input type="text" id="form-checkout__identificationNumber" name="identificationNumber" placeholder="Número do documento" />
+            <input type="email" id="form-checkout__email" name="email" placeholder="E-mail" />
+    
+            <input id="token" name="token" type="hidden">
+            <input id="paymentMethodId" name="paymentMethodId" type="hidden">
+            <input id="transactionAmount" name="transactionAmount" type="hidden" value="100">
+            <input id="description" name="description" type="hidden" value="Nome do Produto">
+    
+            <button type="submit" id="form-checkout__submit">Pagar</button>
 
-    <form id="form-checkout" action="/ajax/process_payment.php/" method="POST">
-        <div id="form-checkout__cardNumber" class="container"></div>
-        <div id="form-checkout__expirationDate" class="container"></div>
-        <div id="form-checkout__securityCode" class="container"></div>
-        <input type="text" id="form-checkout__cardholderName" placeholder="Titular do cartão" />
-        <select id="form-checkout__issuer" name="issuer">
-        <option value="" disabled selected>Banco emissor</option>
-        </select>
-        <select id="form-checkout__installments" name="installments">
-        <option value="" disabled selected>Parcelas</option>
-        </select>
-        <select id="form-checkout__identificationType" name="identificationType">
-        <option value="" disabled selected>Tipo de documento</option>
-        </select>
-        <input type="text" id="form-checkout__identificationNumber" name="identificationNumber" placeholder="Número do documento" />
-        <input type="email" id="form-checkout__email" name="email" placeholder="E-mail" />
-
-        <input id="token" name="token" type="hidden">
-        <input id="paymentMethodId" name="paymentMethodId" type="hidden">
-        <input id="transactionAmount" name="transactionAmount" type="hidden" value="100">
-        <input id="description" name="description" type="hidden" value="Nome do Produto">
-
-        <button type="submit" id="form-checkout__submit">Pagar</button>
-    </form>
+        </form>
+        <span> <br> *Aqui sim, o <span class="side">[server-side]</span> entra em ação, não diretamente, mas apenas após a validação do cartão com o MercadoPago. <br> </span>
+        <span> Este é um exemplo chinelo, sendo o valor cobrado preenchido manualmente no código PHP, serve meramente para teste e aprendizado. <br> Código praticamente só copiado da documentação oficial.<br> </span>
+    </div>
 
     <script src="https://sdk.mercadopago.com/js/v2"></script>
 
