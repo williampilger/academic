@@ -15,7 +15,7 @@
         <h1> <span class="side">[SERVER-SIDE]</span> Criar ordem de pagamento</h1>
         <span>Obtém URL para segunda etapa do pagamento (client-side)</span>
         
-        <form id="form-checkout" action="/ajax/Order-New.php/" method="POST">
+        <form id="form-checkout" action="/ajax/PRO_Order-New.php/" method="POST">
             
             <input type="text" id="form-checkout__id" name="id" placeholder="ID do Usuário Pagante" />
 

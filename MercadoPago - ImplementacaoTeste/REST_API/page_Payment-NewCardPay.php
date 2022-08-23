@@ -15,7 +15,7 @@
         <h1> <span class="side">[SERVER-SIDE]</span> Criar Pagamento com Token de Cartão</h1>
         <span>Você já precisa ter obtido um token de cartão para esta etapa. <br> <br></span>
         
-        <form id="form-newUser" action="/ajax/Payment-NewCardPay.php/" method="POST">
+        <form id="form-checkout" action="/ajax/Payment-NewCardPay.php/" method="POST">
             
             <input type="text" id="form-checkout__description" name="description" placeholder="Descrição da compra (opcional)" />
             <input type="text" id="form-checkout__external_reference" name="external_reference" placeholder="ID do produto (opcional)" />

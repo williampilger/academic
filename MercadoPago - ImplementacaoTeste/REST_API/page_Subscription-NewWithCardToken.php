@@ -12,17 +12,16 @@
 </head>
 <body>
     <div class="center base-flex">
-        <h1> <span class="side">[SERVER-SIDE]</span> Criar ordem de pagamento</h1>
-        <span>Obtém URL para segunda etapa do pagamento (client-side)</span>
+        <h1> <span class="side">[SERVER-SIDE]</span> Criar Assinatura (Pagamento Recorrente)</h1>
+        <span>Cadastra o Cliente em um Plano de assinatura, usando um Token de cartão pré obtido.</span>
         
         <form id="form-checkout" action="/ajax/Subscription-NewWithCardToken.php/" method="POST">
             
             <input type="email" id="form-checkout__email" name="email" placeholder="Email do usuário" />
-            <input type="text" id="form-checkout__short" name="short" placeholder="Descrição curta do produto" />
-            <input type="number" id="form-checkout__amount" name="amount" placeholder="Valor da recorrência" />
+            <input type="text" id="form-checkout__plan" name="plan" placeholder="ID do Plano" />
             <input type="text" id="form-checkout__cardToken" name="cardToken" placeholder="Token do Cartão (Obtido na validação Client-side)" />
 
-            <button type="submit" id="form-newUser__submit">Assinar</button>
+            <button type="submit" id="form-newUser__submit">Criar Assinatura</button>
         </form>
 
     </div>

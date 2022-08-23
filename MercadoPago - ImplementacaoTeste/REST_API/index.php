@@ -45,8 +45,9 @@
                     </div>
                     <div class="psec base-flex">
                         <h4>Assinaturas / Reccorência (Cartão de Crédito)</h4>
-                        <a href="/.php">#Criar Plano para Assinaturas</a>
-                        <a href="/page_Subscription-NewWithCardToken.php">Criar Assinatura (Pagamento Recorrente)</a>
+                        <a href="/page_Plan-New.php">Criar Plano para Assinaturas</a>
+                        <a href="/page_Plan-List.php">Listar Planos Existentes</a>
+                        <a href="/page_Subscription-New.php">Criar Assinatura</a>
                         <a href="/.php">#Listar Assinaturas</a>
                         <a href="/.php">#Cancelar Assinatura Recorrente</a>
                         <a href="/.php">#Estornar Pagamento</a>
@@ -56,6 +57,7 @@
             </div>
             <div class="gsec base-flex">
                 <h2>Checkout PRO</h2>
+                <span>Obs: Muitas das funções de back-end do <br>Checkout Transparente são compartilhadas.</span>
                 <div class="sec base-flex">
                     <h3>Clientes</h3>
                     <div class="psec base-flex">
@@ -69,7 +71,7 @@
                     <h3>Pagamentos</h3>
                     <div class="psec base-flex">
                         <h4>Pagamento Simples (Cartão de Crédito)</h4>
-                        <a href="/pageP_Order-New.php">Nova Ordem de Pagamento</a>
+                        <a href="/page_PRO_Order-New.php">Nova Ordem de Pagamento</a>
                     </div>
                     <div class="psec base-flex">
                         <h4>Assinaturas / Reccorência (Cartão de Crédito)</h4>

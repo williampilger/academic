@@ -116,40 +116,38 @@ class MercadoPago
      * @param string $user_email Email do usuário/cliente
      * @param string $short Nome/Descrição curta do produto. Aparece nas notificações e na fatura do cliente.
      */
-    public function Subscription_new( bool $anualy = false, string $user_email = '', string $short = '', float $amount = 0)
+    public function Subscription_new( string $plan, string $user_email, string $cardToken)
     {
 
         $data = [ //Para recorrências SEM PLANO ASSOCIADO
-            'auto_recurring' => [
-                'frequency_type' => 'months',
-                'frequency' => $anualy ? 12 : 1,
-                'transaction_amount' => $amount,
-                'currency_id' => 'BRL'
-            ],
             'back_url' => 'https://store.authentydev.com.br/ws/gateways_responses/MercadoPago.php',
             'payer_email' => $user_email,
-            'reason' => $short
+            'preapproval_plan_id' => $plan,
+            'card_token_id' => $cardToken,
+            'status'=>'authorized'
         ];
         return $this->doRequest('POST', 'preapproval', $data);
     }
 
-    public function Subscription_newWithTokenCard( bool $anualy = false, string $email = '', string $short = '', float $amount = 0, string $cardToken = '')
+    public function Plan_new( string $backURL, int $frequencyMonth, float $amount, string $reason )
     {
         $data = [
+            'back_url' => $backURL,
             'auto_recurring' => [
-                'frequency_type' => 'months',
-                'frequency' => $anualy ? 12 : 1,
-                'transaction_amount' => $amount,
-                'currency_id' => 'BRL'
+                'frequency' => $frequencyMonth
+                ,'frequency_type' => 'months'
+                ,'transaction_amount' => $amount
+                ,'currency_id' => 'BRL'
             ],
-            'back_url' => 'https://store.authentydev.com.br/ws/gateways_responses/MercadoPago.php',
-            'payer_email' => $email,
-            'reason' => $short,
-            'card_token_id' => $cardToken,
-            'status' => 'authorized'
+            'reason' => $reason
         ];
 
-        return $this->doRequest('POST', 'preapproval', $data);
+        return $this->doRequest('POST', 'preapproval_plan', $data);
+    }
+
+    public function Plan_Search( array $filters )
+    {
+        return $this->doRequest('GET', 'preapproval_plan/search', $filters);
     }
 
     // #####################################################################################################################
