@@ -13,12 +13,8 @@
         <span>Criar usuário básico.</span>
         <form id="form-checkout" action="/ajax/Client-New.php/" method="POST">
             <input type="email" id="form-checkout__email" name="email" placeholder="E-mail" />
-    
-            
             <button type="submit" id="form-newUser__submit">Criar</button>
         </form>
-
     </div>
-
 </body>
 </html>

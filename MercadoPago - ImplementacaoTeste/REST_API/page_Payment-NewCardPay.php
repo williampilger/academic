@@ -8,50 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Payment</title>
-    <style>
-
-        html, body{
-            width: 100%;
-            height: 100%;
-        }
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: gray;
-        }
-        .center{
-            display: flex;
-            flex-direction: column;
-            width: fit-content;
-            background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-        }
-        .side{
-            color: orange;
-            font-size: small;
-            vertical-align: middle;
-        }
-        #form-newUser {
-            display: flex;
-            flex-direction: column;
-        }
-        #form-newUser input{
-            margin: 5px;
-        }
-        hr{
-            width: 100%;
-            margin: 5px 0 15px 0;
-        }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="center">
+    <div class="center base-flex">
         <h1> <span class="side">[SERVER-SIDE]</span> Criar Pagamento com Token de Cartão</h1>
         <span>Você já precisa ter obtido um token de cartão para esta etapa. <br> <br></span>
         
-        <form id="form-newUser" action="/ajax/create_payment.php/" method="POST">
+        <form id="form-newUser" action="/ajax/Payment-NewCardPay.php/" method="POST">
             
             <input type="text" id="form-checkout__description" name="description" placeholder="Descrição da compra (opcional)" />
             <input type="text" id="form-checkout__external_reference" name="external_reference" placeholder="ID do produto (opcional)" />
