@@ -99,7 +99,7 @@ a) Somente as afirmativas I e II são corretas.
 
 b) Somente as afirmativas I e IV são corretas.
 
-->**c) Somente as afirmativas III e IV são corretas.**
+**c) Somente as afirmativas III e IV são corretas.**
 
 d) Somente as afirmativas I, II e III são corretas.
 
@@ -130,13 +130,18 @@ processo B{
 ```
 
 As possíveis saídas são:
-(a) adbc ou bcad
-(b) badc ou bacd
-(c) abdc ou abcd
-(d) dbca ou dcab
-**(e) Nenhuma das opções anteriores**
 
-*Ao meu ver, vai travar no primeiro while dos processos A e B, e vai printar só `b`. A menos que essas identações e símbolos não estejam corretos.*
+(a) adbc ou bcad
+
+**(b) badc ou bacd**
+
+(c) abdc ou abcd
+
+(d) dbca ou dcab
+
+(e) Nenhuma das opções anteriores
+
+
 
 # About
 
