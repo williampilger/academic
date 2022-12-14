@@ -29,4 +29,12 @@ E em seguida, cliar nosso projeto:
 - `PKief.material-icon-theme`;
 - ``
 
-## 
+
+
+
+
+
+
+## Progress
+
+13/12/2022  |  Aula 1  |  00:00:00 >>> 00:42:00
