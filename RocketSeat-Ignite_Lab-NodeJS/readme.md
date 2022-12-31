@@ -5,7 +5,7 @@ Neste diretório está disponível o projeto e algumas anotações criadas duran
 
 ## Documentação
 
-- [nestjs.com](Documentação - Nest);
+- [https://docs.nestjs.com/](Documentação - Nest);
 
 
 
@@ -29,12 +29,29 @@ E em seguida, cliar nosso projeto:
 - `PKief.material-icon-theme`;
 - ``
 
+## Criação do banco de dados
 
+Instale o prisma:
 
+> npm install -D prisma
+> npm install @prisma/client
+
+Criando um banco SQLite (que poderá ser qualquer outro):
+
+> npx prisma init --datasource-provider SQLite
+
+Crie seu esquema, de acordo com sua necessidade, e **depois de pronto**, execute o comando para executar a migration no prisma:
+
+> npx prisma migrate dev
+
+E, por fim, para visualizar o banco criado, rode:
+
+> npm prisma studio
 
 
 
 
 ## Progress
 
-13/12/2022  |  Aula 1  |  00:00:00 >>> 00:42:00
+13/12/2022  |  Aula 1   |  00:00:00 >>> 00:42:00
+30/12/2022  |  Aula 1   |  00:42:00 >>> end
