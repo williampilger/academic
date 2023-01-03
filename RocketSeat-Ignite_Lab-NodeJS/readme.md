@@ -54,4 +54,4 @@ E, por fim, para visualizar o banco criado, rode:
 ## Progress
 
 13/12/2022  |  Aula 1   |  00:00:00 >>> 00:42:00
-30/12/2022  |  Aula 1   |  00:42:00 >>> end
+30/12/2022  |  Aula 1   |  00:42:00 >>> 01:02:00
