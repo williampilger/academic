@@ -27,7 +27,8 @@ E em seguida, cliar nosso projeto:
 É interessante instalar as extenções o VS Code:
 
 - `PKief.material-icon-theme`;
-- ``
+- `Prisma.prisma`;
+
 
 ## Criação do banco de dados
 
@@ -55,3 +56,5 @@ E, por fim, para visualizar o banco criado, rode:
 
 13/12/2022  |  Aula 1   |  00:00:00 >>> 00:42:00
 30/12/2022  |  Aula 1   |  00:42:00 >>> 01:02:00
+04/01/2023  |  Aula 1   |  01:02:00 >>> the end
+04/01/2023  |  Aula 2   |  00:00:00 >>> 00:56:00
