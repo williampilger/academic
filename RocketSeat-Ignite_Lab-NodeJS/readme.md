@@ -24,7 +24,7 @@ E em seguida, cliar nosso projeto:
 *Usei o NPM durante a criação...*
 
 
-É interessante instalar as extenções o VS Code:
+É interessante instalar as extensões o VS Code:
 
 - `PKief.material-icon-theme`;
 - `Prisma.prisma`;
@@ -58,3 +58,4 @@ E, por fim, para visualizar o banco criado, rode:
 30/12/2022  |  Aula 1   |  00:42:00 >>> 01:02:00
 04/01/2023  |  Aula 1   |  01:02:00 >>> the end
 04/01/2023  |  Aula 2   |  00:00:00 >>> 00:56:00
+05/01/2023  |  Aula 2   |  00:56:00 >>> 01:01:00
