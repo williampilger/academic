@@ -60,3 +60,5 @@ E, por fim, para visualizar o banco criado, rode:
 04/01/2023  |  Aula 2   |  00:00:00 >>> 00:56:00
 05/01/2023  |  Aula 2   |  00:56:00 >>> 01:07:00 //in-memory database
 05/01/2023  |  Aula 2   |  01:07:00 >>> 01:19:00
+06/01/2023  |  Aula 2   |  01:19:00 >>> the end
+06/01/2023  |  Aula 3   |  00:00:00 >>> 

@@ -1,3 +1,4 @@
+import { randomUUID } from "crypto";
 import { Replace } from "../helpers/Replace";
 import { Content } from "./content";
 
@@ -10,9 +11,11 @@ interface NotificationProps {
 }
 
 export class Notification {
+    private _id: string;
     private props: NotificationProps;
 
     constructor(props: Replace<NotificationProps, {createdAt?: Date} >) {
+        this._id = randomUUID();
         this.props = {
             ...props,
             createdAt: props.createdAt ?? new Date(), //INTERESSANTE: Maneira bem doida de tornar o atributo opcional, e se ele não for informado, ele será preenchido. Isso é útil pra manter o campo como obrigatório no objeto, mas não no momento da criação.
@@ -22,6 +25,10 @@ export class Notification {
     /**
      * GETTERS and SETTERS
      */
+
+    public get id() {
+        return this._id;
+    }
 
     public set recipientId(recipientId: string) {
         this.props.recipientId = recipientId;
@@ -55,11 +62,11 @@ export class Notification {
         return this.props.readAt;
     }
 
-    public set createAt(createAt: Date ) {
+    public set createdAt(createAt: Date ) {
         this.props.createdAt = createAt;
     }
 
-    public get createAt(): Date {
+    public get createdAt(): Date {
         return this.props.createdAt;
     }
 

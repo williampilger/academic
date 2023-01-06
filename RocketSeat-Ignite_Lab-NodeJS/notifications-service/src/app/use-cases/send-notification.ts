@@ -3,6 +3,7 @@
  * Com "enviar" quero dizer: outro microsserviço envia uma notificação para o sistema de notificações.
  */
 
+import { Injectable } from "@nestjs/common";
 import { Content } from "../entities/content";
 import { Notification } from "../entities/notification";
 import { NotificationsRepository } from "../repositories/notifications-repository";
@@ -13,6 +14,7 @@ interface SendNotificationRequest {
     category: string
 }
 
+@Injectable()
 export class SendNotification {
 
     constructor(private notificationsRepository: NotificationsRepository){}
