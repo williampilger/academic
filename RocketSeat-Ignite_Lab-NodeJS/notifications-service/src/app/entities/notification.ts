@@ -7,6 +7,7 @@ interface NotificationProps {
     content: Content;
     category: string;
     readAt?: Date | null;//Interessante: Recebendo o campo como `undefined` indica que NÂO QUERO MODIFICAR o campo. Recebendo ele como `null` indica que estou DEFININDO ela como não lida (como nula).
+    canceledAt?: Date | null;
     createdAt: Date;
 }
 
@@ -62,14 +63,20 @@ export class Notification {
         return this.props.readAt;
     }
 
-    public set createdAt(createAt: Date ) {
-        this.props.createdAt = createAt;
+    public set createdAt(createdAt: Date ) {
+        this.props.createdAt = createdAt;
     }
 
     public get createdAt(): Date {
         return this.props.createdAt;
     }
 
-    
+    public cancel( ) {
+        this.props.canceledAt = new Date();
+    }
+
+    public get canceledAt(): Date | null | undefined {
+        return this.props.canceledAt;
+    }
 
 }
