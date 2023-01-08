@@ -17,9 +17,7 @@ export class CancelNotification {
     constructor(private notificationsRepository: NotificationsRepository){}
 
     async execute(request: CancelNotificationRequest):Promise<CancelNotificationResponse> {
-        const { notificationId } = request
-
-
+        const { notificationId } = request;
 
         const notification = await this.notificationsRepository.findById(notificationId);
         
@@ -27,7 +25,7 @@ export class CancelNotification {
             throw new Error('2301071809 - Impossible get this notification.');
         }
 
-        await this.notificationsRepository.save(notification);
+        notification.cancel();
 
         return;
     }
