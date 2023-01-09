@@ -21,4 +21,14 @@ describe('Cancel Notification', ()=>{
         expect(notificationsRepository.notifications).toHaveLength(1);
         expect(notificationsRepository.notifications[0].canceledAt).toEqual( expect.any(Date) );//espera qualquer data.
     });
+    it('Shut not be able to cancel a no existing notification', async ()=> {
+        const notificationsRepository = new InMemoryNotificationsRepository();
+        const cancelNotification = new CancelNotification( notificationsRepository );
+
+        
+
+        expect( ()=>{
+            return cancelNotification.execute({notificationId:'fake-notification-id'});
+        }).rejects.toThrow();
+    });
 });
