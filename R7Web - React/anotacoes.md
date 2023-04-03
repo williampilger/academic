@@ -1,5 +1,6 @@
 # Curso de React
 
+[Link do curso](https://www.youtube.com/watch?v=tBweoUiMsDg&t=2s);
 
 ## Iniciando
 
