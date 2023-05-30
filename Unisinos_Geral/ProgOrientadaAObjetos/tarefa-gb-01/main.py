@@ -1,5 +1,10 @@
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget
+try:
+    from PySide6.QtCore import Qt
+    from PySide6.QtWidgets import QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget
+except:
+    print("Você precisa ter instaladas as dependências: PySyde6")
+    exit()
+
 
 class Counter(QMainWindow):
     def __init__(self):
