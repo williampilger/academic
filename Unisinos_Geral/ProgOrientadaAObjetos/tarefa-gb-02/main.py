@@ -16,13 +16,13 @@ except:
 
 
 
-class Counter(QMainWindow):
+class Hellower(QMainWindow):
     def __init__(self):
         super().__init__()
         
-        self.input = QLineEdit("Inform your name")
+        self.input = QLineEdit("Seu nome...")
 
-        self.button = QPushButton("Confirm")
+        self.button = QPushButton("Confirmar")
         self.button.clicked.connect(self.onclick_btn_confirm)
 
         layout = QVBoxLayout()
@@ -33,15 +33,28 @@ class Counter(QMainWindow):
         central_widget.setLayout(layout)
         self.setCentralWidget(central_widget)
 
-        self.label = QLabel("test")
 
-    def onclick_btn_confirm():
-        self.label = QLabel(f"Heloo {self.}")
+    def onclick_btn_confirm(self):
+        self.label = QLabel(f"Olá, {self.input.text()}!! Tudo certo?")
+
+        self.button = QPushButton("Sair")
+        self.button.clicked.connect(self.onclick_btn_restart)
+
+        layout = QVBoxLayout()
+        layout.addWidget(self.label)
+        layout.addWidget(self.button)
+
+        central_widget = QWidget()
+        central_widget.setLayout(layout)
+        self.setCentralWidget(central_widget)
+    
+    def onclick_btn_restart(self):
+        exit()
 
 if __name__ == "__main__":
     app = QApplication([])
 
-    window = Counter()
+    window = Hellower()
     window.show()
 
     app.exec()
