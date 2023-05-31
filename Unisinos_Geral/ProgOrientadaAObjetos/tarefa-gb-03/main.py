@@ -33,8 +33,10 @@ class Information(QHBoxLayout):
 class People():
     def __init__(self):
         super().__init__()
-
-        self.show()
+        self._name = ''
+        self._email = ''
+        self._addr = ''
+        self._bd = ''
 
     # Retorna um componente para exibir o Cadastro em uma lista
     def getDisplayer(self):
@@ -68,9 +70,7 @@ class People():
         central_widget.setLayout( layout )
 
         # https://www.pythonguis.com/tutorials/pyside6-creating-multiple-windows/
-        popup_window = QWidget()
-        popup_window.setCentralWidget(central_widget)
-        popup_window.show()
+        central_widget.show()
 
         
         
