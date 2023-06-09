@@ -46,7 +46,7 @@ class Database:
         self.__conn.commit()
         return result
 
-    def standard_select(self, table:str, where_sent:list[str]=[], where_params=() ):
+    def standard_select(self, table:str, where_sent:tuple[str]=[], where_params=() ):
         result = {}
         if(len(where_sent) == len(where_params)):
             try:
@@ -66,7 +66,7 @@ class Database:
 
         return result
 
-    def standard_insert(self, table:str, fields_name:list[str], fields_values:tuple)->int: #return 0 if fail
+    def standard_insert(self, table:str, fields_name:tuple[str], fields_values:tuple)->int: #return 0 if fail
         n_args = len(fields_name)
         if(n_args == len(fields_values)):
             try:
@@ -80,7 +80,7 @@ class Database:
             LogHandler.new(1,2306081915,'number of arguments is different')
         return 0
     
-    def standard_update(self, table:str, fields_name:list[str]=[], fields_values:tuple=(), where_fields:list[str]=[], where_values:tuple=())->bool:
+    def standard_update(self, table:str, fields_name:tuple[str]=[], fields_values:tuple=(), where_fields:tuple[str]=[], where_values:tuple=())->bool:
         if(len(fields_name) == len(fields_values) and len(where_fields) == len(where_values)):
             try:
                 pfield = ' , '.join([f'{item} = ?' for item in fields_name])

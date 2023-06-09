@@ -57,6 +57,22 @@ class Employer:
                 LogHandler.new(0, 2306081946, 'fail on save database entry')
         return False
 
+    @staticmethod
+    def doLogin(email, passwd):
+        r = Database.getCommon().standard_select(
+            'employers',
+            ('email','passwd'),
+            (email, hashlib.md5(passwd.encode()).hexdigest())
+        )
+        if(len(r)>0):
+            if(len(r)==1):
+                print("FAZENDO LOGIN")
+                return True
+            else:
+                LogHandler.new(0, 2306082153, 'more then one users with same password and email')
+        else:
+            LogHandler.new(1, 2306082154, 'incorrect combination of password and email informed')
+        return False
 
     
 

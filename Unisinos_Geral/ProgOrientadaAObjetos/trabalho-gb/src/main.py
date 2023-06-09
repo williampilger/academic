@@ -63,3 +63,10 @@ def hello_world():
 # for item in result:
 #     print('    ', item)
 ##############################################
+# Fazendo login
+# from classes.employer import Employer
+# r = Employer.doLogin('pilger.will@gmail.com', 'teste')
+# print(r)
+# r = Employer.doLogin('pilger.will@gmail.com', '123654')
+# print(r)
+##############################################
