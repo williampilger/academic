@@ -19,24 +19,42 @@ class Employer:
 
     def Save(self):
         if self.__id == 0:
-            try:
-                Database.getCommon().standard_insert(
-                    'employers',
-                    ['fullname', 'email', 'passwd', 'cpf', 'phone', 'role'],
-                    (
-                        self.fullname,
-                        self.email,
-                        self.passwd,
-                        self.cpf,
-                        self.phone,
-                        self.role
-                    )
+            r = Database.getCommon().standard_insert(
+                'employers',
+                ['fullname', 'email', 'passwd', 'cpf', 'phone', 'role'],
+                (
+                    self.fullname,
+                    self.email,
+                    self.passwd,
+                    self.cpf,
+                    self.phone,
+                    self.role
                 )
+            )
+            if(r>0):
+                self.__id = r
                 return True
-            except:
+            else:
                 LogHandler.new(0, 2306082018, 'fail on save database entry')
         else:
-            LogHandler.new(1, 2306081946, 'not implemented')
+            r = Database.getCommon().standard_update(
+                'employers',
+                ['fullname', 'email', 'passwd', 'cpf', 'phone', 'role'],
+                (
+                    self.fullname,
+                    self.email,
+                    self.passwd,
+                    self.cpf,
+                    self.phone,
+                    self.role
+                ),
+                ['id'],
+                (self.__id,)
+            )
+            if(r):
+                return True
+            else:
+                LogHandler.new(0, 2306081946, 'fail on save database entry')
         return False
 
 

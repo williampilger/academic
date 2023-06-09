@@ -26,6 +26,40 @@ def hello_world():
 
 #app.run(ENV['REST_SERVER']['HOSTNAME'], ENV['REST_SERVER']['PORT'])
 
-from classes.employer import Employer
-teste = Employer('William Pilger', 'plger.will@gmail.com', '123654', '04095978565')
-if teste.Save(): print("sucesso")
+
+
+
+
+
+
+
+
+
+
+
+
+##############################################
+# TESTES # TESTES # TESTES # TESTES # TESTES #
+##############################################
+# Criação de usuário
+# from classes.employer import Employer
+# teste = Employer('William Pilger', 'pilger.will@gmail.com', '123654', '04095978565')
+# if teste.Save(): print("sucesso")
+##############################################
+# Leitura do banco
+# result = db.standard_select('employers')
+# print('Resultado:')
+# for item in result:
+#     print('    ', item)
+##############################################
+# Criação de usuário
+# from classes.employer import Employer
+# teste = Employer('Bartolomeu', 'bartoeu@gmail.com', '123654', '04095978565')
+# if teste.Save(): print("sucesso ao criar")
+# teste.fullname = "Teste do fritz"
+# if teste.Save(): print("sucesso ao atualizar")
+# result = db.standard_select('employers')
+# print('Resultado:')
+# for item in result:
+#     print('    ', item)
+##############################################
