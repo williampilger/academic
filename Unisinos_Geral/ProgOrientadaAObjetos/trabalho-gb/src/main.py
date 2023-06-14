@@ -63,10 +63,26 @@ def hello_world():
 # for item in result:
 #     print('    ', item)
 ##############################################
-# Fazendo login
+# Fazendo login do usuário
 # from classes.employer import Employer
 # r = Employer.doLogin('pilger.will@gmail.com', 'teste')
 # print(r)
 # r = Employer.doLogin('pilger.will@gmail.com', '123654')
 # print(r)
+##############################################
+# Marcando o ponto
+# from classes.employer import Employer
+# employer = Employer(1)
+# print(employer.fullname)
+# employer.AddTimeStamping()
+# employer.AddTimeStamping()
+# employer.AddTimeStamping()
+# print(employer.timestamps)
+##############################################
+# Fazendo login via session
+from classes.session import Session
+r = Employer.doLogin('pilger.will@gmail.com', 'teste')
+print(r)
+r = Employer.doLogin('pilger.will@gmail.com', '123654')
+print(r)
 ##############################################

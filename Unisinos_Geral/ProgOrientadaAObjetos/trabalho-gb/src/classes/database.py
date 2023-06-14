@@ -34,9 +34,27 @@ class Database:
                 role TEXT NOT NULL
             )
             ''')
+            self.__cursor.execute('''
+            CREATE TABLE IF NOT EXISTS employers_sessions (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                employer INTEGER NOT NULL,
+                SSID TEXT UNIQUE NOT NULL,
+                FOREIGN KEY (employer)
+                    REFERENCES employers (id)
+            )
+            ''')
+            self.__cursor.execute('''
+            CREATE TABLE IF NOT EXISTS timeregister (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                employer INTEGER NOT NULL,
+                timestamp INTEGER NOT NULL,
+                FOREIGN KEY (employer)
+                    REFERENCES employers (id)
+            )
+            ''')
             self.__cursor.execute('INSERT INTO employers (fullname,email,passwd,role) VALUES (?,?,?,?)', ('Admin','dev@sample.com.br',hashlib.md5('root'.encode()).hexdigest(),'Administrator'))
             self.__conn.commit()
-            LogHandler.new(1,2306082041,'successfully created the database')
+            LogHandler.new(2,2306082041,'successfully created the database')
         except:
             LogHandler.new(1,2306082040,'impossible to create database')
             exit()
@@ -91,6 +109,18 @@ class Database:
                 LogHandler.new(1,2306082104,'impossible update table entries')
         else:
             LogHandler.new(1,2306082057,'number of arguments is different')
+        return False
+
+    def standard_delete(self, table:str, where_fields:tuple[str]=[], where_values:tuple=() ) -> bool:
+        if( len(where_fields) == len(where_values)):
+            try:
+                pwhere = ' AND '.join([f'{item}=?' for item in where_fields])
+                self.query(f'DELETE FROM {table} WHERE {pwhere}', where_values)
+                return True
+            except:
+                LogHandler.new(1,2306131941,'impossible delete table entries')
+        else:
+            LogHandler.new(1,2306131940,'number of arguments is different')
         return False
     
     @staticmethod
