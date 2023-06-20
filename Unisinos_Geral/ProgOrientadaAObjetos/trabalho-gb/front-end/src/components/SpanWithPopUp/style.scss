@@ -1,0 +1,19 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2023.05.23 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+.span-with-popup{
+    &.show-text{
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    &.popup-item{
+        z-index: 2;
+    }
+}

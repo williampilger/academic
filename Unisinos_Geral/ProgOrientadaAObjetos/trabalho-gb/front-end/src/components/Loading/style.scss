@@ -1,0 +1,165 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2022 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+// OLD LOADING COMPONENT
+// .loading{
+//     background-color: $backgroundColor;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 100%;
+//     div{
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         img{
+//             width: 70px;
+//             background-color: $backgroundColor;
+//             &.small{
+//                 width: 35px;
+//             }
+//         }
+//         span{
+//             color: $accentColor2Light;
+//         }
+//         .clicable{
+//             transition: all ease .2s;
+//             &:hover {
+//                 opacity: .8;
+//                 cursor: pointer;
+//             }
+//         }
+//     }
+// }
+
+.loading{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    
+    .textsarea{
+        padding: 15px 0px 5px 0px;
+        width: fit-content;
+
+        span{
+            display: inline-block;
+            color: $accentColor2Light;
+        }
+    }
+
+    .retryItem{
+
+        &.clicable{
+            transition: all ease .2s;
+
+            .noLoadItem{opacity: 1;transition: all ease .2s; }
+            .loadItem{opacity: 0;transition: all ease .2s;}
+            
+            &:hover {
+                
+                .noLoadItem{opacity: 0;}
+                .loadItem{opacity: 1;}
+
+                opacity: .8;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .wrapper {
+        width: 200px;
+        height: 60px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .circle {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        border-radius: 50%;
+        background-color: $accentColor2Light;
+        left: 15%;
+        transform-origin: 50%;
+        animation: circle7124 .5s alternate infinite ease;
+    }
+    
+    @keyframes circle7124 {
+        0% {
+        top: 60px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.7);
+        }
+    
+        40% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+        }
+    
+        100% {
+        top: 0%;
+        }
+    }
+    
+    .circle:nth-child(2) {
+        left: 45%;
+        animation-delay: .2s;
+    }
+    
+    .circle:nth-child(3) {
+        left: auto;
+        right: 15%;
+        animation-delay: .3s;
+    }
+    
+    .shadow {
+        width: 20px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 62px;
+        transform-origin: 50%;
+        z-index: -1;
+        left: 15%;
+        filter: blur(1px);
+        animation: shadow046 .5s alternate infinite ease;
+    }
+    
+    @keyframes shadow046 {
+        0% {
+        transform: scaleX(1.5);
+        }
+    
+        40% {
+        transform: scaleX(1);
+        opacity: .7;
+        }
+    
+        100% {
+        transform: scaleX(.2);
+        opacity: .4;
+        }
+    }
+    
+    .shadow:nth-child(4) {
+        left: 45%;
+        animation-delay: .2s
+    }
+    
+    .shadow:nth-child(5) {
+        left: auto;
+        right: 15%;
+        animation-delay: .3s;
+    }
+}

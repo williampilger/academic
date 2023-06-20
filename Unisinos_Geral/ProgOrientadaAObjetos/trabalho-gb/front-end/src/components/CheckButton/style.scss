@@ -1,0 +1,9 @@
+@import '../../config/theme.scss';
+.save-changes-button {
+    
+    span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+}

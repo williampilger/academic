@@ -1,0 +1,80 @@
+.ToggleSwitch {
+
+    $size: 19px;
+    $activeColor: #2f5390;
+    $inactiveColor: #ccc;
+    $backgroundColor: white;
+
+    padding-top: 5px;
+
+    span {
+        font-size: calc($size/1.4);
+        padding-bottom: 0;
+        padding-right: 10px;
+        vertical-align: -webkit-baseline-middle;
+    }
+
+    .switch {
+
+        position: relative;
+        display: inline-block;
+        width: calc($size * 2.3);
+        height: calc($size * 1.3);
+
+        input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+
+            &:checked+.slider {
+                background-color: $activeColor;
+            }
+
+            &:focus+.slider {
+                box-shadow: 0 0 1px $activeColor;
+            }
+
+            &:checked+.slider:before {
+                -webkit-transform: translateX($size);
+                -ms-transform: translateX($size);
+                transform: translateX($size);
+            }
+
+        }
+
+        /* The slider */
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: $inactiveColor;
+            -webkit-transition: .4s;
+            transition: .4s;
+
+            &.round {
+                border-radius: calc($size * 1.35);
+
+                &:before {
+                    border-radius: 50%;
+                }
+            }
+
+            &:before {
+                position: absolute;
+                content: "";
+                height: $size;
+                width: $size;
+                left: calc($size * 0.1538);
+                bottom: calc($size * 0.1538);
+                background-color: $backgroundColor;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+        }
+    }
+}

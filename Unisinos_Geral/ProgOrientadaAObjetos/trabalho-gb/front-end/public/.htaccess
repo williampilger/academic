@@ -1,0 +1,5 @@
+# redirect when directory or file hot exists
+RewriteCond %{SCRIPT_FILENAME} !-f 
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^(.*)$ redirect.php?url=$1
+

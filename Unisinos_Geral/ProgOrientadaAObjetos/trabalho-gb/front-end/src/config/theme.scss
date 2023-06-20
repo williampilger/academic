@@ -1,0 +1,124 @@
+/*
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by:  will.i.am                  |  github.com/williampilger
+ *
+ * 2023.06.20 - Bom Princípio - RS
+ * ♪ - / -
+ * 
+ * Arquivo com valores padrão da personalização da página. Se aplica a todo o aplicativo.
+ */
+
+/*PALETA DE CORES*/
+$accentColor1: #131313; //#2f5390;//Cor destaque 1
+$accentColor1Light: #444; //Cor destaque 1
+$accentColor1Drop: #aaa; //Cor destaque 1, beem de leve, para fundos
+$inactiveAccent1: #000000aa; //Cor para botões/itens INATIVOS, que antes eram da cor destaque 1
+$accentColor2: #0077ED; //Cor destaque 2
+$accentColor2Light: #2e8ae6; //Cor destaque 2
+$accentColor2Drop: #95bde6; //Cor destaque 2, beem de leve, para fundos
+$inactiveAccent2: #4e4e4e93; //Cor para botões/itens INATIVOS, que antes eram da cor destaque 2
+$backgroundColor: #f5f5f7; //Cor do fundo
+// $backgroundColor: #313131;//Cor do fundo
+$backgroundColorLight: #fafafa; //Cor do fundo, para componentes à frente do fundo. (fundo sobre fundo)
+$textAccentColor1: #ffffff; //Cor do texto SOBRE DESTAQUE 1
+$textAccentColor2: #fff; //Cor do texto SOBRE DESTAQUE 2
+$textBackgroundColor: #2C2C2C; //Cor do texto SOBRE O BACKGROUND
+$textBackgroundColorLight: #707070; //Cor do texto SOBRE O BACKGROUND
+$detailsIconsAccentColor1: #ffffff; //Cor dos detalhes e/ou ícones SOBRE DESTAQUE 1
+$detailsIconsAccentColor2: #fff; //Cor dos detalhes e/ou ícones SOBRE DESTAQUE 2
+$detailsIconsBackgroundColor: #9d9d9d; //Cor dos detalhes e/ou ícones SOBRE O BACKGROUND
+$linkColor: #0077ED; //#006aff;
+$boxShadow: #80808080;
+$errColor: #d93025; // Conferência de Input - FALHA
+$checkColor: green; // Conferência de Input - OK
+$alertColor: #ffc400;
+$warningColor: #ff0000;
+$currencyColor: #131313;
+
+/*FONTES*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@font-face {
+    font-family: 'Roboto_LOCAL';
+    src: url('../resources/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto_LOCAL';
+    src: url('../resources/fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto_LOCAL';
+    src: url('../resources/fonts/Roboto-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Roboto_LOCAL';
+    src: url('../resources/fonts/Roboto-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+$defaultFontStach: 'Roboto', 'Roboto_LOCAL', 'Arial', sans-serif;
+
+
+/*QUEBRAS DE PÁGINA*/
+
+$minSize: 320px; //Esse é o tamanho mínimo. Se a tela for menor, vai cortar.
+$minSize0: 425px;
+$minSize1: 712px;
+$minSize2: 1050px;
+$maxHeadFooterWidth: 1200px; //Largura máxima do Header e Footer
+$maxBodyWidth: 1000px;
+$headerHeight: 55px;
+$mobileModeMaxSize: $minSize0;
+
+/*FONTSIZES PADRÃO*/
+$fontPP: 8px;
+$fontP: 10px;
+$fontM: 12px;
+$fontMM: 15px;
+$fontG: 18px;
+$fontGM: 21px;
+$fontGG: 25px;
+$fontTP: 27px;
+$fontT: 30px;
+$proporcaoReducao: 0.7; //Fator de MULTIPLICAÇÂO da fonte para telas menores
+$proporcaoReducaoLight: 0.9; //Fator de MULTIPLICAÇÂO da fonte para telas menores
+
+
+:export {
+    //Este export permite importação das variáveis via Javascript/Typescript
+    accentColor1: $accentColor1;
+    accentColor1Light: $accentColor1Light;
+    accentColor1Drop: $accentColor1Drop;
+    inactiveAccent1: $inactiveAccent1;
+    accentColor2: $accentColor2;
+    accentColor2Light: $accentColor2Light;
+    accentColor2Drop: $accentColor2Drop;
+    inactiveAccent2: $inactiveAccent2;
+    backgroundColor: $backgroundColor;
+    backgroundColorLight: $backgroundColorLight;
+    textAccentColor1: $textAccentColor1;
+    textAccentColor2: $textAccentColor2;
+    textBackgroundColor: $textBackgroundColor;
+    textBackgroundColorLight: $textBackgroundColorLight;
+    detailsIconsAccentColor1: $detailsIconsAccentColor1;
+    detailsIconsAccentColor2: $detailsIconsAccentColor2;
+    detailsIconsBackgroundColor: $detailsIconsBackgroundColor;
+    linkColor: $linkColor;
+    boxShadow: $boxShadow;
+    errColor: $errColor;
+    checkColor: $checkColor;
+    alertColor: $alertColor;
+    warningColor: $warningColor;
+    currencyColor: $currencyColor;
+    mobileModeMaxSize: $mobileModeMaxSize;
+}

@@ -1,0 +1,50 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2022 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+.ComboBoxCamp{
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    .titgroup{
+        display: flex;
+        justify-content: space-between;
+        // width: 100%;
+        .name{
+            display: inline-block;
+            margin-right: 5px;
+        }
+    }
+
+    select{
+        width: 210px;
+    }
+
+    @media (max-width: $minSize0) {
+        flex-direction: column;
+        align-items: flex-start;
+        .titgroup{
+
+            span{
+                padding: 5px 0 0 10px;
+            }
+        }
+    } &.small {
+        flex-direction: column;
+        align-items: flex-start;
+        .titgroup{
+
+            span{
+                padding: 5px 0 0 10px;
+            }
+        }
+    }
+}

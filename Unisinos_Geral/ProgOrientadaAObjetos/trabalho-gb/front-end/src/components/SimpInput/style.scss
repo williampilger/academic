@@ -1,0 +1,55 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2022 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+.groupBoxInput{
+    border:1px solid $textBackgroundColor;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    transition: all ease .2s;
+    min-width: 70px;
+
+    &.fail{
+        border: 2px solid $errColor;
+    }
+    &.check{
+        border: 1px solid $checkColor;
+    }
+}
+.inputName{
+    padding: 0 0px;
+    font-size: .75rem;
+    line-height: .875rem;
+    color: $textBackgroundColor;
+    position: absolute;
+    margin-top: -14px;
+    margin-left: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    transition: color .25s;
+    background-color: $backgroundColor;
+}
+
+.inputText{
+    line-height: 1.125rem;
+    border: none;
+    outline: none;
+    text-align: center;
+    color: $textBackgroundColor;
+    background-color: $backgroundColor;
+    width: 96%;
+    border-radius: 5px;
+}
+.inputText:focus{
+    color: #000000; 
+}
+
+
+

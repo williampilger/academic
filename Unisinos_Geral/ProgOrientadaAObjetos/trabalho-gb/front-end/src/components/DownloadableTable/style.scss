@@ -1,0 +1,17 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2022 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+.downloadable-table-component{
+    position: relative;
+    
+    .table-down-btn{
+        position: absolute;
+        top:0;
+        right: 0;
+    }
+}

@@ -1,0 +1,28 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2022.12.06 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+.LoadingButton{
+    padding: 7px 30px !important;//chinelagem, não use isso como exemplo...
+    position: relative;
+    height: fit-content;
+    width: fit-content;
+    font-family: $defaultFontStach;
+
+    .loadingimg{
+        position: absolute;
+        right: 3px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%;
+    }
+
+    transition: all ease .5s;
+    &.failed{
+        background-color: $errColor;
+    }
+}

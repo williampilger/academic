@@ -1,0 +1,30 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2022 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+.defaultpasswordinput{
+    position: relative;
+    align-items: center;
+
+    input{
+        width: 100%;
+    }
+    .eye{
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translatey(-50%);
+        transition: all ease .2s;
+        color: #666;
+        &:hover{
+            cursor: pointer;
+            opacity: .5;
+        }
+    }
+}

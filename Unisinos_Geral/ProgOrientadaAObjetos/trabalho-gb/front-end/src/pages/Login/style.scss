@@ -1,0 +1,133 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2022 - Bom Princípio - RS
+ */
+@import '../../config/theme.scss';
+
+.LoginPage{
+
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    .view{
+        // border: 1px solid red;
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo{
+            // border: 1px solid blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                height: 0px;
+                margin: 0;
+                filter:drop-shadow(0 0 15px white);//##TOP## Faz o bluur no texto
+                transition: all ease .2s;
+                @media (min-width: $minSize2){
+                    height: 70px;
+                    margin: 0 100px 0 0;
+                }
+            }
+        }
+        @media (max-width: $minSize){
+            width: 100%;
+            height: 100%;
+            padding-top: 35px;
+        }
+        .centralcard{
+            // border: 1px solid green;
+            background-color: $backgroundColor;
+            width: $minSize;
+
+            padding: 25px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px 0px $detailsIconsBackgroundColor;
+            display: flex;
+            flex-direction: column;
+
+            @media (max-width: $minSize){
+                width: 100%;
+                height: 100%;
+            }
+
+            .logoP{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                img{
+                    height: 25px;
+                    margin-bottom: 15px;
+                    transition: all ease .2s;
+                    @media (min-width: $minSize2){
+                        height: 0;
+                        margin: 0;
+                    }
+                }
+            }
+
+            h2{
+                color: $textBackgroundColor;
+            }
+            .crieConta{
+                
+                p, a{
+                    padding: 0;
+                    margin: 10px 0;
+                    display: inline-block;
+                    margin-left: 5px;
+                }
+                a{
+                    color: $linkColor;
+                    text-decoration: none;
+                }
+            }
+            .doLogin{
+                padding: 15px 0 0 0;
+                display: block;
+                label, input{
+                    display: block;
+                }
+                label{
+                    color: $textBackgroundColor;
+                    background-color: $backgroundColor;
+                    margin: 5px 0 0 15px;
+                }
+                input{
+                    width: calc(100% - 10px);//compensar o padding (queria saber por que)
+                    padding: 7px 5px;
+                };
+                .infos_avisos{
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 15px;
+                    span{
+                        color: $errColor;
+                        width: 90%;
+                        text-align: justify;
+                    };
+                }
+                .confirmButton{
+                    margin-top: 20px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .forgotPswd{
+                        color:$linkColor;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
