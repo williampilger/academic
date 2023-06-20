@@ -11,6 +11,12 @@ class Employer:
 
     def __init__(self, id:int=0, data:dict={}):
         self.__id = id
+        self.fullname = 'FULL NAME'
+        self.email = ''
+        self.passwd = ''
+        self.cpf = ''
+        self.phone = ''
+        self.role = ''
         if(id == 0): #NEW USER
             self.Update(data, False)
         else:
@@ -29,6 +35,15 @@ class Employer:
     @role.setter
     def role(self, role):
         self.__role = role if role in self.__roles else self.__roles[0]
+
+    @property
+    def isAdm(self):
+        print("My role:", self.role,"My name:",self.fullname)
+        return self.role in Employer.__adm_roles
+
+    @property
+    def id(self):
+        return self.__id
 
     @property
     def timestamps(self)->List[Tuple[int,int|None]]:
@@ -62,7 +77,7 @@ class Employer:
                 (
                     self.fullname,
                     self.email,
-                    self.passwd,
+                    self.__passwd,
                     self.cpf,
                     self.phone,
                     self.role
@@ -81,7 +96,7 @@ class Employer:
                 (
                     self.fullname,
                     self.email,
-                    self.passwd,
+                    self.__passwd,
                     self.cpf,
                     self.phone,
                     self.role
@@ -105,48 +120,81 @@ class Employer:
         if(len(r)>0):
             if(len(r)==1):
                 print("FAZENDO LOGIN")
-                self.Update(r[0], False)
+                self.Update(r[0], False, True)
                 return True
             else:
-                LogHandler.new(1, 2306132034, 'more then one users with same password and email')
+                LogHandler.new(1, 2306132034, 'more then one users with same ID')
         else:
-            LogHandler.new(0, 2306132035, 'user not found')
+            LogHandler.new(0, 2306132035, f'user {self.id} not found')
         return False
 
     @staticmethod
-    def doLogin(email, passwd) -> int: #returns 0 if it fails
+    def doLogin(email, passwd): #returns userID and Bool with "isAdm" flags 0 if it fails
         r = Database.getCommon().standard_select(
             'employers',
-            ('email','passwd'),
+            ['email','passwd'],
             (email, hashlib.md5(passwd.encode()).hexdigest())
         )
         if(len(r)>0):
             if(len(r)==1):
-                return r['id']
+                return int(r[0]['id']),r[0]['role'] in Employer.__adm_roles
             else:
                 LogHandler.new(0, 2306082153, 'more then one users with same password and email')
         else:
             LogHandler.new(1, 2306082154, 'incorrect combination of password and email informed')
-        return 0
+        return 0,False
     
-    def Update(self, data:dict={}, autoSave:bool=False):
+    @staticmethod
+    def New(fullname:str, email:str, passwd:str, cpf:str='', phone:str='', role:str=''):
+        usr = Employer()
+        usr.fullname = fullname
+        usr.email = email
+        usr.passwd = passwd
+        usr.cpf = cpf
+        usr.phone = phone
+        usr.role = role
+        return usr
+    
+    @staticmethod
+    def List():
+        r = Database.getCommon().standard_select(
+            'employers'
+        )
+        return [ Employer(0,item) for item in r]
+    
+    def Update(self, data:dict={}, autoSave:bool=False, raw:bool=False):
 
+        if 'id' in data: self.__id = data['id']
         if 'fullname' in data: self.fullname = data['fullname']
         if 'email' in data: self.email = data['email']
-        if 'passwd' in data: self.passwd = data['passwd']
+        if 'passwd' in data:
+            if raw:
+                self.__passwd = data['passwd']
+            else:
+                self.passwd = data['passwd']
         if 'cpf' in data: self.cpf = data['cpf']
         if 'phone' in data: self.phone = data['phone']
         if 'role' in data: self.role = data['role']
         
-        LogHandler.new(2,2306132003,'successfully update employer')
+        LogHandler.new(2,2306201250,'successfully update employer ' + str(self.id))
 
         if autoSave:
             self.Save()
     
+    def toDict(self):
+        return {
+            'id': self.__id,
+            'fullname': self.fullname,
+            'email': self.email,
+            'cpf': self.cpf,
+            'phone': self.phone,
+            'role': self.role
+        }
+    
     def AddTimeStamping(self):
         r = Database.getCommon().standard_insert(
             'timeregister',
-            ['employer', 'timestamp'],
+            ['employerID', 'timestamp'],
             (
                 self.__id,
                 int(time.time())

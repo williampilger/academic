@@ -2,28 +2,48 @@ import sqlite3
 import hashlib
 import os
 from tools import LogHandler
+from flask import g
 
 class Database:
 
     __comminDatabase = None
 
     def __init__(self, filename:str='sqlite_local_database.db'):
-        initialized = os.path.exists(filename)
-        self.__conn = sqlite3.connect(filename)
-        self.__cursor = self.__conn.cursor()
-
-        if not initialized: self.initialize()
+        self.initialized = os.path.exists(filename)
 
         if Database.__comminDatabase is None:
             Database.__comminDatabase = self
 
-    def __del__(self):
-        self.__conn.close()
+    def __delete__(self):
+        self.conn.close()
+
+    @staticmethod
+    def get_db(filename:str='sqlite_local_database.db'):
+        db = getattr(g, '_database', None)
+        if db is None:
+            db = g._database = sqlite3.connect(filename)
+        return db
+
+    @staticmethod
+    def close_db():
+        db = getattr(g, '_database', None)
+        if db is not None:
+            db.close()
+    
+    @property
+    def conn(self):
+        if not self.initialized: self.initialize()
+        return Database.get_db()
+
+    @property
+    def cursor(self):
+        return self.conn.cursor()
 
     def initialize(self):
         LogHandler.new(2,2306082039,'creating database')
         try:
-            self.__cursor.execute('''
+            self.initialized = True
+            self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS employers (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 fullname TEXT NOT NULL,
@@ -34,34 +54,34 @@ class Database:
                 role TEXT NOT NULL
             )
             ''')
-            self.__cursor.execute('''
+            self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS employers_sessions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                employer INTEGER NOT NULL,
+                employerID INTEGER NOT NULL,
                 SSID TEXT UNIQUE NOT NULL,
-                FOREIGN KEY (employer)
+                FOREIGN KEY (employerID)
                     REFERENCES employers (id)
             )
             ''')
-            self.__cursor.execute('''
+            self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS timeregister (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                employer INTEGER NOT NULL,
+                employerID INTEGER NOT NULL,
                 timestamp INTEGER NOT NULL,
-                FOREIGN KEY (employer)
+                FOREIGN KEY (employerID)
                     REFERENCES employers (id)
             )
             ''')
-            self.__cursor.execute('INSERT INTO employers (fullname,email,passwd,role) VALUES (?,?,?,?)', ('Admin','dev@sample.com.br',hashlib.md5('root'.encode()).hexdigest(),'Administrator'))
-            self.__conn.commit()
+            self.cursor.execute('INSERT INTO employers (fullname,email,passwd,role) VALUES (?,?,?,?)', ('Admin','dev@sample.com.br',hashlib.md5('root'.encode()).hexdigest(),'Administrator'))
+            self.conn.commit()
             LogHandler.new(2,2306082041,'successfully created the database')
-        except:
-            LogHandler.new(1,2306082040,'impossible to create database')
+        except Exception as e:
+            LogHandler.new(1,2306082040,'impossible to create database: ' + str(e) )
             exit()
 
     def query(self, query, params=()):
-        result = self.__cursor.execute(query, params)
-        self.__conn.commit()
+        result = self.cursor.execute(query, params)
+        self.conn.commit()
         return result
 
     def standard_select(self, table:str, where_sent:tuple[str]=[], where_params=() ):
@@ -72,13 +92,13 @@ class Database:
                     w = '1'
                 else:
                     w = ' AND '.join([f'{item}=?' for item in where_sent])
-
+                # print(f'SELECT * FROM {table} WHERE {w}', where_params)
                 r = self.query(f'SELECT * FROM {table} WHERE {w}', where_params)
                 columns = [columns[0] for columns in r.description]
                 result = [dict(zip(columns, linha)) for linha in r.fetchall()]
 
-            except:
-                LogHandler.new(0,2306082044,'impossible do select')
+            except Exception as e:
+                LogHandler.new(0,2306082044,'impossible do select: ' + str(e))
         else:
             LogHandler.new(0,2306082113,'whrong number of arguments')
 
@@ -92,8 +112,8 @@ class Database:
                 pval = ','.join(['?']*len(fields_name))
                 r = self.query(f'INSERT INTO {table} ({pfields}) VALUES ({pval})', fields_values)
                 return r.lastrowid
-            except:
-                LogHandler.new(1,2306082106, 'impossible insert to database table')
+            except Exception as e:
+                LogHandler.new(1,2306082106, 'impossible insert to database table: ' + str(e))
         else:
             LogHandler.new(1,2306081915,'number of arguments is different')
         return 0
@@ -105,8 +125,8 @@ class Database:
                 pwhere = ' AND '.join([f'{item}=?' for item in where_fields])
                 self.query(f'UPDATE {table} SET {pfield} WHERE {pwhere}', fields_values+where_values)
                 return True
-            except:
-                LogHandler.new(1,2306082104,'impossible update table entries')
+            except Exception as e:
+                LogHandler.new(1,2306082104,'impossible update table entries: ' + str(e))
         else:
             LogHandler.new(1,2306082057,'number of arguments is different')
         return False
@@ -117,8 +137,8 @@ class Database:
                 pwhere = ' AND '.join([f'{item}=?' for item in where_fields])
                 self.query(f'DELETE FROM {table} WHERE {pwhere}', where_values)
                 return True
-            except:
-                LogHandler.new(1,2306131941,'impossible delete table entries')
+            except Exception as e:
+                LogHandler.new(1,2306131941,'impossible delete table entries: ' + str(e))
         else:
             LogHandler.new(1,2306131940,'number of arguments is different')
         return False
