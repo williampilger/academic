@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useAppSelector } from '../storage/hooks';
 
 import Header from '../components/Header';
+import HomePage from '../pages/Home';
 import LoginPage from '../pages/Login';
 
 const Rotes = () => {
@@ -30,6 +31,7 @@ const Rotes = () => {
             <main>
                 <Routes>
                     <Route path={`/`} element={ <LoginPage /> } />
+                    <Route path={`/home`} element={ <HomePage /> } />
                 </Routes>
             </main>
         </BrowserRouter>

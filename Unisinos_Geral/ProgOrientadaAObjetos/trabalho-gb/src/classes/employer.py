@@ -49,7 +49,7 @@ class Employer:
     def timestamps(self)->List[Tuple[int,int|None]]:
         r = Database.getCommon().standard_select(
             'timeregister',
-            ('employer',),
+            ('employerID',),
             (self.__id,)
         )
         

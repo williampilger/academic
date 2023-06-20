@@ -8,6 +8,7 @@ from tools import anti_injection as ai
 
 try:
     from flask import Flask, request, g
+    from flask_cors import CORS, cross_origin
 except:
     mp.install_lib('flask')
     mp.restart_program()
@@ -21,8 +22,10 @@ with open( mp.dirConvert(os.path.dirname(__file__)+'/env.json') ) as file:
 db = Database()
 
 app = Flask(__name__)
+cors = CORS(app)
 
 @app.route("/auth", methods=['GET','POST'])
+@cross_origin()
 def auth():
     print("email: ", ai(request.form.get('email')))
     print("senha: ",request.form.get('passwd'))
@@ -39,6 +42,7 @@ def auth():
     return json.dumps( sess.toDict() if sess else {'msg':'2306201111 - user not authenticated'} ), 200 if sess else 401
 
 @app.route("/account/new", methods=['POST'])
+@cross_origin()
 def account_new():
     result = {}
     status = 500
@@ -67,6 +71,7 @@ def account_new():
     return json.dumps( result ), status
 
 @app.route("/account/update", methods=['POST'])
+@cross_origin()
 def account_update():
     result = {}
     status = 500
@@ -103,7 +108,8 @@ def account_update():
 
     return json.dumps( result ), status
 
-@app.route("/tymestamp/new", methods=['GET'])
+@app.route("/timestamp/new", methods=['GET'])
+@cross_origin()
 def timestamp_new():
     result = {}
     status = 500
@@ -112,7 +118,7 @@ def timestamp_new():
     )
     if( sess ):
         if sess.employer.AddTimeStamping():
-            result = {'msg': 'SUCCESS'}
+            result = { 'timestamps': sess.employer.timestamps }
             status = 200
         else:
             result = {'msg': 'FAIL'}
@@ -120,10 +126,25 @@ def timestamp_new():
         result = {'msg': '2306201355 - user not authenticated'}
     return json.dumps( result ), status
 
+@app.route("/timestamp/list", methods=['GET'])
+@cross_origin()
+def timestamp_list():
+    result = {}
+    status = 500
+    sess = Session.Reauth(
+        ai(request.args.get('SSID'))
+    )
+    if( sess ):
+        result = { 'timestamps': sess.employer.timestamps }
+        status = 200
+    else:
+        result = {'msg': '2306201831 - user not authenticated'}
+    return json.dumps( result ), status
 
 
 ## HEADS UP!! Falta autenticação nesse métodos todos !!
 @app.route("/admin/sessions/list", methods=['GET'])
+@cross_origin()
 def admin_sessions_list():
     l = Session.List()
     arr = [i.toDict() for i in l]
@@ -133,6 +154,7 @@ def admin_sessions_list():
     return json.dumps( result )
 
 @app.route("/admin/employers/list", methods=['GET'])
+@cross_origin()
 def admin_employers_list():
     l = Employer.List()
     arr = [i.toDict() for i in l]

@@ -2,16 +2,18 @@
  * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
  * by: will.i.am                   |  github.com/williampilger
  *
- * 2023.06.20 - Bom Princípio - RS
+ * 2023.06.19 - Bom Princípio - RS
  */
 import { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import Config from '../../../package.json';
 import LoadingButton from '../../components/LoadingButton';
 import { DefaultInput } from '../../components/StyledComponents/styled_input';
-import { useAppSelector } from '../../storage/hooks';
+import { useAppDispatch, useAppSelector } from '../../storage/hooks';
 
+import API from '../../api';
+import { setUserData } from '../../storage/reducers/userData';
 import './style.scss';
 
 export type formDataType = {
@@ -23,23 +25,60 @@ export type formDataType = {
 export default function LoginPage() {
     
     const navigate = useNavigate();
-
-    const auth = useAppSelector((state)=>state.authFunctions);
+    const dispatch = useAppDispatch();
     const userData = useAppSelector((state)=>state.userData);
+    const user = useAppSelector((state) => state.userData);
     
     const [formData, setFormData] = useState<formDataType>({email:'', pswd:'', attept:false});
+    const [cookies, setCookies] = useState(true);
+    const [errMsg, setErrMsg] = useState('');
 
-    useEffect(()=>{
-        if(userData.id > 0) navigate(`${Config.home}/`);
-    }, [userData]);
+
+    const login = async (usr: string, pswd: string) => {
+        let resp = await API.auth.login(usr, pswd);
+        if (resp.success) {
+            setErrMsg('');
+            dispatch(setUserData(resp.data));
+            return true;
+        } else {
+            setErrMsg(resp.msg);
+        }
+        return false;
+    }
+
+    const logout = async () => {
+        let resp = await API.auth.logout();
+        return resp.success;
+    }
+
+    const checkSession = async () => {
+        let resp = await API.auth.checkSession();
+        if (resp.success) {
+            dispatch(setUserData(resp.data));
+            return true;
+        } else {
+            // dispatch( logout() );
+        }
+
+        return false;
+    }
+
+    useEffect( ()=>{
+        checkSession();
+    }, []);
+
 
     return (
-        <div className='LoginPage' style={{backgroundImage:`url("")`}}>
+        <div className='LoginPage'>
+            {
+                userData.employer.id > 0 &&
+                <Navigate to='/home'/>
+            }
             <div className='view'>
                 <div className='centralcard'>
                     <h2>Faça seu Login</h2>
                     <div className='crieConta'>
-                        <p className='spanm'>Não possui uma conta?</p>
+                        <a className='spanm' onClick={ _ => alert('Função não implementada! Você precisa falar com o operador do sistema para criar uma conta!')}>Não possui uma conta?</a>
                     </div>
                     <div className='doLogin'>
                         <form action="">
@@ -65,21 +104,21 @@ export default function LoginPage() {
                             </div>
                             <div className='infos_avisos'>
                                 {
-                                    formData.attept && auth.msg!='' &&
-                                    <span>{auth.msg}</span>
+                                    formData.attept && errMsg!='' &&
+                                    <span>{errMsg}</span>
                                 }
                             </div>
                             <div className='confirmButton'>
-                                <Link className='forgotPswd spanm' to={`${Config.home}/_forgotPswd/-`}> Esqueci minha senha.</Link>
+                                <a className='forgotPswd spanm' onClick={ _ => alert('Função não implementada!')}> Esqueci minha senha.</a>
                                 <LoadingButton className='loginbutton' action={async ()=>{
                                     setFormData({
                                         ...formData,
                                         attept: true
                                     });
                                     if(formData.email != '' && formData.pswd != ''){
-                                        if( await auth.login(formData.email, formData.pswd) )
+                                        if( await login(formData.email, formData.pswd) )
                                         {
-                                            navigate(`${Config.home}/`);
+                                            navigate(`${Config.home}/home`);
                                             return true;
                                         }
                                     }

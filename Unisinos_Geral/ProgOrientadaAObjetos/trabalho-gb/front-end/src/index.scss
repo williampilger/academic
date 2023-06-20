@@ -31,6 +31,8 @@ code {
 }
 
 .App{
+
+  background-size: cover;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,7 +46,7 @@ code {
   }
 
   main{
-    height: fit-content;
+    height: 100%;
   }
 
   .sandboxwarn_div{

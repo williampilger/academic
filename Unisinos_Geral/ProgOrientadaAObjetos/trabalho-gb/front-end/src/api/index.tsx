@@ -2,26 +2,24 @@
  * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
  * by: will.i.am                   |  github.com/williampilger
  * 
- * 2022.04.22 - Bom Princípio - RS
+ * 2023.06.19 - Bom Princípio - RS
  * ♪ Rase em up | Alonestar
  */
 
 import axios from 'axios';
 
 import packageJson from '../../package.json';
-import { user_type } from './types';
+import { employer_type, session_type } from './types';
 
-const FRONT_DEV = window.location.host.includes('.local:') || window.location.host.includes('localhost');
-const BACK_DEV = false;//ativar para usar servidor PHP local.
-const USE_REST_AUTH = FRONT_DEV !== BACK_DEV;
-const HOST = BACK_DEV ? `http://${window.location.hostname}:8080` : `${packageJson.homepage}`;
-const STORE_ROOT = `${HOST}${BACK_DEV ? '/public' : ''}`; //console.log('CODE2210071030', STORE_ROOT);
-let SSID = '';//Used only when FRONT_DEV and !BACK_DEV
-// console.log('FRONT_DEV: ', FRONT_DEV, 'BACK_DEV: ', BACK_DEV, 'USE_REST_AUTH: ', USE_REST_AUTH);
-// axios.defaults.withCredentials = true;
+const BACK_DEV = true;
+const USE_REST_AUTH = true;
+const HOST = BACK_DEV ? `http://${window.location.hostname}:8000` : `${packageJson.homepage}`;
+const STORE_ROOT = `${HOST}${BACK_DEV ? '/' : ''}`;
+let SSID = 'rnjniorrkepidnpbetphhqlgrqvopifm';
+
 const api = axios.create({
     withCredentials: !USE_REST_AUTH,
-    baseURL: `${STORE_ROOT}/ws`
+    baseURL: `${STORE_ROOT}`
 });
 
 /**
@@ -71,7 +69,7 @@ const basicFetch = async (method: string, endpoint: string, params: object, aler
     try {
         let r: any = false;
         try {
-            r = method === 'POST' ? await api.post(`/${endpoint}/`, buildParamString(params), { validateStatus: function (status) { return true; } }) : (method === 'GET' ? await simpleBasicFetch(endpoint, buildParamString(params)) : false);
+            r = method === 'POST' ? await api.post(`/${endpoint}`, buildParamString(params), { validateStatus: function (status) { return true; } }) : (method === 'GET' ? await simpleBasicFetch(endpoint, buildParamString(params)) : false);
         } catch (e: any) {
             r = e.response;
         }
@@ -165,11 +163,11 @@ export default {
          * @param pswd Senha
          * @returns JSON com informações básicas do usuário.
          */
-        login: async (user: string, pswd: string): Promise<resultType<{ user: user_type, msg?: string }>> => {
+        login: async (email: string, passwd: string): Promise<resultType<session_type>> => {
 
-            return await basicFetch('POST', 'auth/login.php', {
-                user,
-                pswd
+            return await basicFetch('POST', 'auth', {
+                email,
+                passwd
             });
 
         },
@@ -186,9 +184,9 @@ export default {
          * Verificar Login do usuário, e licença para o APP.
          * @returns JSON com dados do usuário (se logado), ou Status 0 (se não logado).
          */
-        checkSession: async (): Promise<resultType<{ user: user_type, msg?: string }>> => {
+        checkSession: async (): Promise<resultType< session_type >> => {
 
-            return await basicFetch('GET', 'auth/checkSession.php', {});
+            return await basicFetch('GET', 'auth', {});
         }
     },
 
@@ -198,18 +196,26 @@ export default {
          * Obter dados do usuário (página com tudo)
          * @returns JSON
          */
-        getUserData: async (): Promise<resultType<{ user: user_type, msg?: string }>> => {
-            return await basicFetch('GET', 'account/getUserData.php', {});
+        getUserData: async (): Promise<resultType<{ user: employer_type, msg?: string }>> => {
+            return await basicFetch('GET', 'account/get', {});
         },
 
         newUser: async (email: string, fullname: string, pswd: string, newslatter: boolean) => {
-            return await basicFetch('POST', 'account/newAccount.php', {
+            return await basicFetch('POST', 'account/new', {
                 email,
                 name: fullname,
                 pswd,
                 newslatter
             });
-        }
+        },
+
+        getTimestamps: async ():Promise<resultType<{ timestamps: number[][] }>>  => {
+            return await basicFetch('GET', 'timestamp/list', {});
+        },
+
+        newTimestamp: async ():Promise<resultType<{ timestamps: number[][] }>>  => {
+            return await basicFetch('GET', 'timestamp/new', {});
+        },
     },
 
     

@@ -6,21 +6,25 @@
  */
 import { createSlice } from "@reduxjs/toolkit";
 
-import { user_type } from "../../api/types";
+import { session_type } from "../../api/types";
 
-const initialState: user_type = {
-    id: 0, 
-    fullname: '',
-    email: '',
-    cpf: '',
-    role: ''
+const initialState: session_type = {
+    SSID: '',
+    employer: {
+        id: 0, 
+        fullname: '',
+        email: '',
+        cpf: '',
+        phone: '',
+        role: "Generic Employer"
+    }
 }
 
 const userDataSlice = createSlice({
     name: 'userData',
     initialState,
     reducers: {
-        setUserData(state, action:{payload:user_type}){
+        setUserData(state, action:{payload:session_type}){
             state = action.payload;
             return state;
         },

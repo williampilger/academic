@@ -8,29 +8,16 @@
 
 
 
-export type user_type = {
+export type employer_type = {
     id: number, 
     fullname: string,
     email: string,
     cpf: string,
-    role: ''
+    phone:string,
+    role: 'Generic Employer' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director'
 }
 
 export type session_type = {
-    id: number,
-    user: {
-        id: number,
-        fullname: string
-    },
-    ip: string,
-    browser: string,
-    os: string,
-    licenses:{
-        id: number,
-        sessionID: number,
-        purchaseID: number,
-        levelID: number,
-        productID: number,
-        level: number
-    }[]
+    SSID: string,
+    employer: employer_type
 }
