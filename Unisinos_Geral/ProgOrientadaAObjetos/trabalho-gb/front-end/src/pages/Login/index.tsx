@@ -71,7 +71,7 @@ export default function LoginPage() {
     return (
         <div className='LoginPage'>
             {
-                userData.employer.id > 0 &&
+                userData.employee.id > 0 &&
                 <Navigate to='/home'/>
             }
             <div className='view'>

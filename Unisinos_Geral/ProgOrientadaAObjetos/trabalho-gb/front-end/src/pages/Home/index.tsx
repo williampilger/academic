@@ -54,19 +54,19 @@ const HomePage = () => {
     return (
     <div className="main-homepage">
         {
-            userData.employer.id == 0 &&
+            userData.employee.id == 0 &&
             <Navigate to='/'/>
         }
         <div className='view'>
             <div className='centralcard'>
                 <div className='boasvindas'>
-                    <h2>Bem vindo, {userData.employer.fullname}!</h2>
-                    <span className='mm'>{userData.employer.email}</span>
+                    <h2>Bem vindo, {userData.employee.fullname}!</h2>
+                    <span className='mm'>{userData.employee.email}</span>
                     <div className='menus'>
                         {
-                            userData.employer.isAdm &&
+                            userData.employee.isAdm &&
                             <>
-                                <Link className='item' to="/admin/employers">Funcionários</Link>
+                                <Link className='item' to="/admin/employees">Funcionários</Link>
                                 <Link className='item' to="/admin/reports">Relatórios</Link>
                             </>
                         }

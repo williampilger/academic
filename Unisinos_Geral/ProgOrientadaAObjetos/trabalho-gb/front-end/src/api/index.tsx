@@ -9,7 +9,7 @@
 import axios from 'axios';
 
 import packageJson from '../../package.json';
-import { employer_type, session_type } from './types';
+import { employee_type, session_type } from './types';
 
 const BACK_DEV = true;
 const USE_REST_AUTH = true;
@@ -196,7 +196,7 @@ export default {
          * Obter dados do usuário (página com tudo)
          * @returns JSON
          */
-        getUserData: async (): Promise<resultType<{ user: employer_type, msg?: string }>> => {
+        getUserData: async (): Promise<resultType<{ user: employee_type, msg?: string }>> => {
             return await basicFetch('GET', 'account/get', {});
         },
 

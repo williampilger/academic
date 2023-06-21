@@ -8,17 +8,17 @@
 
 
 
-export type employer_type = {
+export type employee_type = {
     id: number, 
     fullname: string,
     email: string,
     cpf: string,
     phone:string,
-    role: 'Generic Employer' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director',
+    role: 'Generic employee' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director',
     isAdm: boolean
 }
 
 export type session_type = {
     SSID: string,
-    employer: employer_type
+    employee: employee_type
 }
