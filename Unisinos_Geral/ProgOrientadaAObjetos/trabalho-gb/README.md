@@ -21,7 +21,7 @@
         - Password: `root`
     - Crie novos usuários e modifique seus dados a vontade
 
-
+**PS:** A primeira requisição será um pouco lenta, pois o banco SQLite3 é criado no primeiro momento em que ele é necessário.
 
 
 

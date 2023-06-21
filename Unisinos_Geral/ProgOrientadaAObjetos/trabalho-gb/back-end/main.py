@@ -2,7 +2,7 @@ import multiplat as mp
 import json
 import os
 from classes.database import Database
-from classes.employer import Employer
+from classes.employee import Employee
 from classes.session import Session
 from tools import anti_injection as ai
 
@@ -53,7 +53,7 @@ def account_new():
     )
     if( sess ):
         if( sess.isAdm ):
-            newUser = Employer(0, json.loads(request.form.get('user')))
+            newUser = Employee(0, json.loads(request.form.get('user')))
             newUser.Save()
             if( newUser ):
                 result = {
@@ -85,11 +85,11 @@ def account_update():
             user = ai(json.loads(request.form.get('user')))
             id = int(user.get('id'))
             if id > 0:
-                newUser = Employer( id )
+                newUser = Employee( id )
                 newUser.Update(user, True)
                 if( newUser ):
                     result = {
-                        'msg': '2306201409 - successfully update the employer',
+                        'msg': '2306201409 - successfully update the employee',
                         'user' : newUser.toDict()
                     }
                     status = 200
@@ -97,7 +97,7 @@ def account_update():
                     result = {'msg': '2306201227 - fail'}
                     status = 501
             else:
-                result = {'msg': '2306201407 - Impossible update employer without id'}
+                result = {'msg': '2306201407 - Impossible update employee without id'}
                 status = 406
         else:
             result = {'msg': '2306201224 - user without privileges'}
@@ -117,8 +117,8 @@ def timestamp_new():
         ai(request.args.get('SSID'))
     )
     if( sess ):
-        if sess.employer.AddTimeStamping():
-            result = { 'timestamps': sess.employer.timestamps }
+        if sess.employee.AddTimeStamping():
+            result = { 'timestamps': sess.employee.timestamps }
             status = 200
         else:
             result = {'msg': 'FAIL'}
@@ -135,7 +135,7 @@ def timestamp_list():
         ai(request.args.get('SSID'))
     )
     if( sess ):
-        result = { 'timestamps': sess.employer.timestamps }
+        result = { 'timestamps': sess.employee.timestamps }
         status = 200
     else:
         result = {'msg': '2306201831 - user not authenticated'}
@@ -153,13 +153,13 @@ def admin_sessions_list():
     }
     return json.dumps( result )
 
-@app.route("/admin/employers/list", methods=['GET'])
+@app.route("/admin/employees/list", methods=['GET'])
 @cross_origin()
-def admin_employers_list():
-    l = Employer.List()
+def admin_employees_list():
+    l = Employee.List()
     arr = [i.toDict() for i in l]
     result = {
-        'employers' : arr
+        'employees' : arr
     }
     return json.dumps( result )
 
@@ -174,43 +174,43 @@ app.run(ENV['REST_SERVER']['HOSTNAME'], ENV['REST_SERVER']['PORT'])
 # TESTES # TESTES # TESTES # TESTES # TESTES #
 ##############################################
 # Criação de usuário
-# from classes.employer import Employer
-# teste = Employer(0,{'fullname':'William Pilger', 'email':'pilger.will@gmail.com', 'passwd':'123654', 'cpf':'04095978565'})
+# from classes.employee import Employee
+# teste = Employee(0,{'fullname':'William Pilger', 'email':'pilger.will@gmail.com', 'passwd':'123654', 'cpf':'04095978565'})
 # if teste.Save():
 #     print("sucesso")
 ##############################################
 # Leitura do banco
-# result = db.standard_select('employers')
+# result = db.standard_select('employees')
 # print('Resultado:')
 # for item in result:
 #     print('    ', item)
 ##############################################
 # Criação de usuário
-# from classes.employer import Employer
-# teste = Employer('Bartolomeu', 'bartoeu@gmail.com', '123654', '04095978565')
+# from classes.employee import Employee
+# teste = Employee('Bartolomeu', 'bartoeu@gmail.com', '123654', '04095978565')
 # if teste.Save(): print("sucesso ao criar")
 # teste.fullname = "Teste do fritz"
 # if teste.Save(): print("sucesso ao atualizar")
-# result = db.standard_select('employers')
+# result = db.standard_select('employees')
 # print('Resultado:')
 # for item in result:
 #     print('    ', item)
 ##############################################
 # Fazendo login do usuário
-# from classes.employer import Employer
-# r = Employer.doLogin('pilger.will@gmail.com', 'teste')
+# from classes.employee import Employee
+# r = Employee.doLogin('pilger.will@gmail.com', 'teste')
 # print(r)
-# r = Employer.doLogin('pilger.will@gmail.com', '123654')
+# r = Employee.doLogin('pilger.will@gmail.com', '123654')
 # print(r)
 ##############################################
 # Marcando o ponto
-# from classes.employer import Employer
-# employer = Employer(1)
-# print(employer.fullname)
-# employer.AddTimeStamping()
-# employer.AddTimeStamping()
-# employer.AddTimeStamping()
-# print(employer.timestamps)
+# from classes.employee import Employee
+# employee = Employee(1)
+# print(employee.fullname)
+# employee.AddTimeStamping()
+# employee.AddTimeStamping()
+# employee.AddTimeStamping()
+# print(employee.timestamps)
 ##############################################
 # Fazendo login via session
 # from classes.session import Session

@@ -44,7 +44,7 @@ class Database:
         try:
             self.initialized = True
             self.cursor.execute('''
-            CREATE TABLE IF NOT EXISTS employers (
+            CREATE TABLE IF NOT EXISTS employees (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 fullname TEXT NOT NULL,
                 email TEXT UNIQUE NOT NULL,
@@ -55,24 +55,24 @@ class Database:
             )
             ''')
             self.cursor.execute('''
-            CREATE TABLE IF NOT EXISTS employers_sessions (
+            CREATE TABLE IF NOT EXISTS employees_sessions (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                employerID INTEGER NOT NULL,
+                employeeID INTEGER NOT NULL,
                 SSID TEXT UNIQUE NOT NULL,
-                FOREIGN KEY (employerID)
-                    REFERENCES employers (id)
+                FOREIGN KEY (employeeID)
+                    REFERENCES employees (id)
             )
             ''')
             self.cursor.execute('''
             CREATE TABLE IF NOT EXISTS timeregister (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-                employerID INTEGER NOT NULL,
+                employeeID INTEGER NOT NULL,
                 timestamp INTEGER NOT NULL,
-                FOREIGN KEY (employerID)
-                    REFERENCES employers (id)
+                FOREIGN KEY (employeeID)
+                    REFERENCES employees (id)
             )
             ''')
-            self.cursor.execute('INSERT INTO employers (fullname,email,passwd,role) VALUES (?,?,?,?)', ('Admin','dev@sample.com.br',hashlib.md5('root'.encode()).hexdigest(),'Administrator'))
+            self.cursor.execute('INSERT INTO employees (fullname,email,passwd,role) VALUES (?,?,?,?)', ('Admin','dev@sample.com.br',hashlib.md5('root'.encode()).hexdigest(),'Administrator'))
             self.conn.commit()
             LogHandler.new(2,2306082041,'successfully created the database')
         except Exception as e:

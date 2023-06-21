@@ -2,14 +2,14 @@ import hashlib
 from classes.database import Database
 from typing import List, Tuple
 from tools import LogHandler, get_random_string
-from classes.employer import Employer
+from classes.employee import Employee
 
 class Session:
 
     def __init__(self, id:int=0, data:dict={}):
         self.__id = id
-        self.employerID = 0
-        self.__employer = None
+        self.employeeID = 0
+        self.__employee = None
         if(id == 0): #NEW SESSION
             self.__SSID = get_random_string(32)
             self.Update(data, False)
@@ -21,14 +21,14 @@ class Session:
         return self.__SSID
 
     @property
-    def employer(self):
-        if self.__employer is None:
-            self.__employer = Employer(self.employerID)
-        return self.__employer
+    def employee(self):
+        if self.__employee is None:
+            self.__employee = Employee(self.employeeID)
+        return self.__employee
 
     @property
     def isAdm(self):
-        return self.employer.isAdm
+        return self.employee.isAdm
 
     @property
     def id(self):
@@ -37,39 +37,39 @@ class Session:
     def toDict(self):
         return {
             'SSID' : self.__SSID,
-            'employer' : self.employer.toDict()
+            'employee' : self.employee.toDict()
         }
 
     def Save(self):
         if self.__id == 0:
             r = Database.getCommon().standard_insert(
-                'employers_sessions',
-                ['SSID', 'employerID'],
+                'employees_sessions',
+                ['SSID', 'employeeID'],
                 (
                     self.__SSID,
-                    self.employerID
+                    self.employeeID
                 )
             )
             if(r>0):
                 self.__id = r
-                LogHandler.new(2, 2306132119, 'successfully create a employer_session database entry')
+                LogHandler.new(2, 2306132119, 'successfully create a employee_session database entry')
                 return True
             else:
                 LogHandler.new(0, 2306132120, 'fail on save database entry')
         else:
             r = Database.getCommon().standard_update(
-                'employers_sessions',
-                ['SSID', 'employerID'],
+                'employees_sessions',
+                ['SSID', 'employeeID'],
                 (
                     self.__SSID,
-                    self.employerID
+                    self.employeeID
                 ),
                 ['id'],
                 (self.__id,)
             )
             if(r):
                 self.__id = r
-                LogHandler.new(2, 2306132121, 'successfully update a employer_session database entry')
+                LogHandler.new(2, 2306132121, 'successfully update a employee_session database entry')
                 return True
             else:
                 LogHandler.new(0, 2306132122, 'fail on save database entry')
@@ -77,7 +77,7 @@ class Session:
 
     def Retrieve(self)->bool:
         r = Database.getCommon().standard_select(
-            'employers_sessions',
+            'employees_sessions',
             ('id',),
             (self.__id,)
         )
@@ -95,19 +95,19 @@ class Session:
     def Update(self, data:dict={}, autoSave:bool=False):
         if 'id' in data: self.__id = data['id']
         if 'SSID' in data: self.__SSID = data['SSID']
-        if 'employerID' in data: self.employerID = data['employerID']
+        if 'employeeID' in data: self.employeeID = data['employeeID']
         
-        LogHandler.new(2,2306132138,'successfully update employer_session')
+        LogHandler.new(2,2306132138,'successfully update employee_session')
 
         if autoSave:
             self.Save()
 
     @staticmethod
     def Login(email, passwd):
-        employer_id,isAdm = Employer.doLogin(email, passwd)
-        if( employer_id>0 ):
+        employee_id,isAdm = Employee.doLogin(email, passwd)
+        if( employee_id>0 ):
             sess = Session()
-            sess.employerID = employer_id
+            sess.employeeID = employee_id
             sess.Save()
             return sess
         return None
@@ -115,7 +115,7 @@ class Session:
     @staticmethod
     def Reauth(ssid):
         r = Database.getCommon().standard_select(
-            'employers_sessions',
+            'employees_sessions',
             ('SSID',),
             (ssid,)
         )
@@ -131,7 +131,7 @@ class Session:
     def List():
         try:
             r = Database.getCommon().standard_select(
-                'employers_sessions'
+                'employees_sessions'
             )
             return [ Session(0,item) for item in r]
         except Exception as e:

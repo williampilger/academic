@@ -14,7 +14,7 @@ export type employee_type = {
     email: string,
     cpf: string,
     phone:string,
-    role: 'Generic employee' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director',
+    role: 'Generic Employee' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director',
     isAdm: boolean
 }
 

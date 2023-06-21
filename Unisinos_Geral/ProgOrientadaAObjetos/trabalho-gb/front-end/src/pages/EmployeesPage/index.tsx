@@ -8,12 +8,12 @@
 
 import './style.scss';
 
-export default function EmployersPage() {
+export default function EmployeesPage() {
 
 
     return (
-        <div className='EmployersPage'>
-            EmployersPage
+        <div className='EmployeesPage'>
+            EmployeesPage
         </div>
     );
 }

@@ -10,13 +10,13 @@ import { session_type } from "../../api/types";
 
 const initialState: session_type = {
     SSID: '',
-    employer: {
+    employee: {
         id: 0, 
         fullname: '',
         email: '',
         cpf: '',
         phone: '',
-        role: "Generic Employer",
+        role: "Generic Employee",
         isAdm: false
     }
 }

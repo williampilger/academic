@@ -4,9 +4,9 @@ from typing import List, Tuple
 from tools import LogHandler
 import time
 
-class Employer:
+class Employee:
     
-    __roles = ['Generic Employer', 'Administrator', 'Software Developper', 'Secretary', 'Marketer', 'Owner', 'Director']
+    __roles = ['Generic Employee', 'Administrator', 'Software Developper', 'Secretary', 'Marketer', 'Owner', 'Director']
     __adm_roles = ['Owner', 'Administrator']
 
     def __init__(self, id:int=0, data:dict={}):
@@ -39,7 +39,7 @@ class Employer:
     @property
     def isAdm(self):
         print("My role:", self.role,"My name:",self.fullname)
-        return self.role in Employer.__adm_roles
+        return self.role in Employee.__adm_roles
 
     @property
     def id(self):
@@ -49,7 +49,7 @@ class Employer:
     def timestamps(self)->List[Tuple[int,int|None]]:
         r = Database.getCommon().standard_select(
             'timeregister',
-            ('employerID',),
+            ('employeeID',),
             (self.__id,)
         )
         
@@ -72,7 +72,7 @@ class Employer:
     def Save(self):
         if self.__id == 0:
             r = Database.getCommon().standard_insert(
-                'employers',
+                'employees',
                 ['fullname', 'email', 'passwd', 'cpf', 'phone', 'role'],
                 (
                     self.fullname,
@@ -85,13 +85,13 @@ class Employer:
             )
             if(r>0):
                 self.__id = r
-                LogHandler.new(2, 2306132003, 'successfully create a employer database entry')
+                LogHandler.new(2, 2306132003, 'successfully create a employee database entry')
                 return True
             else:
                 LogHandler.new(0, 2306082018, 'fail on save database entry')
         else:
             r = Database.getCommon().standard_update(
-                'employers',
+                'employees',
                 ['fullname', 'email', 'passwd', 'cpf', 'phone', 'role'],
                 (
                     self.fullname,
@@ -105,7 +105,7 @@ class Employer:
                 (self.__id,)
             )
             if(r):
-                LogHandler.new(2, 2306132004, 'successfully update a employer database entry')
+                LogHandler.new(2, 2306132004, 'successfully update a employee database entry')
                 return True
             else:
                 LogHandler.new(0, 2306081946, 'fail on save database entry')
@@ -113,7 +113,7 @@ class Employer:
 
     def Retrieve(self)->bool:
         r = Database.getCommon().standard_select(
-            'employers',
+            'employees',
             ('id',),
             (self.__id,)
         )
@@ -131,13 +131,13 @@ class Employer:
     @staticmethod
     def doLogin(email, passwd): #returns userID and Bool with "isAdm" flags 0 if it fails
         r = Database.getCommon().standard_select(
-            'employers',
+            'employees',
             ['email','passwd'],
             (email, hashlib.md5(passwd.encode()).hexdigest())
         )
         if(len(r)>0):
             if(len(r)==1):
-                return int(r[0]['id']),r[0]['role'] in Employer.__adm_roles
+                return int(r[0]['id']),r[0]['role'] in Employee.__adm_roles
             else:
                 LogHandler.new(0, 2306082153, 'more then one users with same password and email')
         else:
@@ -146,7 +146,7 @@ class Employer:
     
     @staticmethod
     def New(fullname:str, email:str, passwd:str, cpf:str='', phone:str='', role:str=''):
-        usr = Employer()
+        usr = Employee()
         usr.fullname = fullname
         usr.email = email
         usr.passwd = passwd
@@ -158,9 +158,9 @@ class Employer:
     @staticmethod
     def List():
         r = Database.getCommon().standard_select(
-            'employers'
+            'employees'
         )
-        return [ Employer(0,item) for item in r]
+        return [ Employee(0,item) for item in r]
     
     def Update(self, data:dict={}, autoSave:bool=False, raw:bool=False):
 
@@ -176,7 +176,7 @@ class Employer:
         if 'phone' in data: self.phone = data['phone']
         if 'role' in data: self.role = data['role']
         
-        LogHandler.new(2,2306201250,'successfully update employer ' + str(self.id))
+        LogHandler.new(2,2306201250,'successfully update employee ' + str(self.id))
 
         if autoSave:
             self.Save()
@@ -195,7 +195,7 @@ class Employer:
     def AddTimeStamping(self):
         r = Database.getCommon().standard_insert(
             'timeregister',
-            ['employerID', 'timestamp'],
+            ['employeeID', 'timestamp'],
             (
                 self.__id,
                 int(time.time())
