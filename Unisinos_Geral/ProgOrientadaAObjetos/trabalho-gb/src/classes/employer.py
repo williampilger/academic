@@ -188,7 +188,8 @@ class Employer:
             'email': self.email,
             'cpf': self.cpf,
             'phone': self.phone,
-            'role': self.role
+            'role': self.role,
+            'isAdm': self.isAdm
         }
     
     def AddTimeStamping(self):

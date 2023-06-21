@@ -14,7 +14,8 @@ export type employer_type = {
     email: string,
     cpf: string,
     phone:string,
-    role: 'Generic Employer' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director'
+    role: 'Generic Employer' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director',
+    isAdm: boolean
 }
 
 export type session_type = {

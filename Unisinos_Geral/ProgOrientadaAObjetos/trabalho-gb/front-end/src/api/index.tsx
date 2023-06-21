@@ -15,7 +15,7 @@ const BACK_DEV = true;
 const USE_REST_AUTH = true;
 const HOST = BACK_DEV ? `http://${window.location.hostname}:8000` : `${packageJson.homepage}`;
 const STORE_ROOT = `${HOST}${BACK_DEV ? '/' : ''}`;
-let SSID = 'rnjniorrkepidnpbetphhqlgrqvopifm';
+let SSID = '';
 
 const api = axios.create({
     withCredentials: !USE_REST_AUTH,
@@ -77,10 +77,10 @@ const basicFetch = async (method: string, endpoint: string, params: object, aler
         if (r) {
             result.reqStat = r.status;
             result.success = r.status === 200 || r.status === 201;
-            if (USE_REST_AUTH && r.status === 200 && ('user' in r.data && 'SSID' in r.data.user)) {
+            if (USE_REST_AUTH && r.status === 200 && ('SSID' in r.data)) {
                 //console.log(`SSID PRESENTE: ${r.data.user.SSID}`);
-                SSID = r.data.user.SSID;
-                delete r.data.user.SSID;
+                SSID = r.data.SSID;
+                delete r.data.SSID;
             }// else console.log('SSID USENTE -> ', USE_REST_AUTH, r.status, r.data.user);
             if (r.data) result.data = r.data;
             let msg = `HTTP ${r.status.toFixed(0)} ERR STATUS`;

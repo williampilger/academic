@@ -81,7 +81,7 @@ export default function LoginPage() {
                         <a className='spanm' onClick={ _ => alert('Função não implementada! Você precisa falar com o operador do sistema para criar uma conta!')}>Não possui uma conta?</a>
                     </div>
                     <div className='doLogin'>
-                        <form action="">
+                        <div className='form'>
                             <div>
                                 <label className='spanm' htmlFor="email">E-mail</label>
                                 <DefaultInput id='email' type='email' required autoFocus placeholder='sample@sample.com' value={formData.email} onChange={(e)=>{
@@ -125,7 +125,7 @@ export default function LoginPage() {
                                     return false;
                                 }}>Fazer Login</LoadingButton>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>

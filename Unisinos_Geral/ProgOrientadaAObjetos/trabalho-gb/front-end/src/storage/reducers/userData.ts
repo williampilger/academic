@@ -16,7 +16,8 @@ const initialState: session_type = {
         email: '',
         cpf: '',
         phone: '',
-        role: "Generic Employer"
+        role: "Generic Employer",
+        isAdm: false
     }
 }
 

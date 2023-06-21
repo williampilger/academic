@@ -311,3 +311,34 @@ span.t, .spant {
     }
   }
 }
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-width: 5px;
+}
+/* Works on Chrome, Edge, and Safari */
+body ::-webkit-scrollbar {
+width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb {
+background-color: #c1c1c1; /* ##VER##*/
+border-radius: 20px;
+}
+
+/* Chrome, Safari, Edge, Opera --- isso serve para tirar as setinhas do input*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

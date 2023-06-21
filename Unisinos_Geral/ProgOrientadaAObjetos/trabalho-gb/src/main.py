@@ -97,7 +97,7 @@ def account_update():
                     result = {'msg': '2306201227 - fail'}
                     status = 501
             else:
-                result = {'msg': '2306201407 - Impossible uptate employer without id'}
+                result = {'msg': '2306201407 - Impossible update employer without id'}
                 status = 406
         else:
             result = {'msg': '2306201224 - user without privileges'}

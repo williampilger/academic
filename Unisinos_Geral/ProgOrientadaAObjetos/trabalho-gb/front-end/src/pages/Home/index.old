@@ -6,11 +6,10 @@
  * 
 */
 import { useEffect, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import api from '../../api';
 import Loading from '../../components/Loading';
 import LoadingButton from '../../components/LoadingButton';
-import { TimestampShow } from '../../components/TimestampShow';
 import { useAppSelector } from '../../storage/hooks';
 import './style.scss';
 
@@ -20,25 +19,27 @@ const HomePage = () => {
     const userData = useAppSelector((state)=>state.userData);
     
     type pontoReg = {
-        entrada: number,
-        saida?: number
+        entrada: Date,
+        saida?: Date
         duracao: number
     }
     const [timestamps, setTimestamps] = useState<pontoReg[] | undefined>(undefined); 
 
-    const processTimestamps = (timestamps:number[][]) => {
+    const processTimestamps = (timestamps: number[][]) => {
         let reg:pontoReg[] = []
         timestamps.forEach( par =>{
-            let entrada = par[0]
-            let saida = par[1]
-            let duracao = saida ? ((saida - entrada) / 60) : 0
+            let entrada = new Date(par[0]*1000);
+            let saida = par[1] ? new Date(par[0]*1000) : undefined;
+            let duracao = saida ? ( saida.getMinutes() - entrada.getMinutes() ) : 0;
+
             reg.push({
                 entrada,
                 saida,
                 duracao
-            })
+            });
         })
         setTimestamps(reg)
+        return true;
     }
 
     useEffect( () => {
@@ -47,6 +48,7 @@ const HomePage = () => {
             if( r.success ){
                 processTimestamps(r.data.timestamps)
             }
+            
         }
         load()
     },[]);
@@ -62,15 +64,6 @@ const HomePage = () => {
                 <div className='boasvindas'>
                     <h2>Bem vindo, {userData.employer.fullname}!</h2>
                     <span className='mm'>{userData.employer.email}</span>
-                    <div className='menus'>
-                        {
-                            userData.employer.isAdm &&
-                            <>
-                                <Link className='item' to="/admin/employers">Funcionários</Link>
-                                <Link className='item' to="/admin/reports">Relatórios</Link>
-                            </>
-                        }
-                    </div>
                 </div>
                 <div className='ponto'>
                     {
@@ -78,12 +71,12 @@ const HomePage = () => {
                         <div className='marcacoes'>
                             <h3>Minhas Marcações Ponto</h3>
                             {
-                                timestamps.map( item => {
+                                timestamps.map( par => {
                                     return(
                                         <div className="timestamp-item">
-                                            <span>Entrada: <TimestampShow timestamp={item.entrada}/></span>
-                                            <span>Saída: { item.saida ? <TimestampShow timestamp={item.saida}/> : '-' }</span>
-                                            <span>Duração: {item.duracao.toFixed(2)}min</span>
+                                            <span>Entrada: {par.entrada.toDateString()}</span>
+                                            <span>Saída: { par.saida ? par.saida.toDateString() : '-'}</span>
+                                            <span>Duração: { par.saida ? par.duracao : 0}min</span>
                                         </div>
                                     )
                                 })
@@ -96,8 +89,7 @@ const HomePage = () => {
                         <LoadingButton action={ async () => {
                             let r = await api.account.newTimestamp()
                             if( r.success ){
-                                processTimestamps(r.data.timestamps)
-                                return true;
+                                return processTimestamps(r.data.timestamps)
                             }
                             return false;
                         }}>Criar Marcação</LoadingButton>

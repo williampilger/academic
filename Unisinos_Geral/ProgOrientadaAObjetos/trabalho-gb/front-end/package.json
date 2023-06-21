@@ -4,7 +4,7 @@
   "private": false,
   "homepage": "http://fedora.local/",
   "mainDomain": "fedora.local",
-  "home": "/",
+  "home": "",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^11.2.7",
