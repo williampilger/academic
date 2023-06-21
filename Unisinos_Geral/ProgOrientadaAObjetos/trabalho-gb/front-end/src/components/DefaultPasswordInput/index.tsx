@@ -4,8 +4,7 @@
  *
  * 2022 - Bom Princípio - RS
  */
-import React, { HtmlHTMLAttributes, useState } from 'react';
-import react from 'react';
+import React, { useState } from 'react';
 import { BsEyeFill, BsEyeSlashFill } from 'react-icons/bs';
 import { DefaultInput } from '../StyledComponents/styled_input';
 
@@ -22,7 +21,8 @@ export default (props:{
         required?:boolean,
         minLength?:number
         placeholder?:string,
-        className?:string
+        className?:string,
+        autocomplete?:string
     }) => {
 
     
@@ -42,6 +42,7 @@ export default (props:{
                 onChange={props.onChange}
                 onFocus={props.onFocus}
                 onBlur={props.onBlur}
+                autoComplete={props.autocomplete}
             />
             {
                 !showPswd &&

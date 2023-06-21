@@ -222,6 +222,16 @@ export default {
 
 
     admin: {
-       
+        employees: {
+            list: async ():Promise<resultType<{ employees: employee_type[] }>>  => {
+                return await basicFetch('GET', 'admin/employees/list', {});
+            },
+            get: async ( id:number ):Promise<resultType<{ employee: employee_type }>>  => {
+                return await basicFetch('GET', 'admin/employees/get', {id});
+            },
+            update: async ( user: employee_type ): Promise<resultType<{ employee: employee_type }>>  => {
+                return await basicFetch('POST', 'account/update', {user:JSON.stringify(user)});
+            },
+        }
     }
 }

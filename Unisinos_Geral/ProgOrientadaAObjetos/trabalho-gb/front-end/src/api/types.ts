@@ -6,7 +6,7 @@
  */
 
 
-
+export type role_type = 'Generic Employee' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director'
 
 export type employee_type = {
     id: number, 
@@ -14,7 +14,8 @@ export type employee_type = {
     email: string,
     cpf: string,
     phone:string,
-    role: 'Generic Employee' | 'Administrator' | 'Software Developper' | 'Secretary' | 'Marketer' | 'Owner' | 'Director',
+    passwd?: string,
+    role: role_type,
     isAdm: boolean
 }
 

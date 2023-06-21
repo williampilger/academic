@@ -1,0 +1,32 @@
+/**
+ * Authenty AE - Bom Princípio-RS  |  github.com/authentyAE
+ * by: will.i.am                   |  github.com/williampilger
+ *
+ * 2023.06.21 - São Leopoldo - RS
+ */
+@import '../../config/theme.scss';
+
+.GenericPage{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .centered{
+        max-height: 80%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        background-color: $backgroundColor;
+        border-radius: 10px;
+
+        padding: 15px;
+
+        .result-group{
+            
+        }
+    }
+}

@@ -6,7 +6,7 @@
  * 
 */
 import { useEffect, useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import api from '../../api';
 import Loading from '../../components/Loading';
 import LoadingButton from '../../components/LoadingButton';
@@ -53,10 +53,6 @@ const HomePage = () => {
 
     return (
     <div className="main-homepage">
-        {
-            userData.employee.id == 0 &&
-            <Navigate to='/'/>
-        }
         <div className='view'>
             <div className='centralcard'>
                 <div className='boasvindas'>

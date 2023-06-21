@@ -4,11 +4,12 @@
  *
  * 2022 - Bom Princípio - RS
  */
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import { useAppSelector } from '../storage/hooks';
 
 import Header from '../components/Header';
+import EmployeeEditPage from '../pages/EmployeeEdit';
 import EmployeesPage from '../pages/EmployeesPage';
 import HomePage from '../pages/Home';
 import LoginPage from '../pages/Login';
@@ -18,13 +19,6 @@ const Rotes = () => {
 
     const userData = useAppSelector((state) => state.userData);
 
-    const queryParams = new URLSearchParams(window.location.search);
-    const url = queryParams.get('url');
-    // if(url && url!='')
-    // {
-    //     navigate(`${Config.home}/${url}`);
-    // }
-
     return (
         <BrowserRouter>
 
@@ -33,9 +27,21 @@ const Rotes = () => {
             <main>
                 <Routes>
                     <Route path={`/`} element={ <LoginPage /> } />
-                    <Route path={`/home`} element={ <HomePage /> } />
-                    <Route path={`/admin/employees`} element={ <EmployeesPage /> } />
-                    <Route path={`/admin/reports`} element={ <ReportsPage /> } />
+                    {
+                        userData.employee.id > 0 &&
+                        <>
+                            <Route path={`/home`} element={ <HomePage /> } />
+                            {
+                                userData.employee.isAdm &&
+                                <>
+                                    <Route path={`/admin/employees`} element={ <EmployeesPage /> } />
+                                    <Route path={`/admin/employee/:itemID`} element={ <EmployeeEditPage /> } />
+                                    <Route path={`/admin/reports`} element={ <ReportsPage /> } />
+                                </>
+                            }
+                        </>
+                    }
+                    <Route path={`*`} element={ <Navigate to='/' /> } />
                 </Routes>
             </main>
         </BrowserRouter>

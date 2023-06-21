@@ -6,8 +6,7 @@
  */
 @import '../../config/theme.scss';
 
-.EmployeesPage{
-    
+.EmployeeEditPage{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,29 +24,13 @@
 
         padding: 15px;
 
-        .func-group{
+        .user-form{
+            
+            padding: 20px 0 0 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-
-            padding: 15px 0 0 0;
-            gap: 5px;
-
-            .employee-item{
-                display: flex;
-                flex-direction: column;
-                text-decoration: none;
-                padding: 5px;
-                background-color: $backgroundColorLight;
-                border-radius: 10px;
-
-                transition: all ease .2s;
-                width: 100%;
-                &:hover{
-                    background-color: $textBackgroundColorLight;
-                }
-            }
+            gap: 20px;
         }
     }
 }

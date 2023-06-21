@@ -82,7 +82,8 @@ def account_update():
     )
     if( sess ):
         if( sess.isAdm ):
-            user = ai(json.loads(request.form.get('user')))
+            user = json.loads(request.form.get('user'))
+            # user = ai(json.loads(request.form.get('user')))
             id = int(user.get('id'))
             if id > 0:
                 newUser = Employee( id )
@@ -90,7 +91,7 @@ def account_update():
                 if( newUser ):
                     result = {
                         'msg': '2306201409 - successfully update the employee',
-                        'user' : newUser.toDict()
+                        'employee' : newUser.toDict()
                     }
                     status = 200
                 else:
@@ -163,6 +164,14 @@ def admin_employees_list():
     }
     return json.dumps( result )
 
+@app.route("/admin/employees/get", methods=['GET'])
+@cross_origin()
+def admin_employees_get():
+    l = Employee( int(request.args.get('id')) )
+    result = {
+        'employee' : l.toDict()
+    }
+    return json.dumps( result )
 
 
 app.run(ENV['REST_SERVER']['HOSTNAME'], ENV['REST_SERVER']['PORT'])
