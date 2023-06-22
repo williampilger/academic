@@ -36,6 +36,7 @@ export default function EmployeesPage() {
     return (
         <div className='EmployeesPage'>
             <div className="centered">
+                <Link to='/home'>Voltar</Link>
                 <h1>Cadastro de Funcionários</h1>
                 <span>clique sobre um funcionário para editá-lo</span>
                 <div className="func-group">

@@ -7,5 +7,64 @@
 @import '../../config/theme.scss';
 
 .ReportsPage{
-    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    .centered{
+        max-height: 80%;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        background-color: $backgroundColor;
+        border-radius: 10px;
+
+        padding: 15px;
+
+        .result-group{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+
+            .employee-group{
+                display: flex;
+                flex-direction: column;
+                background-color: $textBackgroundColorLight;
+                border-radius: 10px;
+                padding: 10px;
+                width: 100%;
+                gap: 10px;
+
+                .emplo-name{
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .timestamps{
+                    display: flex;
+                    flex-direction: column;
+
+                    .date-card{
+                        
+                        display: flex;
+                        flex-direction: column;
+                        padding: 10px;
+                        border: 1px dashed gray;
+                        border-radius: 10px;
+
+                        .date-span{
+                            margin-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

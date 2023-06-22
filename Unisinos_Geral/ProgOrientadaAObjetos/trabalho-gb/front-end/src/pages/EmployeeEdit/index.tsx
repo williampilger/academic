@@ -102,11 +102,20 @@ export default function EmployeeEditPage() {
                                 if( send.passwd && send.passwd == '' ){
                                     delete send.passwd
                                 }
-                                let r = await api.admin.employees.update(send);
-                                if( r.success ){
-                                    setData(r.data.employee)
-                                    setSaved(true)
-                                    return true
+                                if( send.id == 0){
+                                    let r = await api.admin.employees.new(send);
+                                    if( r.success ){
+                                        setData(r.data.employee)
+                                        setSaved(true)
+                                        return true
+                                    }
+                                } else {
+                                    let r = await api.admin.employees.update(send);
+                                    if( r.success ){
+                                        setData(r.data.employee)
+                                        setSaved(true)
+                                        return true
+                                    }
                                 }
                                 return false
                             }}/>

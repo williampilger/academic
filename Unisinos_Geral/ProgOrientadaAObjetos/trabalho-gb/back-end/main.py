@@ -173,6 +173,15 @@ def admin_employees_get():
     }
     return json.dumps( result )
 
+@app.route("/admin/employees/list-timestamps", methods=['GET'])
+@cross_origin()
+def admin_employees_listWithTimestamp():
+    l = Employee.List()
+    arr = [i.toDict(True) for i in l]
+    result = {
+        'employees' : arr
+    }
+    return json.dumps( result )
 
 app.run(ENV['REST_SERVER']['HOSTNAME'], ENV['REST_SERVER']['PORT'])
 

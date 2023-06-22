@@ -16,7 +16,8 @@ export type employee_type = {
     phone:string,
     passwd?: string,
     role: role_type,
-    isAdm: boolean
+    isAdm: boolean,
+    timestamps?: number[][]
 }
 
 export type session_type = {

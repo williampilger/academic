@@ -181,8 +181,8 @@ class Employee:
         if autoSave:
             self.Save()
     
-    def toDict(self):
-        return {
+    def toDict(self, includeTimestamps:bool=False):
+        obj = {
             'id': self.__id,
             'fullname': self.fullname,
             'email': self.email,
@@ -191,6 +191,9 @@ class Employee:
             'role': self.role,
             'isAdm': self.isAdm
         }
+        if includeTimestamps:
+            obj['timestamps'] = self.timestamps
+        return obj
     
     def AddTimeStamping(self):
         r = Database.getCommon().standard_insert(

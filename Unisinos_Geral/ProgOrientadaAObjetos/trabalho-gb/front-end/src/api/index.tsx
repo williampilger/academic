@@ -226,11 +226,17 @@ export default {
             list: async ():Promise<resultType<{ employees: employee_type[] }>>  => {
                 return await basicFetch('GET', 'admin/employees/list', {});
             },
+            list_wtt: async ():Promise<resultType<{ employees: employee_type[] }>>  => {
+                return await basicFetch('GET', 'admin/employees/list-timestamps', {});
+            },
             get: async ( id:number ):Promise<resultType<{ employee: employee_type }>>  => {
                 return await basicFetch('GET', 'admin/employees/get', {id});
             },
             update: async ( user: employee_type ): Promise<resultType<{ employee: employee_type }>>  => {
                 return await basicFetch('POST', 'account/update', {user:JSON.stringify(user)});
+            },
+            new: async ( user: employee_type ): Promise<resultType<{ employee: employee_type }>>  => {
+                return await basicFetch('POST', 'account/new', {user:JSON.stringify(user)});
             },
         }
     }
