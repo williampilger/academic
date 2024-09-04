@@ -1,32 +1,30 @@
-"""
-===============================================================================
-Script Name : polygon_inertia_stress_calculator.py
-Author      : williampilger - github.com/wiliampilger
-Thanks      : thanks ChatGPT 4o for the start of this script
-Created     : 03/09/2024
-Version     : 1.0
-Description : This script calculates inertia and stresses for a given polygon 
-              using points coordinates provided by the user, along with a normal 
-              force (N) and a moment (M).
-
-Usage       : python polygon_inertia_stress_calculator.py --help
-              to see the usage and usage example
-
-Requirements: 
-    - Python 3.x
-    - Shapely library: pip install shapely
-
-Notes       : 
-    - Ensure that the points form a closed polygon by providing the coordinates 
-      correctly.
-    - Calculations are based on the input coordinates and the geometric properties 
-      of the generated polygon.
-    - Use the --help flag for more information on how to use the script.
-
-License     : MIT License
-
-===============================================================================
-"""
+# ===============================================================================
+# Script Name : polygon_inertia_stress_calculator.py
+# Author      : williampilger - github.com/wiliampilger
+# Thanks      : thanks ChatGPT 4o for the start of this script
+# Created     : 03/09/2024
+# Version     : 1.0
+# Description : This script calculates inertia and stresses for a given polygon 
+#               using points coordinates provided by the user, along with a normal 
+#               force (N) and a moment (M).
+#
+# Usage       : python polygon_inertia_stress_calculator.py --help
+#               to see the usage and usage example
+#
+# Requirements: 
+#     - Python 3.x
+#     - Shapely library: pip install shapely
+#
+# Notes       : 
+#     - Ensure that the points form a closed polygon by providing the coordinates 
+#       correctly.
+#     - Calculations are based on the input coordinates and the geometric properties 
+#       of the generated polygon.
+#     - Use the --help flag for more information on how to use the script.
+#
+# License     : MIT License
+#
+# ===============================================================================
 
 import sys
 import os
