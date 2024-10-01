@@ -68,9 +68,14 @@ Cargas na Viga:
             TOTAL: ${beamAccidentalLoad_kN} kN/m
 `);
 
+const Msk: number = ps.Msk(beamPermanentLoad_kN, beamAccidentalLoad_kN, slab_l_m);
+const Vsk: number = ps.Vsk(beamPermanentLoad_kN, beamAccidentalLoad_kN, slab_l_m);
+
 
 const Tn: number = ps.Tn((beamSelfWeight_kN + beamPermanentLoad_kN + beamAccidentalLoad_kN) * slabArea_m2, slabArea_m2);
 const I: number = ps.I_rectangular(beam_w_m, beam_h_m);
+
 const Ws: number = ps.W(I, beam_h_m / 2);
-const Wi: number = ps.W(I, beam_h_m / 2);
+const Wi: number = ps.W(I, beam_h_m / 2);//##VER## esses dois não devem ser iguais!!
+
 

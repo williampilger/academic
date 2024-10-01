@@ -1,3 +1,5 @@
+import CONSTANTS from "../config/CONSTANTS";
+
 const LOG_CALCS: boolean = true;
 
 /**
@@ -47,6 +49,35 @@ export function W(inertia: number, y: number): number {
     resPrint('W', 'I/y', `${inertia} / ${y}`, `${W}cm³`, 'Módulo de resistência à flexão');
     return W;
 }
+
+/**
+ * Calculate Sollicitation Moment
+ * @param Cp Permanent Load, in kN/m
+ * @param Ca Accidental Load, in kN/m
+ * @param L Beam Length, in m
+ * @returns Solicitation Moment, in kN.m
+ */
+export function Msk(Cp: number, Ca: number, L: number): number {
+    const Msk = (Cp + Ca) * L**2 / 8;
+    resPrint('Msk', '(Cp+Ca) * L² / 8', `(${Cp} + ${Ca}) * ${L}² / 8`, `${Msk}kN.m`, 'Momento de Serviço Característico');
+    return Msk;
+}
+
+/**
+ * Calculate Characteristic Shear stress
+ * @param Cp Permanent Load, in kN/m
+ * @param Ca Accidental Load, in kN/m
+ * @param L Beam Length, in m
+ * @returns Characteristic Shear stress, in kN
+ */
+export function Vsk(Cp: number, Ca: number, L: number): number {
+    const cf = CONSTANTS.LOAD_SECCURITY_FACTOR;
+
+    const Vsk = (Cp + Ca) * L / 2 * cf;
+    resPrint('Vsk', '(Cp+Ca) * L / 2 * γ', `(${Cp} + ${Ca}) * ${L} / 2 * ${cf}`, `${Vsk}kN`, 'Esforço Cortante de Serviço Característico');
+    return Vsk;
+}
+
 
 
 export function resPrint(varName: string, calcSample: string, calc: string, result: string, explain: string): void {
