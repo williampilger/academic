@@ -35,10 +35,11 @@ const slab_w_m: number = input.slab.dimensions_cm.w / 100;
 const slabArea_m2: number = slab_w_m * slab_l_m;
 
 console.log(`
-    Área da laje: ${slabArea_m2} m²
-    Peso próprio da laje: ${input.slab.ownWeight_kNpm2} kN/m²
-    Carga permanente da laje: ${input.slab.permanentLoad_kNpm2} kN/m²
-    Sobrecarga acidental da laje: ${input.slab.accidentalLoad_kNpm2} kN/m²
+    Dados da Laje:
+        Área: ${slabArea_m2} m²
+        Peso próprio: ${input.slab.ownWeight_kNpm2} kN/m²
+        Carga permanente: ${input.slab.permanentLoad_kNpm2} kN/m²
+        Sobrecarga acidental: ${input.slab.accidentalLoad_kNpm2} kN/m²
 `);
 
 const slabSelfWeight_kN: number = input.slab.ownWeight_kNpm2 * slabArea_m2;
@@ -54,18 +55,18 @@ const beamPermanentLoad_kN: number = ((slabPermanentLoad_kN + slabSelfWeight_kN)
 const beamAccidentalLoad_kN: number = slabAccidentalLoad_kN / slab_l_m / 2;
 
 console.log(`
-Cargas na Viga:
-    - Cargas Permanentes:
-        Peso próprio da laje: ${slabSelfWeight_kN} kN / ${slab_l_m}m / 2
-      + Peso próprio da viga: ${beamSelfWeight_kN} kN  / ${slab_l_m}m / 2
-      + Carga permanente da laje: ${slabPermanentLoad_kN} kN  / ${slab_l_m}m / 2
-      ----------------------------------------------------------------------------
-            TOTAL: ${beamPermanentLoad_kN} kN/m
+    Cargas na Viga:
+       -> Cargas Permanentes:
+            Peso próprio da laje: ${slabSelfWeight_kN} kN / ${slab_l_m}m / 2
+        + Peso próprio da viga: ${beamSelfWeight_kN} kN  / ${slab_l_m}m / 2
+        + Carga permanente da laje: ${slabPermanentLoad_kN} kN  / ${slab_l_m}m / 2
+        ----------------------------------------------------------------------------
+                TOTAL: ${beamPermanentLoad_kN} kN/m
 
-    - Sobrecarga Acidental:
-        Sobrecarga acidental da laje: ${slabAccidentalLoad_kN} kN / ${slab_l_m}m / 2
-      ----------------------------------------------------------------------------
-            TOTAL: ${beamAccidentalLoad_kN} kN/m
+       -> Sobrecarga Acidental:
+            Sobrecarga acidental da laje: ${slabAccidentalLoad_kN} kN / ${slab_l_m}m / 2
+        ----------------------------------------------------------------------------
+                TOTAL: ${beamAccidentalLoad_kN} kN/m
 `);
 
 const Msk: number = ps.Msk(beamPermanentLoad_kN, beamAccidentalLoad_kN, slab_l_m);
