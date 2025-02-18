@@ -3,7 +3,7 @@
 
 ### Criando a Infraestrutura
 
-*Criei três máquinas (VMs) com o Apache
+*Criei três máquinas (VMs) com o Apache, usando o CloudShell e o código abaixo:*
 ```sh
 gcloud compute instances create web1 \
     --project=qwiklabs-gcp-02-31a1dca897ec \
@@ -24,3 +24,20 @@ gcloud compute instances create web1 \
     --labels=goog-ec-src=vm_add-gcloud \
     --reservation-affinity=any
 ```
+
+Por algum motivo, o script de inicialização não funcionou, então:
+```sh
+sudo su
+apt-get update
+apt-get install apache2 -y
+service apache2 restart
+echo "<h3>Web Server: web<num>2</num></h3>" > /var/www/html/index.html
+```
+
+
+
+---
+
+# Sobre
+
+Não foi possível concluir esta aula, pois o sistema não reconhecia as máquinas rodando, sendo que estavam.
