@@ -6,5 +6,11 @@
 
 Que também pode ser feito usando:
 ```sh
-gcloud compute firewall-rules create privatenet-allow-icmp-ssh-rdp --direction=INGRESS --priority=1000 --network=privatenet --action=ALLOW --rules=icmp,tcp:22,tcp:3389 --source-ranges=0.0.0.0/0
+gcloud compute firewall-rules create privatenet-allow-icmp-ssh-rdp \
+  --direction=INGRESS \
+  --priority=1000 \
+  --network=privatenet \
+  --action=ALLOW \
+  --rules=icmp,tcp:22,tcp:3389
+  --source-ranges=0.0.0.0/0
 ```
