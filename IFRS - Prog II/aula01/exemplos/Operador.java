@@ -12,7 +12,7 @@ public class Operador {
 		int mult = a*b;
 		int div = a/b;
 		
-		System.out.printf(" Soma: %d \n Subtração: %d \n Multiplicação: %d \n Divisão: %d", soma, sub, mult, div);
+		System.out.printf(" Soma: %d \n Subtracao: %d \n Multiplicacao: %d \n Divisao: %d", soma, sub, mult, div);
 	}
 
 }

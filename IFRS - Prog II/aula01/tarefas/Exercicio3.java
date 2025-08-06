@@ -1,5 +1,5 @@
 /**
- * 3. Faça um programa que leia 2 números inteiros do teclado e que imprima se os números são iguais
+ * 3. FaÃ§a um programa que leia 2 nÃºmeros inteiros do teclado e que imprima se os nÃºmeros sÃ£o iguais
  *    ou diferentes. Caso sejam diferentes, imprima o maior deles apenas.
  */
 
@@ -20,9 +20,9 @@ public class Exercicio3 {
 		leitor.close();
 
 		if(a==b) {
-			System.out.println("A e B são iguais!");
+			System.out.println("A e B sÃ£o iguais!");
 		} else {
-			System.out.printf("%c é o maior deles!", a>b ? 'A' : 'B');
+			System.out.printf("%c Ã© o maior deles!", a>b ? 'A' : 'B');
 		}
 		
 	}

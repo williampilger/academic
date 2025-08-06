@@ -1,6 +1,6 @@
 /**
- * 1. Faça um programa que leia 2 números inteiros do teclado e que imprima na tela a soma,
- * substração, multiplicação, divisão e resto da divisão desses dois números.
+ * 1. Faca um programa que leia 2 numeros inteiros do teclado e que imprima na tela a soma,
+ * substracao, multiplicacao, divisao e resto da divisao desses dois numeros.
  */
 
 package tarefas;
@@ -24,7 +24,7 @@ public class Exercicio1 {
 		int mult = a*b;
 		int div = a/b;
 		
-		System.out.printf(" Soma: %d \n Subtração: %d \n Multiplicação: %d \n Divisão: %d", soma, sub, mult, div);
+		System.out.printf(" Soma: %d \n Subtracao: %d \n Multiplicacao: %d \n Divisao: %d", soma, sub, mult, div);
 		
 	}
 

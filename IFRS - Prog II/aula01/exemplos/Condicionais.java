@@ -14,11 +14,11 @@ public class Condicionais {
 		int b = Integer.parseInt(leitor.nextLine());
 
 		if( a > b) {
-			System.out.println("A é Maior que B");
+			System.out.println("A eh Maior que B");
 		} else if (b > a) {
-			System.out.println("A é Menor que B");
+			System.out.println("A eh Menor que B");
 		} else {
-			System.out.println("As cachaça são iguais!");
+			System.out.println("As cachaca sao iguais!");
 		}
 		
 		leitor.close();

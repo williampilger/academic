@@ -1,5 +1,5 @@
 /**
- * 2. Escreva um programa que lê um número do teclado e que determine se ele é par ou impar.
+ * 2. Escreva um programa que la um numero do teclado e que determine se ele eh par ou impar.
  */
 package tarefas;
 
@@ -17,7 +17,7 @@ public class Exercicio2 {
 		
 		boolean ehPar =  a % 2 == 0;
 
-		System.out.printf("A é %s", ehPar ? "Par" : "Impar");			
+		System.out.printf("A eh %s", ehPar ? "Par" : "Impar");			
 		
 	}
 

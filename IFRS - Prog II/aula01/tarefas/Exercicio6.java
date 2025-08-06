@@ -1,7 +1,7 @@
 /**
- * 6. Escreva um programa que solicite as seguintes informações sobre uma viagem: quilometragem
- *    inicial do carro, quilometragem do carro após a viagem e o número de litros de combustível
- *    consumidos. Com base nessas informações calcule a média de consumo do carro por litro e
+ * 6. Escreva um programa que solicite as seguintes informaÃ§Ãµes sobre uma viagem: quilometragem
+ *    inicial do carro, quilometragem do carro apÃ³s a viagem e o nÃºmero de litros de combustÃ­vel
+ *    consumidos. Com base nessas informaÃ§Ãµes calcule a mÃ­dia de consumo do carro por litro e
  *    imprima na tela.
  */
 
@@ -25,7 +25,7 @@ public class Exercicio6 {
 		double distancia = km1 - km0;
 		double kmpl = distancia / consumo;
 		
-		System.out.printf("O consumo médio foi de %.2f km/l", kmpl);
+		System.out.printf("O consumo mÃ©dio foi de %.2f km/l", kmpl);
 	}
 
 }

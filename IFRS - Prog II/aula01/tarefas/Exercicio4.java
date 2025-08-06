@@ -1,6 +1,6 @@
 /**
- * 4. Crie um programa que calcule e mostre o volume de uma esfera. O raio da esfera ser· fornecido
- *    pelo usu·rio atravÈs do teclado (tipo de dado double). Pesquisa a fÛrmula para c·lcule de volume
+ * 4. Crie um programa que calcule e mostre o volume de uma esfera. O raio da esfera ser√° fornecido
+ *    pelo usu√°rio atrav√°s do teclado (tipo de dado double). Pesquisa a f√≥rmula para c√°lcule de volume
  *    da esfera e considere para PI o valor 3.14159 (tipo de dado double).
  */
 
@@ -19,7 +19,7 @@ public class Exercicio4 {
 		
 		double volume = 4/3 * Math.PI * Math.pow(raio,3);
 		
-		System.out.printf("O volume da esfera È '%2f' cm≥.", volume);
+		System.out.printf("O volume da esfera √© '%2f' cm¬≤.", volume);
 	}
 
 }
