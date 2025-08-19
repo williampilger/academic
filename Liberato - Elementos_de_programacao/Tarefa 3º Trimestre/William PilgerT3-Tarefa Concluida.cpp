@@ -1,22 +1,22 @@
 /*
 Funcionamento basico....
 
-A NAVEGA«√O PELO PROGRAMA … TODA FEITA PELAS CETAS
+A NAVEGA√á√ÉO PELO PROGRAMA √â TODA FEITA PELAS CETAS
 
 O programa inicia, fazendo a leitura de um nome, o nome de um arquivo,que o usuario escolhe...
 caso o arquivo exista... ele tenta o ler...
 caso contrario... tenta criar...
 caso uma delar falhe... ele encerra o programa...
-se n„o... le o conteudo do arquivo, se ele ja tiver algum, e o salva na struct agenda...
-depois disso, abre um MENU... e durante sua exibiÁ„o, fica SEMPRE verificando a passagem do tempo...
+se n√£o... le o conteudo do arquivo, se ele ja tiver algum, e o salva na struct agenda...
+depois disso, abre um MENU... e durante sua exibi√ß√£o, fica SEMPRE verificando a passagem do tempo...
 no menu, o usuario podera escolher entre criar, editar ou deletar um evento...
 CASO ALGUM EVENTO ESTEJA COM A DATA E HORA ULTRAPASSADOS, ELE AVISA O USUARIO, E EM SEGUIDA, DELETA O EVENTO.
-no menu tambÈm, se tera a opcao listar, que vai listar todos os eventos existentes em diverÁas ordem, que o usuario escolhe.
-O programa vai salvando as alteraÁıes no arquivo de acordo com a necessidade, para que, quando a pessoa saia, a mesma, n„o perca seus dados.
+no menu tamb√©m, se tera a opcao listar, que vai listar todos os eventos existentes em diver√ßas ordem, que o usuario escolhe.
+O programa vai salvando as altera√ß√µes no arquivo de acordo com a necessidade, para que, quando a pessoa saia, a mesma, n√£o perca seus dados.
 */
 
 //COISAS PARA ARRUMAR:
-//VERIFICANDO O DIA.. ELE N√O ACERTA OS ANOS QUE S√O BISSESTOS
+//VERIFICANDO O DIA.. ELE N√ÉO ACERTA OS ANOS QUE S√ÉO BISSESTOS
 #include <stdio.h>
 #include <stdlib.h>
 #include <conio2.h>
@@ -24,7 +24,7 @@ O programa vai salvando as alteraÁıes no arquivo de acordo com a necessidade, pa
 #include <windows.h>
 #include <time.h>
 #include <string.h>
-//definiÁ„o de constantes de cores do programa
+//defini√ß√£o de constantes de cores do programa
 #define CORMENUCEL 240 //cor que fica o item celecionado no menu
 #define CORALERTA 224 //cor que fica algum aviso de campro preenchido incorretamente
 #define CORPADRAO 15 //cor do texto em geral no programa
@@ -32,15 +32,15 @@ O programa vai salvando as alteraÁıes no arquivo de acordo com a necessidade, pa
 #define CORNAO 196 //cor do item que NAO esta celecionado em algumas das colunas do menu
 #define CORULTSALV 160 //cor da parte que informa quando foi salvo pela ultima vez
 #define CORNOMAGEND 144//cor que aparece o nome "agenda - nomedoarquivo"
-//definiÁ„o de constantes que definem o numero de caracteres que variaveis podem ter
+//defini√ß√£o de constantes que definem o numero de caracteres que variaveis podem ter
 #define NOMEDOEVENTO 80 //numero de caracteres disponiveis para armazenar o nome do evento
 #define NOMEDOARQUIVO 200 //numero de caracteres disponiveis para armazenar o nome do arquivo da agenda (coloquei 200 caracteres para caso a pessoa digite um caminho... ex: C:\Banoc_de_dados\Agenda...)
-#define DESCRICAODOEVENTO 20 //numero de caracteres disponiveis para escrever a descriÁ„o do evento
+#define DESCRICAODOEVENTO 20 //numero de caracteres disponiveis para escrever a descri√ß√£o do evento
 #define CHARTEMPORARIA 100 //Numero de caracteres disponiveis para a char temporaria
 #define SEGTEMPCHAR 2 //numero de caracteres da segunda char temporaria
 #define LIMAGENDA 365 //numero de eventos que podem ser armazenados...
-#define MAXEVINDIAS 5 //N˙mero maximo de eventos em um mesmo dia
-//outras definiÁıes
+#define MAXEVINDIAS 5 //N√∫mero maximo de eventos em um mesmo dia
+//outras defini√ß√µes
 #define NULCICPSAL 1000000 //numero de ciclos que o programa leva para salvar o arquivo da agenda... periodicamente...
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 struct data{
@@ -53,15 +53,15 @@ struct hora{
 	int min;
 	int sec;
 };
-struct  evento{ //"MODELO" de estrutura para armazenar as informaÁıes do evento
-		char nome[NOMEDOEVENTO];//variavel qie armazena a descriÁ„o do evento
+struct  evento{ //"MODELO" de estrutura para armazenar as informa√ß√µes do evento
+		char nome[NOMEDOEVENTO];//variavel qie armazena a descri√ß√£o do evento
 		char descri[DESCRICAODOEVENTO];//variavel que armazena o nome do evento
 		char tipo;//variavel que armazena o tipo do evento
 		struct data evd;//armazena a data do evento
 		struct hora evh;//armazena o horario dos eventos
 	};
 //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-void tamanho_tela(int larg, int alt)  // FunÁ„o para definir o tamanho da tela (copia do professor) 
+void tamanho_tela(int larg, int alt)  // Fun√ß√£o para definir o tamanho da tela (copia do professor) 
 {
     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
     COORD consoleSize;
@@ -73,16 +73,16 @@ void tamanho_tela(int larg, int alt)  // FunÁ„o para definir o tamanho da tela (
 int vdata(int dia, int mes, int ano)
 {
 	char quantdmeses[12]={31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-	ano=ano+2000;//adiciona 2000 ‡ data que o usuario digitou para que nao se precise digitar '2015' por exemplo... precisamos so do '15'
+	ano=ano+2000;//adiciona 2000 √† data que o usuario digitou para que nao se precise digitar '2015' por exemplo... precisamos so do '15'
 	if(mes>12) return(0);
-	if(ano%4!=0) quantdmeses[1]--;//caso a ano n„o seja bissesto dievh.minui um dia de fevereiro
+	if(ano%4!=0) quantdmeses[1]--;//caso a ano n√£o seja bissesto dievh.minui um dia de fevereiro
 	if((dia<=quantdmeses[mes-1])&(dia>0)){ //verifica se o dia existe
 		return(1); //retorna 1 se sim
 	}
 	else return(0); //retorna 0 se nao
 }
 
-int vhora(struct evento *p){//testa se a hora REGISTRADA È v·lida
+int vhora(struct evento *p){//testa se a hora REGISTRADA √© v√°lida
 	if((p->evh.hora>23)^(p->evh.hora<0)) return(0);//se a hora for maior que 24 ou menos que zero... retorna 0
 	else{
 		if((p->evh.min>59)^(p->evh.min<0)) return(0);//se tiver maiss de 60 min ou menos de zero... retorna zero
@@ -117,7 +117,7 @@ void eschora(struct evento *p, char tempchar[CHARTEMPORARIA]){//escreve a hora D
 	p->evh.sec=atoi(segtempchar);
 }
 int vevent(struct evento *p){//verifica se um evento ja esta ultrapassado...retorna 1 se o dia ja passou
-	//OBS: novamente... o codigo parece repetitivo... mas s„o coisas que nao da para fazer em uma funÁ„o, pois precisam de um taratmento um pouco diferente...
+	//OBS: novamente... o codigo parece repetitivo... mas s√£o coisas que nao da para fazer em uma fun√ß√£o, pois precisam de um taratmento um pouco diferente...
 	char datasistema[8], horasistema[8], tempchar[CHARTEMPORARIA]={0};
 	int ano, mes, dia, hora, min, sec;
 	time_t currentTime; //precisa definir, para atualizar a hora e a data depois...
@@ -155,7 +155,7 @@ int vevent(struct evento *p){//verifica se um evento ja esta ultrapassado...reto
 		}
 	}
 }
-int tesdia(struct evento *p, int dia, int mes, int ano, char tipo){//funÁ„o para testar se um dia ja tem feriado ou o limite estourado... 
+int tesdia(struct evento *p, int dia, int mes, int ano, char tipo){//fun√ß√£o para testar se um dia ja tem feriado ou o limite estourado... 
 	//Retorna 0 para dia com feriado
 	//retorna 1 para dia disponivel
 	//retorna 2 para dia lotado
@@ -166,7 +166,7 @@ int tesdia(struct evento *p, int dia, int mes, int ano, char tipo){//funÁ„o para
 		if(p->evd.dia==dia){
 			if(p->evd.mes==mes){
 				if(p->evd.ano==ano){//um evento no dia foi encontrado
-					if(p->tipo!=0){//aqui ele verifica se o que tem nesse dia È algo valido
+					if(p->tipo!=0){//aqui ele verifica se o que tem nesse dia √© algo valido
 						if(p->tipo==5){
 							if((tipo==1)^(tipo==2)) return(0);
 							quantdias++;
@@ -197,17 +197,17 @@ int tesdia(struct evento *p, int dia, int mes, int ano, char tipo){//funÁ„o para
 int novo_evento(struct evento *pa, int ti){
 	char quantdmeses[13]={0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 	char datasistema[8], horasistema[8];
-	int opcao=1, positempchar=0, x=0;//variavel x, para usar para fins diverÁos... 
-	//positempchar - responÁavel pela posiÁ„o do curor na variavel char temporaria
+	int opcao=1, positempchar=0, x=0;//variavel x, para usar para fins diver√ßos... 
+	//positempchar - respon√ßavel pela posi√ß√£o do curor na variavel char temporaria
 	char tempchar[CHARTEMPORARIA]={0}, segtempchar[SEGTEMPCHAR]={0};
 	int tempint;//variavel int para usar para fins variados dentro do programa...
 	unsigned char dig=0;
-	int dataerro=0, horaerro=0; //cria uma variavel que armazena a informaÁ„o de 'se existe arro na data ou na hora'
+	int dataerro=0, horaerro=0; //cria uma variavel que armazena a informa√ß√£o de 'se existe arro na data ou na hora'
 	//O PROGRAM PREENCHE OS CAMPOS DATA E HOR AUTOMATIVAMENTE COM A DATA E HORA DDO MOMENTO... MAS PODE SER ALTERADO FACILMENTE DEPOIS...
 	struct evento *p;
 	if((ti==1)^(ti==3)){
 		p=pa;
-		while(x<LIMAGENDA){//calcula a posiÁ„o do evento na matris de structs"
+		while(x<LIMAGENDA){//calcula a posi√ß√£o do evento na matris de structs"
 			if(p->tipo==0) break;
 			p++;
 			x++;
@@ -216,14 +216,14 @@ int novo_evento(struct evento *pa, int ti){
 		}
 		x=0;
 		if(x>=LIMAGENDA){
-			printf("\n\n\n\n\nO limite de eventos foi atingido...\n\nN„o ser· possivem continuar...");
+			printf("\n\n\n\n\nO limite de eventos foi atingido...\n\nN√£o ser√° possivem continuar...");
 			getch();
 			return(0);
 		}
 	}
 	else p=pa;
 	x=0;
-	while(x<CHARTEMPORARIA){//essa funÁ„o ta ai para que a variavel tepraria seja limpa toda vez que nao esteja sendo usada...
+	while(x<CHARTEMPORARIA){//essa fun√ß√£o ta ai para que a variavel tepraria seja limpa toda vez que nao esteja sendo usada...
 		tempchar[x]=0;
 		x++;
 	}
@@ -305,7 +305,7 @@ int novo_evento(struct evento *pa, int ti){
 			dig=getch();
 			if(positempchar<1){
 				x=0;
-				while(x<CHARTEMPORARIA){//essa funÁ„o ta ai para que a variavel tepraria seja limpa toda vez que nao esteja sendo usada...
+				while(x<CHARTEMPORARIA){//essa fun√ß√£o ta ai para que a variavel tepraria seja limpa toda vez que nao esteja sendo usada...
 					tempchar[x]=0;
 					x++;
 				}
@@ -374,7 +374,7 @@ int novo_evento(struct evento *pa, int ti){
 					if(dig==75){
 						switch(opcao){//ceta para aesquerda
 							case 5://alterar o tipo de evento
-								if(p->tipo>1) p->tipo--;//muda o tipo para um anterior.. se possÌvel
+								if(p->tipo>1) p->tipo--;//muda o tipo para um anterior.. se poss√≠vel
 								break;
 							case 1:
 								if((p->evd.dia)<=1){
@@ -440,7 +440,7 @@ int novo_evento(struct evento *pa, int ti){
 							tempchar[positempchar]=255; //sobrescreve o que tem no ponto da variavel temporaria, quando o usuario preciona black space
 							strcpy(p->nome,tempchar);
 							break;
-						case 4: //apaga caracteres da escriÁ„o o evento
+						case 4: //apaga caracteres da escri√ß√£o o evento
 							if(positempchar>0) positempchar--;
 							tempchar[positempchar]=255; //sobrescreve o que tem no ponto da variavel temporaria, quando o usuario preciona black space
 							strcpy(p->descri,tempchar);
@@ -456,17 +456,17 @@ int novo_evento(struct evento *pa, int ti){
 						p->tipo=0;
 						return(0); //sai da janela de criar nova terefa @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 					}
-					if(dataerro==1){//verifica se a data È valida
+					if(dataerro==1){//verifica se a data √© valida
 						printf("\nA DATA INFORMADA E INVALIDA");
 						x=1;//dis que tem algum erro...
 					}
-					if(horaerro==1){//verifica se a hora È valida
+					if(horaerro==1){//verifica se a hora √© valida
 						printf("\nA HORA INFORMADA NAO E VALIDA");
 						x=1;//indica um erro
 					}
 					if(p->tipo==0){//verifica se o tipo foi celecionado
 						printf("\nTIPO DE EVENTO NAO CELECIONADO");
-						x=1;//diz que h· um erro
+						x=1;//diz que h√° um erro
 					}
 					if((p->nome[0]==0)^(p->nome[0]==225)){
 						printf("\nNOME NAO PREENCHIDO");
@@ -501,22 +501,22 @@ int novo_evento(struct evento *pa, int ti){
 				default://pega a perte dos numeros e letras que a pessoa digita...
 					switch(opcao){
 						case 1://parte onde o usuario digita a DATA
-							if(dig>47&dig<58){//o programa verifica se es„o sendo digitados somente NUMEROS
+							if(dig>47&dig<58){//o programa verifica se es√£o sendo digitados somente NUMEROS
 								if(positempchar<6){//controle do limite de caracteres no dia
 									tempchar[positempchar]=dig;//pasa o que ja tem para as variaveis definitivas
 									dataerro=!(vdata(p->evd.dia, p->evd.mes, p->evd.ano)); //verifica se o dia existe
-									positempchar++;//soma mais um a esta variavel para que na proxima, ele escreva no seguinte espaÁo
+									positempchar++;//soma mais um a esta variavel para que na proxima, ele escreva no seguinte espa√ßo
 									escdata(p, tempchar);//escreve a data nas variaveis definitivas
 								}
 							}
 							break;
 						case 2:
-							if(dig>47&dig<58){//verifica se Á„o digitados somente numeros
+							if(dig>47&dig<58){//verifica se √ß√£o digitados somente numeros
 								if(positempchar<6){//controle de limite de caracteres
 									tempchar[positempchar]=dig;//escreve o digito na char temporaria
 									eschora(p, tempchar);//passa esse valor para as variaveis oficiais
-									horaerro=!(vhora(p));//testa se a hora È valida
-									positempchar++;//soma um ‡ variavel respons·vel pela contagem dos bits preenchidos...
+									horaerro=!(vhora(p));//testa se a hora √© valida
+									positempchar++;//soma um √† variavel respons√°vel pela contagem dos bits preenchidos...
 								}
 							}
 							break;
@@ -527,10 +527,10 @@ int novo_evento(struct evento *pa, int ti){
 								positempchar++;//faz a contagem dos bits digitados
 							}
 							break;
-						case 4://escrever descriÁ„o
+						case 4://escrever descri√ß√£o
 							if(positempchar<DESCRICAODOEVENTO){//testa se ainda 'cabem' caracteres no nome do arquivo
-								tempchar[positempchar]=dig;//adiciona o caracter pressionado ‡ descriÁ„o do evento
-								strcpy(p->descri,tempchar);//escreve ‡ descriÁ„o do evento na struct definitiva
+								tempchar[positempchar]=dig;//adiciona o caracter pressionado √† descri√ß√£o do evento
+								strcpy(p->descri,tempchar);//escreve √† descri√ß√£o do evento na struct definitiva
 								positempchar++;//faz a contagem dos bits digitados
 							}
 							break;
@@ -608,7 +608,7 @@ int editar_evento(struct evento *p){
 	}
 }
 int lista_eventos(struct evento *p, int tipo){
-	struct evento *pa; //È um ponteir que vai ficar SEMPRE apontando para o inicio da estrutura
+	struct evento *pa; //√© um ponteir que vai ficar SEMPRE apontando para o inicio da estrutura
 	pa=p;
 	int x=0, ano, mes, dia, sem;
 	char limmes[13]={0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -654,7 +654,7 @@ int lista_eventos(struct evento *p, int tipo){
 				if(mes>=12){
 					if(tipo==4) return(0);
 					mes=1;
-					if(ano%4!=0) limmes[2]=28;//caso a ano n„o seja bissesto dievh.minui um dia de fevereiro
+					if(ano%4!=0) limmes[2]=28;//caso a ano n√£o seja bissesto dievh.minui um dia de fevereiro
 					else limmes[2]=29;
 					ano++;
 				}
@@ -679,12 +679,12 @@ int main(void)
 		clrscr();
 		printf("\n\n\n                                      Agenda...");
 		printf("\n\n\n                         Desenvolvido por William Pilger");
-		printf("\n                Ultima compilacao em   %s   ‡s   %s", __DATE__, __TIME__);
+		printf("\n                Ultima compilacao em   %s   √†s   %s", __DATE__, __TIME__);
 		printf("\n\n\n\nDigite o nome do arquivo da agenda:");
 		scanf("%s", &nomarq);
 		FILE *fluxo;
 		strcat(nomarq,".txt");
-		if((fluxo=fopen(nomarq, "rt"))==NULL){//aqui h· uma coisa errada... quqndo o arquivo nao existe.. ele n„o retorna isso... simplesmente cria ele...
+		if((fluxo=fopen(nomarq, "rt"))==NULL){//aqui h√° uma coisa errada... quqndo o arquivo nao existe.. ele n√£o retorna isso... simplesmente cria ele...
 			printf("\n\n\nArquivo de agenda nao encontrado...\n\nDeseja criar um novo?(S/N)");
 			dig=getch();
 			if((dig==115)^(dig==83)){
@@ -708,7 +708,7 @@ int main(void)
 	}
 	while(1){
 		if(config[0]==1){
-			if(nessalv==1){//esta funcÁ„o espera um certo "tempo" para salvar o arquivo da agenda... sempre periodicamente...
+			if(nessalv==1){//esta func√ß√£o espera um certo "tempo" para salvar o arquivo da agenda... sempre periodicamente...
 				FILE *fluxo;
 				fluxo=fopen(nomarq, "wt");
 				fwrite(&agenda[0], sizeof(struct evento), LIMAGENDA, fluxo);
@@ -801,7 +801,7 @@ int main(void)
 				case 13:
 					switch(opcao){
 						case 1://criar evento
-							p=&agenda[0];//salva o endereÁo da struct no ponteiro
+							p=&agenda[0];//salva o endere√ßo da struct no ponteiro
 							if(config[1]==0) novo_evento(p, 1);//cria um novo evento
 							if(config[1]==1) novo_evento(p, 3);//cria um novo evento, sem preencher a data e a hora...
 							nessalv=1;
