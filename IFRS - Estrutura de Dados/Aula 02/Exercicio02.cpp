@@ -1,5 +1,5 @@
 /**
- * Tarefa 2]
+ * Tarefa 2
  * Ordenação de dados: Método Bolha
  * (mesmo que a primeira, mas ordenando os dados com método Bolha)
  */
