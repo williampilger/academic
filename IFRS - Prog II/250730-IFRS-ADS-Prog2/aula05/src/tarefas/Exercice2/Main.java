@@ -1,46 +1,45 @@
-package Exercice1;
+package Exercice2;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // Criando e configurando um Aluno
-        Aluno aluno = new Aluno();
-        aluno.nome = "João Silva";
-        aluno.idade = 20;
-        aluno.curso = "Análise e Desenvolvimento de Sistemas";
-        aluno.print();
+        Animal a1 = new Animal();
+        a1.nome = "Totó";
+        a1.especie = "Cachorro";
+        a1.idade = 5;
+        a1.print();
+
         System.out.println();
 
-        // Criando e configurando um Chimarrão
-        Chimarrao chimarrao = new Chimarrao();
-        chimarrao.tipo = "Erva-mate tradicional";
-        chimarrao.temperatura = 70.5;
-        chimarrao.capacidade = 1000;
-        chimarrao.print();
+        Filme f1 = new Filme();
+        f1.titulo = "Inception";
+        f1.diretor = "Christopher Nolan";
+        f1.duracao = 148;
+        f1.print();
+
         System.out.println();
 
-        // Criando e configurando uma Cidade
-        Cidade cidade = new Cidade();
-        cidade.nome = "Porto Alegre";
-        cidade.populacao = 1500000;
-        cidade.estado = "Rio Grande do Sul";
-        cidade.print();
+        Canal c1 = new Canal();
+        c1.titulo = "TechWorld";
+        c1.proprietario = "Alice";
+        c1.inscritos = 120000;
+        c1.print();
+
         System.out.println();
 
-        // Criando e configurando um Computador
-        Computador computador = new Computador();
-        computador.marca = "Dell";
-        computador.modelo = "Inspiron 15";
-        computador.ano = 2023;
-        computador.print();
+        Smartphone s1 = new Smartphone();
+        s1.fabricante = "Apple";
+        s1.modelo = 13.5;
+        s1.armazenamento = 256;
+        s1.print();
+
         System.out.println();
 
-        // Criando e configurando um Pet
-        Pet pet = new Pet();
-        pet.nome = "Rex";
-        pet.raca = "Labrador";
-        pet.idade = 3;
-        pet.print();
+        Curso crs1 = new Curso();
+        crs1.nome = "Programação em Java";
+        crs1.duracao = 40;
+        crs1.instrutor = "Carlos Silva";
+        crs1.print();
     }
 }
