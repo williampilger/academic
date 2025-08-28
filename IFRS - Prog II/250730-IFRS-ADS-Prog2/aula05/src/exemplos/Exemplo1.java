@@ -1,10 +1,10 @@
 /*
  * Fazendo tudo em um único arquivo para facilitar a execução no linux. Fabe-se que esta é uma péssima prática.
  * Rodar, sem gerar arquivo `.class` com:
- *  $ java Main.java
+ *  $ java Exemplo1.java
  */
 
-public class Main {
+public class Exemplo1 {
     
     public static void main(String[] args) {
         
