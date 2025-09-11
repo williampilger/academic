@@ -1,10 +1,13 @@
 package exercicios.parte3;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Curso {
 	private String nome;
-	private Disciplina[] disciplinas;
+	private List<Disciplina> disciplinas;
 	
-	public Curso(String nome, Disciplina[] disciplinas) {
+	public Curso(String nome, List<Disciplina> disciplinas) {
 		super();
 		this.nome = nome;
 		this.disciplinas = disciplinas;
@@ -12,6 +15,7 @@ public class Curso {
 	public Curso(String nome) {
 		super();
 		this.nome = nome;
+		this.disciplinas = new ArrayList<>();
 	}
 	
 	public String getNome() {
@@ -20,16 +24,16 @@ public class Curso {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	public Disciplina[] getDisciplinas() {
+	public List<Disciplina> getDisciplinas() {
 		return disciplinas;
 	}
-	public void setDisciplinas(Disciplina[] disciplinas) {
+	public void setDisciplinas(List<Disciplina> disciplinas) {
 		this.disciplinas = disciplinas;
 	}
 	public void addDisciplina(Disciplina disciplina) {
-		this.disciplinas[this.disciplinas.length - 1] = disciplina;
+		this.disciplinas.add(disciplina);
 	}
 	public void rmDisciplina(Disciplina disciplina) {
-		System.out.println("N√O IMPLEMENTEI O M…TODO DE REMOSS√O!!");
+		System.out.println("M√âTODO DE REMO√á√ÉO N√ÉO IMPLEMENTADO!!");
 	}
 }
