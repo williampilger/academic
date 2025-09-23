@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-#define TAM 2
+#define TAM 10
 
 struct Estudante {
     char nome[50];
