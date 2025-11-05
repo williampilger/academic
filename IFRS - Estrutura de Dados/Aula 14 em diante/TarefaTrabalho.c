@@ -21,10 +21,6 @@ typedef struct Lista
 // Globais
 No *lista = NULL;
 
-// bool Existe (char nome[TAM_NOME]){
-//     if(lista==NULL) return false;
-// }
-
 Estudante *NovoEstudante(const char *nome, double n1, double n2)
 {
     Estudante *novoEstudante = malloc(sizeof(Estudante));
@@ -55,15 +51,14 @@ No *NovoNo(Estudante estudante)
 
 void CadastrarEstudante()
 {
-
     char nome[TAM_NOME];
     double n1, n2;
 
-    printf("\n Informe o Nome: ");
+    printf("Informe o Nome: ");
     scanf(" %[^\n]", nome);
-    printf("\n Informe a N1: ");
+    printf("Informe a N1: ");
     scanf(" %lf", &n1);
-    printf("\n Informe a N2: ");
+    printf("Informe a N2: ");
     scanf(" %lf", &n2);
 
     Estudante *estudante = NovoEstudante(nome, n1, n2);
@@ -100,15 +95,115 @@ void ListarEstudantes()
         No *atual = lista;
         while (atual != NULL)
         {
-            printf("Nome: %s | Nota 1: %.2f | Nota 2: %.2f | Média: %.2f\n", atual->estudante.nome, atual->estudante.n1, atual->estudante.n2, atual->estudante.media);
+            printf("Nome: %s | Nota 1: %.2lf | Nota 2: %.2lf | Média: %.2lf\n", atual->estudante.nome, atual->estudante.n1, atual->estudante.n2, atual->estudante.media);
             atual = atual->proximo;
         }
+        printf("\n");
     }
 }
 
-int main()
+void ConsultarEstudante()
+{
+    char nomeBusca[TAM_NOME];
+    No *atual = lista;
+    bool encontrado = false;
+
+    printf("-----------------\n");
+    printf("Informe o nome de busca: ");
+    scanf(" %[^\n]", nomeBusca);
+
+    while(atual != NULL){
+        if(strcmp(atual->estudante.nome, nomeBusca) == 0){
+            encontrado = true;
+            printf("Registro encontrado!\n");
+            printf("Nome: %s | Nota 1: %.2lf | Nota 2: %.2lf | Média: %.2lf\n", atual->estudante.nome, atual->estudante.n1, atual->estudante.n2, atual->estudante.media);
+            break;
+        }
+        atual = atual->proximo;
+    }
+
+    if(!encontrado){
+        printf("Registro não encontrado!\n");
+    }
+}
+
+void AlterarNotas()
+{
+    char nomeBusca[TAM_NOME];
+    No *atual = lista;
+    bool encontrado = false;
+
+    printf("-----------------\n");
+    printf("Informe o nome de busca: ");
+    scanf(" %[^\n]", nomeBusca);
+
+    while(atual != NULL){
+        if(strcmp(atual->estudante.nome, nomeBusca) == 0){
+            encontrado = true;
+            printf("Registro encontrado!\n");
+            printf("Nome: %s | Nota 1: %.2lf | Nota 2: %.2lf | Média: %.2lf\n", atual->estudante.nome, atual->estudante.n1, atual->estudante.n2, atual->estudante.media);
+            printf("Informe a N1: ");
+            scanf(" %lf", &atual->estudante.n1);
+            printf("Informe a N2: ");
+            scanf(" %lf", &atual->estudante.n2);
+            atual->estudante.media = (atual->estudante.n1 + atual->estudante.n2) / 2;
+            printf("Nome: %s | Nota 1: %.2lf | Nota 2: %.2lf | Média: %.2lf\n", atual->estudante.nome, atual->estudante.n1, atual->estudante.n2, atual->estudante.media);
+            printf("Registro alterado com sucesso!\n");
+            break;
+        }
+        atual = atual->proximo;
+    }
+
+    if(!encontrado){
+        printf("Registro não encontrado!\n");
+    }
+}
+
+void ExcluirEstudante()
+{
+    char nomeBusca[TAM_NOME];
+    No *atual = lista;
+    No *anterior = NULL;
+    bool encontrado = false;
+
+    printf("-----------------\n");
+    printf("Informe o nome de busca: ");
+    scanf(" %[^\n]", nomeBusca);
+    
+    while (atual != NULL) {
+        if (strcmp(atual->estudante.nome, nomeBusca) == 0) {
+            encontrado = true;
+            if (anterior == NULL) {
+                lista = atual->proximo;
+            } else {
+                anterior->proximo = atual->proximo;
+            }
+            free(atual);
+            printf("Registro excluído com sucesso.\n");
+            break;
+        }
+        anterior = atual;
+        atual = atual->proximo;
+    if (!encontrado){
+        printf("Registro não encontrado!\n");
+    }
+
+    }
+}   
+/*
+void OrdenarEstudantesPorNome()
 {
 
+}
+
+void OrdenarEstudantesPorMedia()
+{
+
+}
+*/
+
+int main()
+{
     int opcao;
     bool flag = true;
 
@@ -122,7 +217,7 @@ int main()
         printf("4 - Excluir estudante\n");
         printf("5 - Listar estudantes\n");
         printf("6 - Ordenar estudantes por nome\n");
-        printf("7 - Mostrar estudantes pela média\n");
+        printf("7 - Ordenar estudantes pela média\n");
         printf("8 - Apresentar 5 melhores estudantes\n");
         printf("9 - Sair\n");
 
@@ -135,12 +230,15 @@ int main()
         }
         else if (opcao == 2)
         {
+            ConsultarEstudante();
         }
         else if (opcao == 3)
         {
+            AlterarNotas();
         }
         else if (opcao == 4)
         {
+            ExcluirEstudante();
         }
         else if (opcao == 5)
         {
