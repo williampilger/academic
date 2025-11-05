@@ -189,18 +189,102 @@ void ExcluirEstudante()
     }
 
     }
-}   
-/*
-void OrdenarEstudantesPorNome()
-{
-
 }
 
-void OrdenarEstudantesPorMedia()
+/**
+ * Ordena os estudante
+ * 1 - por nome
+ * 2 - por média
+ */
+void OrdenarEstudantes(int criterio)
 {
+    if (lista == NULL || lista->proximo == NULL)
+    {
+        printf("Lista vazia ou com um elemento. Nada a ordenar.\n");
+        return;
+    }
 
+    bool trocou;
+    No *atual;
+
+    do
+    {
+        trocou = false;
+        atual = lista;
+        while (atual->proximo != NULL)
+        {
+            bool trocar = false;
+            
+            if (criterio == 1) { // por nome
+                trocar = strcmp(atual->estudante.nome, atual->proximo->estudante.nome) > 0;
+            } else if(criterio==2) { //por média
+                trocar = atual->estudante.media < atual->proximo->estudante.media;
+            } else {
+                printf("Critério inválido.\n");
+                return;
+            }
+
+            if (trocar)
+            {
+                Estudante temp = atual->estudante;
+                atual->estudante = atual->proximo->estudante;
+                atual->proximo->estudante = temp;
+                trocou = true;
+            }
+            atual = atual->proximo;
+        }
+    } while (trocou);
+
+    printf("Lista ordenada por nome.\n");
+    ListarEstudantes();
 }
-*/
+
+// apresentar os 5 melhores SEM MODIFICAR o array original
+void CincoMelhoresEstudantes(){
+    if (lista == NULL)
+    {
+        printf("Lista vazia.\n");
+        return;
+    }
+
+    // Criar uma cópia da lista original
+    No *copiaLista = NULL;
+    No *atual = lista;
+    while (atual != NULL)
+    {
+        No *novoNo = NovoNo(atual->estudante);
+        novoNo->proximo = copiaLista;
+        copiaLista = novoNo;
+        atual = atual->proximo;
+    }
+
+    bool trocou;
+    do
+    {
+        trocou = false;
+        atual = copiaLista;
+        while (atual->proximo != NULL)
+        {
+            if (atual->estudante.media < atual->proximo->estudante.media)
+            {
+                Estudante temp = atual->estudante;
+                atual->estudante = atual->proximo->estudante;
+                atual->proximo->estudante = temp;
+                trocou = true;
+            }
+            atual = atual->proximo;
+        }
+    } while (trocou);
+
+    printf("\n-----------------\n");
+    printf("5 Melhores Estudantes:\n");
+    atual = copiaLista;
+    for (int i = 0; i < 5 && atual != NULL; i++)
+    {
+        printf("Nome: %s | Nota 1: %.2lf | Nota 2: %.2lf | Média: %.2lf\n", atual->estudante.nome, atual->estudante.n1, atual->estudante.n2, atual->estudante.media);
+        atual = atual->proximo;
+    }
+}
 
 int main()
 {
@@ -246,12 +330,15 @@ int main()
         }
         else if (opcao == 6)
         {
+            OrdenarEstudantes(1);
         }
         else if (opcao == 7)
         {
+            OrdenarEstudantes(2);
         }
         else if (opcao == 8)
         {
+            CincoMelhoresEstudantes();
         }
         else if (opcao == 9)
         {
