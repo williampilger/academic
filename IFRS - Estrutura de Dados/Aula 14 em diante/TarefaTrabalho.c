@@ -184,10 +184,9 @@ void ExcluirEstudante()
         }
         anterior = atual;
         atual = atual->proximo;
+    }
     if (!encontrado){
         printf("Registro não encontrado!\n");
-    }
-
     }
 }
 
