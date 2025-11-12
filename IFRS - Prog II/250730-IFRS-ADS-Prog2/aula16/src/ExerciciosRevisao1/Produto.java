@@ -1,6 +1,7 @@
 package ExerciciosRevisao1;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
+	
 	private int codigo;
 	private String nome;
 	private Fabricante fabricante;
@@ -55,4 +56,14 @@ public class Produto {
 		if( data.length != 5) throw new Exception("Impossible import the informed data: " + entry);
 		return new Produto(Integer.parseInt(data[0]), data[1], new Fabricante(data[3], data[4]), Double.parseDouble(data[2]));
 	}
+	
+	@Override
+	public int compareTo(Produto o) {
+		int dif = this.codigo - o.getCodigo();
+		if( dif == 0) {
+			return this.nome.compareTo(o.getNome());
+		}
+		return dif;
+	}
+	
 }

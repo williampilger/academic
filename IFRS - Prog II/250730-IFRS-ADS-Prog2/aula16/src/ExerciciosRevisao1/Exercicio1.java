@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Exercicio1 {
@@ -30,6 +32,7 @@ public class Exercicio1 {
 			System.out.println(" 2 - Listar produtos");
 			System.out.println(" 3 - Salvar para arquivo");
 			System.out.println(" 4 - Carregar do arquivo");
+			System.out.println(" 5 - Reordenar lista (por código)");
 			System.out.println(" ---------------------------");
 			System.out.println(" 0 - Sair");
 			System.out.println("");
@@ -123,6 +126,9 @@ public class Exercicio1 {
 				}
 				
 				break;
+			case 5:
+				Collections.sort(lista);
+				System.out.println("Lista reordenada!");
 			default:
 				System.out.println("Opção inválida!!! Leia com mais atenção!");
 				break;
