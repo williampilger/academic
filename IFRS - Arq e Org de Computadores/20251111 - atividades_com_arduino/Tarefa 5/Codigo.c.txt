@@ -1,0 +1,35 @@
+#define COMMON_CATODE //define o LED como Catodo comum
+
+int pR = 11;
+int pG = 10;
+int pB = 9;
+
+void setup () {
+  pinMode(pR, OUTPUT);
+  pinMode(pG, OUTPUT);
+  pinMode(pB, OUTPUT);
+
+}
+
+void setColor(int R, int G, int B){
+  analogWrite(pR, R);
+  analogWrite(pG, G);
+  analogWrite(pB, B);
+}
+
+void loop() {
+  setColor(255, 0, 0);
+  delay(1000);
+  setColor(0, 255, 0);
+  delay(1000);
+  setColor(0, 0, 255);
+  delay(1000);
+  setColor(255, 255, 0);
+  delay(1000);
+  setColor(255, 0, 220);
+  delay(1000);
+  setColor(255, 220, 255);
+  delay(1000);
+  setColor(255, 255, 255);
+  delay(1000);
+}

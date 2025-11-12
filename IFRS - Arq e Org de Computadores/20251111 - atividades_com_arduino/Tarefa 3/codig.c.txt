@@ -1,0 +1,12 @@
+int BUZ = 11;
+
+void setup() {
+	pinMode(BUZ, OUTPUT);
+}
+
+void loop () {
+  tone(BUZ, 500);
+  delay(1000);
+  noTone(BUZ);
+  delay(1000);
+}

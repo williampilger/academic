@@ -1,0 +1,18 @@
+int BUTTON = 2;
+int LED = 12;
+
+int btnState = 0;
+
+void setup() {
+	pinMode(LED, OUTPUT);
+	pinMode(BUTTON, INPUT);
+}
+
+void loop () {
+  btnState = digitalRead(BUTTON);
+  if(btnState != HIGH){
+    digitalWrite(LED, HIGH);
+  } else {
+    digitalWrite(LED, LOW);
+  }
+}
