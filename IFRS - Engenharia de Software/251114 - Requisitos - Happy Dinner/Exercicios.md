@@ -1,6 +1,5 @@
-Com base nos textos sobre Manutenção de Software disponíveis no Moodle da disciplina, responda às questões a seguir:
+# Com base nos textos sobre Manutenção de Software disponíveis no Moodle da disciplina, responda às questões a seguir:
 
----
 
 ### 1. Explique por que um sistema de software usado em um ambiente real deve mudar ou torna-se progressivamente menos útil.
 
@@ -31,6 +30,12 @@ O processo de obter um código que entrega o mesmo resultado de uma aplicação 
 
 ### 5. Descreva brevemente as três principais tipos de manutenção de software definidos por Sommerville. Por que é difícil distinguí-los?
 
+A *Correção de Defeitos* é, teoricamente, a alteração mais barata, pois não é algo que modifica a estrutura e as funcionalidades da aplicação, sendo geralmente uma alteração pequena. Eu classificaria ela como uma **Refatoração** de código.
+
+A *Adaptação Ambiental* é uma alteração na aplicação para se adequar ao novo ambiente onde deve executar. Mudanças no sistema operacional e/ou hardware, por exemplo. São alterações geralmente menos caras que as da próxima categoria, mas mais caras que as da anterior. Eu a classificaria como uma **Reengenharia** de código.
+
+*Adição de Funcionalidades* é a alteração mais custosa, pois tem potencial para gerar o maior volume de modificação de código (modificação ou adição), pois tratam-se de novas funções. Eu a classificaria como **Reengenharia**.
+
 ---
 
 ### 6. No artigo de Paduelli os tipos de manutenção são classificados inicialmente como: corretivas, adaptativas e perfectivas. Qual a relação destas categorias com as apresentadas por Sommerville?
@@ -42,6 +47,8 @@ O processo de obter um código que entrega o mesmo resultado de uma aplicação 
 ---
 
 ### 8. Qual a relação entre a categoria de manutenção preventiva utilizada por Paduelli e os conceitos de reengenharia e refatoração de código?
+
+
 
 ---
 
