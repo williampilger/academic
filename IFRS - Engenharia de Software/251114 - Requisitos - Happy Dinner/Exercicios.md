@@ -75,6 +75,8 @@ Quando a manutenção necessária para manter o sistema útil e funcional é mai
 - Mudanças frequentes de prioridades;
 - Falta de comprometimento com cronogramas;
 - Elevada rotatividade de membros;
+- Ausência de manutenção preventiva;
+- Falta de motivação da equipe (nunguém gosta de modificar algo feito por outros);
 
 ---
 
