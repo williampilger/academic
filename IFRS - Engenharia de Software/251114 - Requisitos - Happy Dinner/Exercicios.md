@@ -24,31 +24,35 @@ Enquanto a refatoração consiste na atualização de código com o intuito de m
 
 ### 4. O que é Engenharia Reversa?
 
-O processo de obter um código que entrega o mesmo resultado de uma aplicação da qual não se possui o código-fonte. Poder-se-ia chamar isso de cópia/pirataria, dependendo do contexto.
+É o procesos inverso da *Engenharia Avante*. Em termos de software, fazer engenharia reversa é o ato de entender e documentar o sistema que eu tenho, para depois realizar modificações nele.
 
 ---
 
 ### 5. Descreva brevemente as três principais tipos de manutenção de software definidos por Sommerville. Por que é difícil distinguí-los?
 
-A *Correção de Defeitos* é, teoricamente, a alteração mais barata, pois não é algo que modifica a estrutura e as funcionalidades da aplicação, sendo geralmente uma alteração pequena. Eu classificaria ela como uma **Refatoração** de código.
+A *Correção de Defeitos* (ou *Corretiva*) é, teoricamente, a alteração mais barata, pois não é algo que modifica a estrutura e as funcionalidades da aplicação, sendo geralmente uma alteração pequena.
 
-A *Adaptação Ambiental* é uma alteração na aplicação para se adequar ao novo ambiente onde deve executar. Mudanças no sistema operacional e/ou hardware, por exemplo. São alterações geralmente menos caras que as da próxima categoria, mas mais caras que as da anterior. Eu a classificaria como uma **Reengenharia** de código.
+A *Adaptação Ambiental* (ou *Adaptativas* ) é uma alteração na aplicação para se adequar ao novo ambiente onde deve executar. Mudanças no sistema operacional e/ou hardware, por exemplo. São alterações geralmente menos caras que as da próxima categoria, mas mais caras que as da anterior.
 
-*Adição de Funcionalidades* é a alteração mais custosa, pois tem potencial para gerar o maior volume de modificação de código (modificação ou adição), pois tratam-se de novas funções. Eu a classificaria como **Reengenharia**.
+*Adição de Funcionalidades* (ou *Perfectiva*) é a alteração mais custosa, pois tem potencial para gerar o maior volume de modificação de código (modificação ou adição), pois tratam-se de novas funções.
 
 ---
 
 ### 6. No artigo de Paduelli os tipos de manutenção são classificados inicialmente como: corretivas, adaptativas e perfectivas. Qual a relação destas categorias com as apresentadas por Sommerville?
 
+Já respondido na questão anterior.
+
 ---
 
 ### 7. Por que Paduelli não considera as manutenções emergenciais como uma nova categoria de manutenção ao longo do texto?
+
+Por que ele considera que a manutenção emergencial, segundo ele, se enquadra nas demais categorias, mas é executada de maneira urgente. 
 
 ---
 
 ### 8. Qual a relação entre a categoria de manutenção preventiva utilizada por Paduelli e os conceitos de reengenharia e refatoração de código?
 
-
+O intuito da preventiva é a de evitar problemas.
 
 ---
 
@@ -65,6 +69,12 @@ Quando a manutenção necessária para manter o sistema útil e funcional é mai
 ---
 
 ### 11. Cite dois problemas gerenciais que podem ocorrer durante a manutenção de sistemas.
+
+- Auxência de um processo para manutenção;
+- Grande espectativa dos usuários;
+- Mudanças frequentes de prioridades;
+- Falta de comprometimento com cronogramas;
+- Elevada rotatividade de membros;
 
 ---
 
