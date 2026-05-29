@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02 - 2026/03/06</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer>
+        function funcaoSolucao(primeiroNumero, segundoNumero){
+
+            if(primeiroNumero > segundoNumero){
+                return primeiroNumero;
+            } else{
+                return segundoNumero;
+            }
+        }
+        function btnOnClick(){
+            const numeroPrimeiro = document.querySelector("#numero-primeiro").value;
+            const numeroSegundo = document.querySelector("#numero-segundo").value;
+
+            if(numeroPrimeiro && numeroSegundo ){
+                const resultado = funcaoSolucao(numeroPrimeiro, numeroSegundo);
+                window.alert(`O maior número é: ${resultado}`);
+            } else {
+                window.alert("não dá pra comparar se você não preencher os dois campos!");
+            }
+        }
+    </script>
+    <style>
+        .default-input{
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .default-button {
+            background-color: #0096d4;
+            color: white;
+            border-radius: 30px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            padding: 5px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="flex flex-col gap-4 justify-center items-center py-[50px] px-[15px]">
+    <div class="border-2 rounded-2xl p-2 w-full">
+        <h2 class="font-bold ">Enunciado:</h2>
+        <p>Crie uma função que receba dois números como parâmetros, e que retorne apenas o maior deles.</p>
+    </div>
+    <div class="flex flex-col border-2 rounded-2xl p-2 w-full">
+        <h2 class="font-bold">Solução:</h2>
+        <div class="flex flex-col items-start gap-1">
+            <div class="flex justify-center gap-1">
+                <label for="numero-primeiro">Primeiro Número</label>
+                <input class="default-input" type="number" id="numero-primeiro">
+            </div>
+            <div class="flex justify-center gap-1">
+                <label for="numero-segundo">Segundo Número</label>
+                <input class="default-input" type="number" id="numero-segundo">
+            </div>
+            <button class="default-button" onclick="btnOnClick()">Testar qual o Maior</button>
+        </div>
+    </div>
+</body>
+</html>

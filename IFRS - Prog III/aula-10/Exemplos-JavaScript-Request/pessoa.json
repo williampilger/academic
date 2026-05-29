@@ -1,0 +1,19 @@
+{
+    "nome":"Mathias",
+    "sobrenome": "Pereira", 
+    "idade":44, 
+    "carro":null,
+    "servicoMilitar": true,
+    "endereco": {
+        "rua": "Avenida Perimetral",
+        "numero": 123,
+        "cidade": "Porto Alegre",
+        "estado": "RS",
+        "pais": "Brasil"
+    },
+    "hobbies": [
+        "ciclismo",
+        "cerveja artesanal",
+        "futebol"
+    ]
+}

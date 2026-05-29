@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <h1>Equipes</h1>
+    <button onclick="loadTeams()">Carregar Equipes</button>
+    <script>
+        function loadTeams(){
+            fetch('equipes.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.createElement('div');
+                    container.innerHTML = '<h2>Equipes Carregadas</h2>';
+                    if (Array.isArray(data)) {
+                        const ul = document.createElement('ul');
+                        data.forEach(team => {
+                            const li = document.createElement('li');
+                            li.textContent = typeof team === 'string' ? team : JSON.stringify(team);
+                            ul.appendChild(li);
+                        });
+                        container.appendChild(ul);
+                    } else {
+                        container.innerHTML += '<p>Dados não são uma lista.</p>';
+                    }
+                    document.body.appendChild(container);
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar equipes:', error);
+                    document.body.innerHTML += '<p>Erro ao carregar equipes.</p>';
+                });
+        }
+    </script>
+</body>
+</html>

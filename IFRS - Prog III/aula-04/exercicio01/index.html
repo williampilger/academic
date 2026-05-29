@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01 - Quadro</title>
+    <script defer>
+        function mostraTempo(){
+            const tempo_emDias = document.querySelector("#tempo-input").value;
+
+            const anos = Math.floor(tempo_emDias / 365);
+            const meses = Math.floor((tempo_emDias % 365) / 30);
+            const dias = (tempo_emDias % 365) % 30;
+
+
+            alert(`O tempo em anos é: ${anos} anos, ${meses} meses e ${dias} dias.`);
+
+        }
+    </script>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            height: 100vh;
+        }    
+    </style>
+</head>
+<body>
+    <div>
+        <label for="tempo-input">Tempo em DIAS</label>
+        <input type="number" id="tempo-input">
+    </div>
+    <button onclick="mostraTempo()">Converter para Anos</button>
+</body>
+</html>

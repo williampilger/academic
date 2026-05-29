@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2</title>
+    <style>
+        .pai{
+            background-color: lightblue;
+            padding: 15px;
+            border-radius: 15px;
+        }
+        .pai .filho{
+            background-color: brown;
+            padding: 15px;
+            margin: 5px;
+            border-radius: 10px;
+        }
+        .campo-adicionar{
+            background-color: lightgreen;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+    </style>
+    <script src="exemplo02.js" defer></script>
+</head>
+<body>
+    <div class="pai">
+        Antônio
+        <div class="filho">Marcos</div>
+        <div class="filho">Maria</div>
+    </div>
+    <div class="campo-adicionar">
+        <input type="text" id="nome">
+        <input type="button" id="btn-add" value="Adicionar Filho" onclick="adicionar()">
+    </div>
+</body>
+</html>
